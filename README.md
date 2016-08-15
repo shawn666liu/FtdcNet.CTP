@@ -12,4 +12,4 @@ Depends on [ftdc2c_ctp](http://github.com/shawn666liu/ftdc2c_ctp). Clone ftdc2c_
 
 ## Binary
 
-If you don't want build yourself, just copy FtdcNet.CTP.dll, FtdcNet.CTP.xml, and x64 x86 directories.
+If you don't want to build yourself, just copy FtdcNet.CTP.dll, FtdcNet.CTP.xml, and x64 x86 directories from [Demo](http://github.com/shawn666liu/FtdcNet.CTP/tree/master/Demo) project.
