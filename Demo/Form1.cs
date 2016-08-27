@@ -99,6 +99,9 @@ namespace Demo
         {
             if (DataApi == null)
             {
+                if (CheckInput() == false)
+                    return;
+
                 DataApi = new FtdcMdAdapter("", false, false);
                 DataApi.OnFrontEvent += DataApi_OnFrontEvent;
                 DataApi.OnRspEvent += DataApi_OnRspEvent;
@@ -140,6 +143,9 @@ namespace Demo
         {
             if (TraderApi == null)
             {
+                if (CheckInput() == false)
+                    return;
+
                 TraderApi = new FtdcTdAdapter("");
                 TraderApi.OnFrontEvent += TraderApi_OnFrontEvent;
                 TraderApi.OnRspEvent += TraderApi_OnRspEvent;
@@ -235,6 +241,16 @@ namespace Demo
                 req.ExchangeID = "";
                 TraderApi.ReqQryInstrument(req, ++this.iRequestID);
             }
+        }
+
+        private bool CheckInput()
+        {
+            if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text))
+            {
+                MessageBox.Show("请输入用户名和密码");
+                return false;
+            }
+            return true;
         }
     }
 }
