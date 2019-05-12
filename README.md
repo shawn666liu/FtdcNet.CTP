@@ -13,7 +13,8 @@ If you don't want to build yourself, just copy FtdcNet.CTP.dll, FtdcNet.CTP.xml,
 ## Version
 
 CTP version is V6.3.15 (2019-02-20)
-6.3.15 生产版API只能连接生产版看穿式监管前置
+
+6.3.15 鐢熶骇鐗圓PI鍙兘杩炴帴鐢熶骇鐗堢湅绌垮紡鐩戠鍓嶇疆
 
 ## ChangeLog
 
