@@ -1,7 +1,7 @@
 ﻿/////////////////////////////////////////////////////////////////////////
 //// 上期技术 Ftdc C++ => .Net Framework Adapter
 //// Author : shawn666.liu@hotmail.com   
-//// 本文件生成于 2016/8/14 13:48:55
+//// 本文件生成于 2019/5/12 13:31:52
 /////////////////////////////////////////////////////////////////////////
 
 using System;
@@ -52,6 +52,14 @@ namespace CTP
         ///批量报单操作错误回报, ThostFtdcBatchOrderActionField
         /// </summary>
         OnErrRtnBatchOrderAction,
+        /// <summary>
+        ///期权自对冲录入错误回报, ThostFtdcInputOptionSelfCloseField
+        /// </summary>
+        OnErrRtnOptionSelfCloseInsert,
+        /// <summary>
+        ///期权自对冲操作错误回报, ThostFtdcOptionSelfCloseActionField
+        /// </summary>
+        OnErrRtnOptionSelfCloseAction,
         /// <summary>
         ///申请组合录入错误回报, ThostFtdcInputCombActionField
         /// </summary>
@@ -153,6 +161,18 @@ namespace CTP
         /// </summary>
         OnRspTradingAccountPasswordUpdate,
         /// <summary>
+        ///查询用户当前支持的认证模式的回复, ThostFtdcRspUserAuthMethodField
+        /// </summary>
+        OnRspUserAuthMethod,
+        /// <summary>
+        ///获取图形验证码请求的回复, ThostFtdcRspGenUserCaptchaField
+        /// </summary>
+        OnRspGenUserCaptcha,
+        /// <summary>
+        ///获取短信验证码请求的回复, ThostFtdcRspGenUserTextField
+        /// </summary>
+        OnRspGenUserText,
+        /// <summary>
         ///报单录入请求响应, ThostFtdcInputOrderField
         /// </summary>
         OnRspOrderInsert,
@@ -208,6 +228,14 @@ namespace CTP
         ///批量报单操作请求响应, ThostFtdcInputBatchOrderActionField
         /// </summary>
         OnRspBatchOrderAction,
+        /// <summary>
+        ///期权自对冲录入请求响应, ThostFtdcInputOptionSelfCloseField
+        /// </summary>
+        OnRspOptionSelfCloseInsert,
+        /// <summary>
+        ///期权自对冲操作请求响应, ThostFtdcInputOptionSelfCloseActionField
+        /// </summary>
+        OnRspOptionSelfCloseAction,
         /// <summary>
         ///申请组合录入请求响应, ThostFtdcInputCombActionField
         /// </summary>
@@ -333,6 +361,18 @@ namespace CTP
         /// </summary>
         OnRspQryInstrumentOrderCommRate,
         /// <summary>
+        ///请求查询资金账户响应, ThostFtdcTradingAccountField
+        /// </summary>
+        OnRspQrySecAgentTradingAccount,
+        /// <summary>
+        ///请求查询二级代理商资金校验模式响应, ThostFtdcSecAgentCheckModeField
+        /// </summary>
+        OnRspQrySecAgentCheckMode,
+        /// <summary>
+        ///请求查询二级代理商信息响应, ThostFtdcSecAgentTradeInfoField
+        /// </summary>
+        OnRspQrySecAgentTradeInfo,
+        /// <summary>
         ///请求查询期权交易成本响应, ThostFtdcOptionInstrTradeCostField
         /// </summary>
         OnRspQryOptionInstrTradeCost,
@@ -352,6 +392,14 @@ namespace CTP
         ///请求查询报价响应, ThostFtdcQuoteField
         /// </summary>
         OnRspQryQuote,
+        /// <summary>
+        ///请求查询期权自对冲响应, ThostFtdcOptionSelfCloseField
+        /// </summary>
+        OnRspQryOptionSelfClose,
+        /// <summary>
+        ///请求查询投资单元响应, ThostFtdcInvestUnitField
+        /// </summary>
+        OnRspQryInvestUnit,
         /// <summary>
         ///请求查询组合合约安全系数响应, ThostFtdcCombInstrumentGuardField
         /// </summary>
@@ -463,6 +511,10 @@ namespace CTP
         ///保证金监控中心用户令牌, ThostFtdcCFMMCTradingAccountTokenField
         /// </summary>
         OnRtnCFMMCTradingAccountToken,
+        /// <summary>
+        ///期权自对冲通知, ThostFtdcOptionSelfCloseField
+        /// </summary>
+        OnRtnOptionSelfClose,
         /// <summary>
         ///申请组合通知, ThostFtdcCombActionField
         /// </summary>

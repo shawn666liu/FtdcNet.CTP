@@ -1,7 +1,7 @@
 ﻿/////////////////////////////////////////////////////////////////////////
 //// 上期技术 Ftdc C++ => .Net Framework Adapter
 //// Author : shawn666.liu@hotmail.com   
-//// 本文件生成于 2016/8/14 13:48:55
+//// 本文件生成于 2019/5/12 13:31:52
 /////////////////////////////////////////////////////////////////////////
 
 
@@ -42,6 +42,17 @@ namespace CTP
         /// </summary>
         public event OnRtnEventHandler OnRtnEvent;
 
+
+        /// <summary>
+        /// pSystemInfo至少分配273字节,建议512
+        /// </summary>
+        /// <param name="pSystemInfo" ></param>
+        /// <param name="nLen" > 获取到的采集信息的长度</param>
+        /// <returns>0 为正确，非0为错误</returns>
+        public static int CTP_GetSystemInfo(byte[] pSystemInfo, ref int nLen)
+        {
+            return Interop.CTPGetSystemInfo(pSystemInfo, ref nLen);
+        }
         /// <summary>
         ///创建TraderApi
         ///@param pszFlowPath 存贮订阅信息文件的目录，默认为当前目录
@@ -168,6 +179,24 @@ namespace CTP
         }
 
         /// <summary>
+        ///注册用户终端信息，用于中继服务器多连接模式
+        ///需要在终端认证成功后，用户登录前调用该接口
+        /// </summary>
+        public int RegisterUserSystemInfo(ThostFtdcUserSystemInfoField pUserSystemInfo)
+        {
+            return Interop.TdRegisterUserSystemInfo(Handle, pUserSystemInfo);
+        }
+
+        /// <summary>
+        ///上报用户终端信息，用于中继服务器操作员登录模式
+        ///操作员登录后，可以多次调用该接口上报客户信息
+        /// </summary>
+        public int SubmitUserSystemInfo(ThostFtdcUserSystemInfoField pUserSystemInfo)
+        {
+            return Interop.TdSubmitUserSystemInfo(Handle, pUserSystemInfo);
+        }
+
+        /// <summary>
         ///用户登录请求
         /// </summary>
         public int ReqUserLogin(ThostFtdcReqUserLoginField pReqUserLoginField, int nRequestID)
@@ -197,6 +226,54 @@ namespace CTP
         public int ReqTradingAccountPasswordUpdate(ThostFtdcTradingAccountPasswordUpdateField pTradingAccountPasswordUpdate, int nRequestID)
         {
             return Interop.TdReqTradingAccountPasswordUpdate(Handle, pTradingAccountPasswordUpdate, nRequestID);
+        }
+
+        /// <summary>
+        ///查询用户当前支持的认证模式
+        /// </summary>
+        public int ReqUserAuthMethod(ThostFtdcReqUserAuthMethodField pReqUserAuthMethod, int nRequestID)
+        {
+            return Interop.TdReqUserAuthMethod(Handle, pReqUserAuthMethod, nRequestID);
+        }
+
+        /// <summary>
+        ///用户发出获取图形验证码请求
+        /// </summary>
+        public int ReqGenUserCaptcha(ThostFtdcReqGenUserCaptchaField pReqGenUserCaptcha, int nRequestID)
+        {
+            return Interop.TdReqGenUserCaptcha(Handle, pReqGenUserCaptcha, nRequestID);
+        }
+
+        /// <summary>
+        ///用户发出获取短信验证码请求
+        /// </summary>
+        public int ReqGenUserText(ThostFtdcReqGenUserTextField pReqGenUserText, int nRequestID)
+        {
+            return Interop.TdReqGenUserText(Handle, pReqGenUserText, nRequestID);
+        }
+
+        /// <summary>
+        ///用户发出带有图片验证码的登陆请求
+        /// </summary>
+        public int ReqUserLoginWithCaptcha(ThostFtdcReqUserLoginWithCaptchaField pReqUserLoginWithCaptcha, int nRequestID)
+        {
+            return Interop.TdReqUserLoginWithCaptcha(Handle, pReqUserLoginWithCaptcha, nRequestID);
+        }
+
+        /// <summary>
+        ///用户发出带有短信验证码的登陆请求
+        /// </summary>
+        public int ReqUserLoginWithText(ThostFtdcReqUserLoginWithTextField pReqUserLoginWithText, int nRequestID)
+        {
+            return Interop.TdReqUserLoginWithText(Handle, pReqUserLoginWithText, nRequestID);
+        }
+
+        /// <summary>
+        ///用户发出带有动态口令的登陆请求
+        /// </summary>
+        public int ReqUserLoginWithOTP(ThostFtdcReqUserLoginWithOTPField pReqUserLoginWithOTP, int nRequestID)
+        {
+            return Interop.TdReqUserLoginWithOTP(Handle, pReqUserLoginWithOTP, nRequestID);
         }
 
         /// <summary>
@@ -309,6 +386,22 @@ namespace CTP
         public int ReqBatchOrderAction(ThostFtdcInputBatchOrderActionField pInputBatchOrderAction, int nRequestID)
         {
             return Interop.TdReqBatchOrderAction(Handle, pInputBatchOrderAction, nRequestID);
+        }
+
+        /// <summary>
+        ///期权自对冲录入请求
+        /// </summary>
+        public int ReqOptionSelfCloseInsert(ThostFtdcInputOptionSelfCloseField pInputOptionSelfClose, int nRequestID)
+        {
+            return Interop.TdReqOptionSelfCloseInsert(Handle, pInputOptionSelfClose, nRequestID);
+        }
+
+        /// <summary>
+        ///期权自对冲操作请求
+        /// </summary>
+        public int ReqOptionSelfCloseAction(ThostFtdcInputOptionSelfCloseActionField pInputOptionSelfCloseAction, int nRequestID)
+        {
+            return Interop.TdReqOptionSelfCloseAction(Handle, pInputOptionSelfCloseAction, nRequestID);
         }
 
         /// <summary>
@@ -560,6 +653,30 @@ namespace CTP
         }
 
         /// <summary>
+        ///请求查询资金账户
+        /// </summary>
+        public int ReqQrySecAgentTradingAccount(ThostFtdcQryTradingAccountField pQryTradingAccount, int nRequestID)
+        {
+            return Interop.TdReqQrySecAgentTradingAccount(Handle, pQryTradingAccount, nRequestID);
+        }
+
+        /// <summary>
+        ///请求查询二级代理商资金校验模式
+        /// </summary>
+        public int ReqQrySecAgentCheckMode(ThostFtdcQrySecAgentCheckModeField pQrySecAgentCheckMode, int nRequestID)
+        {
+            return Interop.TdReqQrySecAgentCheckMode(Handle, pQrySecAgentCheckMode, nRequestID);
+        }
+
+        /// <summary>
+        ///请求查询二级代理商信息
+        /// </summary>
+        public int ReqQrySecAgentTradeInfo(ThostFtdcQrySecAgentTradeInfoField pQrySecAgentTradeInfo, int nRequestID)
+        {
+            return Interop.TdReqQrySecAgentTradeInfo(Handle, pQrySecAgentTradeInfo, nRequestID);
+        }
+
+        /// <summary>
         ///请求查询期权交易成本
         /// </summary>
         public int ReqQryOptionInstrTradeCost(ThostFtdcQryOptionInstrTradeCostField pQryOptionInstrTradeCost, int nRequestID)
@@ -597,6 +714,22 @@ namespace CTP
         public int ReqQryQuote(ThostFtdcQryQuoteField pQryQuote, int nRequestID)
         {
             return Interop.TdReqQryQuote(Handle, pQryQuote, nRequestID);
+        }
+
+        /// <summary>
+        ///请求查询期权自对冲
+        /// </summary>
+        public int ReqQryOptionSelfClose(ThostFtdcQryOptionSelfCloseField pQryOptionSelfClose, int nRequestID)
+        {
+            return Interop.TdReqQryOptionSelfClose(Handle, pQryOptionSelfClose, nRequestID);
+        }
+
+        /// <summary>
+        ///请求查询投资单元
+        /// </summary>
+        public int ReqQryInvestUnit(ThostFtdcQryInvestUnitField pQryInvestUnit, int nRequestID)
+        {
+            return Interop.TdReqQryInvestUnit(Handle, pQryInvestUnit, nRequestID);
         }
 
         /// <summary>

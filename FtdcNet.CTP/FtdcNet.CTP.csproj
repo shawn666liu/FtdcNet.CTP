@@ -61,32 +61,7 @@
     <Compile Include="Struct.cs" />
     <Compile Include="TdApi.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\..\ftdc2c_ctp\api\x64\thostmduserapi.dll">
-      <Link>x64\thostmduserapi.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\ftdc2c_ctp\api\x64\thosttraderapi.dll">
-      <Link>x64\thosttraderapi.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\ftdc2c_ctp\api\x86\thostmduserapi.dll">
-      <Link>x86\thostmduserapi.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\ftdc2c_ctp\api\x86\thosttraderapi.dll">
-      <Link>x86\thosttraderapi.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\ftdc2c_ctp\Release\x64\ftdc2c_ctp.dll">
-      <Link>x64\ftdc2c_ctp.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\ftdc2c_ctp\Release\x86\ftdc2c_ctp.dll">
-      <Link>x86\ftdc2c_ctp.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

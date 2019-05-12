@@ -6,14 +6,17 @@
 
 Licensed under the [MIT License](http://www.mit-license.org/)
 
-## Building
-
-Depends on [ftdc2c_ctp](http://github.com/shawn666liu/ftdc2c_ctp). Clone ftdc2c_ctp and build it first.
-
 ## Binary
 
-If you don't want to build yourself, just copy FtdcNet.CTP.dll, FtdcNet.CTP.xml, and x64 x86 directories from [Demo](http://github.com/shawn666liu/FtdcNet.CTP/tree/master/Demo) project.
+If you don't want to build yourself, just copy FtdcNet.CTP.dll, FtdcNet.CTP.xml, and x64 x86 directories from [Release](http://github.com/shawn666liu/FtdcNet.CTP/tree/master/Release) folder.
 
 ## Version
 
-CTP version is V6.3.6 (2015-12-15)
+CTP version is V6.3.15 (2019-02-20)
+6.3.15 生产版API只能连接生产版看穿式监管前置
+
+## ChangeLog
+
+2019-05-12
+* ftdc2c_ctp integrated.
+* update to CTP v6.3.15

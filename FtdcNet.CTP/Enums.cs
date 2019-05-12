@@ -1,7 +1,7 @@
 ﻿/////////////////////////////////////////////////////////////////////////
 //// 上期技术 Ftdc C++ => .Net Framework Adapter
 //// Author : shawn666.liu@hotmail.com   
-//// 本文件生成于 2016/8/14 13:48:55
+//// 本文件生成于 2019/5/12 13:31:52
 /////////////////////////////////////////////////////////////////////////
 
 using System;
@@ -133,6 +133,16 @@ namespace CTP
         /// 人行开户许可证
         /// </summary>
         AccountsPermits = (byte)'J',
+
+        /// <summary>
+        /// 外国人永久居留证
+        /// </summary>
+        FrgPrmtRdCard = (byte)'K',
+
+        /// <summary>
+        /// 资管产品备案函
+        /// </summary>
+        CptMngPrdLetter = (byte)'L',
 
         /// <summary>
         /// 其他证件
@@ -575,7 +585,57 @@ namespace CTP
         /// <summary>
         /// 资金不够仍允许行权
         /// </summary>
-        ExecOrderNoCheck = (byte)'M'
+        ExecOrderNoCheck = (byte)'M',
+
+        /// <summary>
+        /// 指定
+        /// </summary>
+        Designate = (byte)'N',
+
+        /// <summary>
+        /// 证券处置
+        /// </summary>
+        StockDisposal = (byte)'O',
+
+        /// <summary>
+        /// 席位资金预警
+        /// </summary>
+        BrokerDepositWarn = (byte)'Q',
+
+        /// <summary>
+        /// 备兑不足预警
+        /// </summary>
+        CoverWarn = (byte)'S',
+
+        /// <summary>
+        /// 行权试算
+        /// </summary>
+        PreExecOrder = (byte)'T',
+
+        /// <summary>
+        /// 行权交收风险
+        /// </summary>
+        ExecOrderRisk = (byte)'P',
+
+        /// <summary>
+        /// 持仓限额预警
+        /// </summary>
+        PosiLimitWarn = (byte)'U',
+
+        /// <summary>
+        /// 持仓限额查询
+        /// </summary>
+        QryPosiLimit = (byte)'V',
+
+        /// <summary>
+        /// 银期签到签退
+        /// </summary>
+        FBSign = (byte)'W',
+
+        /// <summary>
+        /// 银期签约解约
+        /// </summary>
+        FBAccount = (byte)'X'
     };
 
     /// <summary>
@@ -929,7 +989,17 @@ namespace CTP
         /// <summary>
         /// 做市商
         /// </summary>
-        MarketMaker = (byte)'5'
+        MarketMaker = (byte)'5',
+
+        /// <summary>
+        /// 第一腿投机第二腿套保 大商所专用
+        /// </summary>
+        SpecHedge = (byte)'6',
+
+        /// <summary>
+        /// 第一腿套保第二腿投机  大商所专用
+        /// </summary>
+        HedgeSpec = (byte)'7'
     };
 
     /// <summary>
@@ -1185,7 +1255,17 @@ namespace CTP
         /// <summary>
         /// 互换单
         /// </summary>
-        Swap = (byte)'5'
+        Swap = (byte)'5',
+
+        /// <summary>
+        /// 大宗交易成交衍生
+        /// </summary>
+        DeriveFromBlockTrade = (byte)'6',
+
+        /// <summary>
+        /// 期转现成交衍生
+        /// </summary>
+        DeriveFromEFPTrade = (byte)'7'
     };
 
     /// <summary>
@@ -1417,7 +1497,12 @@ namespace CTP
         /// <summary>
         /// 组合衍生成交
         /// </summary>
-        CombinationDerived = (byte)'4'
+        CombinationDerived = (byte)'4',
+
+        /// <summary>
+        /// 大宗交易成交
+        /// </summary>
+        BlockTrade = (byte)'5'
     };
 
     /// <summary>
@@ -1438,7 +1523,12 @@ namespace CTP
         /// <summary>
         /// 卖委托价
         /// </summary>
-        Sell = (byte)'2'
+        Sell = (byte)'2',
+
+        /// <summary>
+        /// 场外成交价
+        /// </summary>
+        OTC = (byte)'3'
     };
 
     /// <summary>
@@ -1910,7 +2000,47 @@ namespace CTP
         /// <summary>
         /// 是否期货下单频率限制
         /// </summary>
-        IsFutureOrderFreq = (byte)'C'
+        IsFutureOrderFreq = (byte)'C',
+
+        /// <summary>
+        /// 行权冻结是否计算盈利
+        /// </summary>
+        IsExecOrderProfit = (byte)'H',
+
+        /// <summary>
+        /// 银期开户是否验证开户银行卡号是否是预留银行账户
+        /// </summary>
+        IsCheckBankAcc = (byte)'I',
+
+        /// <summary>
+        /// 弱密码最后修改日期
+        /// </summary>
+        PasswordDeadLine = (byte)'J',
+
+        /// <summary>
+        /// 强密码校验
+        /// </summary>
+        IsStrongPassword = (byte)'K',
+
+        /// <summary>
+        /// 自有资金质押比
+        /// </summary>
+        BalanceMorgage = (byte)'a',
+
+        /// <summary>
+        /// 最小密码长度
+        /// </summary>
+        MinPwdLen = (byte)'O',
+
+        /// <summary>
+        /// IP当日最大登陆失败次数
+        /// </summary>
+        LoginFailMaxNumForIP = (byte)'U',
+
+        /// <summary>
+        /// 密码有效期
+        /// </summary>
+        PasswordPeriod = (byte)'V'
     };
 
     /// <summary>
@@ -6316,7 +6446,12 @@ namespace CTP
         /// <summary>
         /// 用于手续费、盈亏、保证金
         /// </summary>
-        All = (byte)'2'
+        All = (byte)'2',
+
+        /// <summary>
+        /// 人民币方案3
+        /// </summary>
+        CNY3 = (byte)'3'
     };
 
     /// <summary>
@@ -7238,6 +7373,67 @@ namespace CTP
     };
 
     /// <summary>
+    /// TFtdcDceCombinationTypeType是一个组合类型类型
+    /// </summary>
+    public enum EnumDceCombinationTypeType : byte
+    {
+        /// <summary>
+        /// 期货对锁组合
+        /// </summary>
+        SPL = (byte)'0',
+
+        /// <summary>
+        /// 期权对锁组合
+        /// </summary>
+        OPL = (byte)'1',
+
+        /// <summary>
+        /// 期货跨期组合
+        /// </summary>
+        SP = (byte)'2',
+
+        /// <summary>
+        /// 期货跨品种组合
+        /// </summary>
+        SPC = (byte)'3',
+
+        /// <summary>
+        /// 买入期权垂直价差组合
+        /// </summary>
+        BLS = (byte)'4',
+
+        /// <summary>
+        /// 卖出期权垂直价差组合
+        /// </summary>
+        BES = (byte)'5',
+
+        /// <summary>
+        /// 期权日历价差组合
+        /// </summary>
+        CAS = (byte)'6',
+
+        /// <summary>
+        /// 期权跨式组合
+        /// </summary>
+        STD = (byte)'7',
+
+        /// <summary>
+        /// 期权宽跨式组合
+        /// </summary>
+        STG = (byte)'8',
+
+        /// <summary>
+        /// 买入期货期权组合
+        /// </summary>
+        BFO = (byte)'9',
+
+        /// <summary>
+        /// 卖出期货期权组合
+        /// </summary>
+        SFO = (byte)'a'
+    };
+
+    /// <summary>
     /// TFtdcOptionRoyaltyPriceTypeType是一个期权权利金价格类型类型
     /// </summary>
     public enum EnumOptionRoyaltyPriceTypeType : byte
@@ -7250,7 +7446,12 @@ namespace CTP
         /// <summary>
         /// 开仓价
         /// </summary>
-        OpenPrice = (byte)'4'
+        OpenPrice = (byte)'4',
+
+        /// <summary>
+        /// 最新价与昨结算价较大值
+        /// </summary>
+        MaxPreSettlementPrice = (byte)'5'
     };
 
     /// <summary>
@@ -7580,6 +7781,138 @@ namespace CTP
         /// 无效请求
         /// </summary>
         Invalid = (byte)'3'
+    };
+
+    /// <summary>
+    /// TFtdcWeakPasswordSourceType是一个弱密码来源类型
+    /// </summary>
+    public enum EnumWeakPasswordSourceType : byte
+    {
+        /// <summary>
+        /// 弱密码库
+        /// </summary>
+        Lib = (byte)'1',
+
+        /// <summary>
+        /// 手工录入
+        /// </summary>
+        Manual = (byte)'2'
+    };
+
+    /// <summary>
+    /// TFtdcOptSelfCloseFlagType是一个期权行权的头寸是否自对冲类型
+    /// </summary>
+    public enum EnumOptSelfCloseFlagType : byte
+    {
+        /// <summary>
+        /// 自对冲期权仓位
+        /// </summary>
+        CloseSelfOptionPosition = (byte)'1',
+
+        /// <summary>
+        /// 保留期权仓位
+        /// </summary>
+        ReserveOptionPosition = (byte)'2',
+
+        /// <summary>
+        /// 自对冲卖方履约后的期货仓位
+        /// </summary>
+        SellCloseSelfFuturePosition = (byte)'3',
+
+        /// <summary>
+        /// 保留卖方履约后的期货仓位
+        /// </summary>
+        ReserveFuturePosition = (byte)'4'
+    };
+
+    /// <summary>
+    /// TFtdcBizTypeType是一个业务类型类型
+    /// </summary>
+    public enum EnumBizTypeType : byte
+    {
+        /// <summary>
+        /// 期货
+        /// </summary>
+        Future = (byte)'1',
+
+        /// <summary>
+        /// 证券
+        /// </summary>
+        Stock = (byte)'2'
+    };
+
+    /// <summary>
+    /// TFtdcAppTypeType是一个用户App类型类型
+    /// </summary>
+    public enum EnumAppTypeType : byte
+    {
+        /// <summary>
+        /// 直连的投资者
+        /// </summary>
+        Investor = (byte)'1',
+
+        /// <summary>
+        /// 为每个投资者都创建连接的中继
+        /// </summary>
+        InvestorRelay = (byte)'2',
+
+        /// <summary>
+        /// 所有投资者共享一个操作员连接的中继
+        /// </summary>
+        OperatorRelay = (byte)'3',
+
+        /// <summary>
+        /// 未知
+        /// </summary>
+        UnKnown = (byte)'4'
+    };
+
+    /// <summary>
+    /// TFtdcResponseValueType是一个应答类型类型
+    /// </summary>
+    public enum EnumResponseValueType : byte
+    {
+        /// <summary>
+        /// 检查成功
+        /// </summary>
+        Right = (byte)'0',
+
+        /// <summary>
+        /// 检查失败
+        /// </summary>
+        Refuse = (byte)'1'
+    };
+
+    /// <summary>
+    /// TFtdcOTCTradeTypeType是一个OTC成交类型类型
+    /// </summary>
+    public enum EnumOTCTradeTypeType : byte
+    {
+        /// <summary>
+        /// 大宗交易
+        /// </summary>
+        Block = (byte)'0',
+
+        /// <summary>
+        /// 期转现
+        /// </summary>
+        EFP = (byte)'1'
+    };
+
+    /// <summary>
+    /// TFtdcMatchTypeType是一个期现风险匹配方式类型
+    /// </summary>
+    public enum EnumMatchTypeType : byte
+    {
+        /// <summary>
+        /// 基点价值
+        /// </summary>
+        DV01 = (byte)'1',
+
+        /// <summary>
+        /// 面值
+        /// </summary>
+        ParValue = (byte)'2'
     };
 
 }; // end of namespace
