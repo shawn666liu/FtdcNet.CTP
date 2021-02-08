@@ -1,7 +1,7 @@
 ﻿/////////////////////////////////////////////////////////////////////////
 //// 上期技术 Ftdc C++ => .Net Framework Adapter
 //// Author : shawn666.liu@hotmail.com   
-//// 2021-02-08 09:21:24
+//// 2021-02-08 23:32:54
 /////////////////////////////////////////////////////////////////////////
 
 using System;
@@ -11,11 +11,12 @@ namespace CTP
     /// <summary>
     /// THOST_TE_RESUME_TYPE, 公共流重传方式
     /// </summary>
-    public enum EnumTeResumeType : byte
+    public enum EnumTeResumeType
     {
         THOST_TERT_RESTART = 0,
         THOST_TERT_RESUME,
-        THOST_TERT_QUICK
+        THOST_TERT_QUICK,
+        THOST_TERT_NONE
     };
 
     /// <summary>

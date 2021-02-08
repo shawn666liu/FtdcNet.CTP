@@ -1,7 +1,7 @@
 ﻿/////////////////////////////////////////////////////////////////////////
 //// 上期技术 Ftdc C++ => .Net Framework Adapter
 //// Author : shawn666.liu@hotmail.com   
-//// 2021-02-08 09:21:24
+//// 2021-02-08 23:32:54
 /////////////////////////////////////////////////////////////////////////
 
 
@@ -18,9 +18,9 @@ namespace CTP
         /// <summary>
         /// Marshal IntPtr to Struct/Class 
         /// </summary>
-        public static T P2S<T>(IntPtr ptr) where T : class
+        public static T P2S<T>(IntPtr iptr) where T : class
         {
-            return Marshal.PtrToStructure(ptr, typeof(T)) as T;
+            return Marshal.PtrToStructure(iptr, typeof(T)) as T;
         }
     }
 

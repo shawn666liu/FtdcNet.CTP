@@ -1,12 +1,13 @@
 ﻿/////////////////////////////////////////////////////////////////////////
 //// 上期技术 Ftdc C++ => .Net Framework Adapter
 //// Author : shawn666.liu@hotmail.com   
-//// 2021-02-08 09:21:24
+//// 2021-02-08 23:32:55
 /////////////////////////////////////////////////////////////////////////
 
 
 
 using System;
+using System.Diagnostics.Contracts;
 using System.Runtime.InteropServices;
 
 
@@ -136,6 +137,8 @@ namespace CTP
         /// </summary>
         public int SubscribeMarketData(string[] ppInstrumentID)
         {
+            Contract.Requires<ArgumentNullException>(ppInstrumentID != null);
+            Contract.Assume(ppInstrumentID != null);
             return Interop.MdSubscribeMarketData(Handle, ppInstrumentID, ppInstrumentID.Length);
         }
 
@@ -147,6 +150,8 @@ namespace CTP
         /// </summary>
         public int UnSubscribeMarketData(string[] ppInstrumentID)
         {
+            Contract.Requires<ArgumentNullException>(ppInstrumentID != null);
+            Contract.Assume(ppInstrumentID != null);
             return Interop.MdUnSubscribeMarketData(Handle, ppInstrumentID, ppInstrumentID.Length);
         }
 
@@ -158,6 +163,8 @@ namespace CTP
         /// </summary>
         public int SubscribeForQuoteRsp(string[] ppInstrumentID)
         {
+            Contract.Requires<ArgumentNullException>(ppInstrumentID != null);
+            Contract.Assume(ppInstrumentID != null);
             return Interop.MdSubscribeForQuoteRsp(Handle, ppInstrumentID, ppInstrumentID.Length);
         }
 
@@ -169,6 +176,8 @@ namespace CTP
         /// </summary>
         public int UnSubscribeForQuoteRsp(string[] ppInstrumentID)
         {
+            Contract.Requires<ArgumentNullException>(ppInstrumentID != null);
+            Contract.Assume(ppInstrumentID != null);
             return Interop.MdUnSubscribeForQuoteRsp(Handle, ppInstrumentID, ppInstrumentID.Length);
         }
 
@@ -193,8 +202,7 @@ namespace CTP
         /// </summary>
         protected void CbOnFrontFunc(IntPtr pObject, EnumOnFrontType type, int nReason)
         {
-            if (OnFrontEvent != null)
-                OnFrontEvent(this, new OnFrontEventArgs(type, nReason));
+            OnFrontEvent?.Invoke(this, new OnFrontEventArgs(type, nReason));
         }
         private readonly Interop.CbOnFrontEvent CbOnFrontDelegate;
 
@@ -204,8 +212,7 @@ namespace CTP
         /// </summary>
         protected void CbOnRspFunc(IntPtr pObject, EnumOnRspType type, IntPtr pParam, ThostFtdcRspInfoField pRspInfo, int nRequestID, [MarshalAs(UnmanagedType.I1)] bool bIsLast)
         {
-            if (OnRspEvent != null)
-                OnRspEvent(this, new OnRspEventArgs(type, pParam, pRspInfo, nRequestID, bIsLast));
+            OnRspEvent?.Invoke(this, new OnRspEventArgs(type, pParam, pRspInfo, nRequestID, bIsLast));
         }
         private readonly Interop.CbOnRspEvent CbOnRspDelegate;
 
@@ -215,8 +222,7 @@ namespace CTP
         /// </summary>
         protected void CbOnRtnFunc(IntPtr pObject, EnumOnRtnType type, IntPtr pParam)
         {
-            if (OnRtnEvent != null)
-                OnRtnEvent(this, new OnRtnEventArgs(type, pParam));
+            OnRtnEvent?.Invoke(this, new OnRtnEventArgs(type, pParam));
         }
         private readonly Interop.CbOnRtnEvent CbOnRtnDelegate;
 
