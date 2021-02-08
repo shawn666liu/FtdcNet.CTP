@@ -1,7 +1,6 @@
 ﻿/////////////////////////////////////////////////////////////////////////
 //// 上期技术 Ftdc C++ => .Net Framework Adapter
-//// Author : shawn666.liu@hotmail.com   
-//// 2021-02-08 23:32:55
+//// Author : shawn666.liu@hotmail.com
 /////////////////////////////////////////////////////////////////////////
 
 using System;
@@ -137,6 +136,9 @@ namespace CTP
 
         [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
         public static extern int MdReqUserLogout(IntPtr pApi, ThostFtdcUserLogoutField pUserLogout, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int MdReqQryMulticastInstrument(IntPtr pApi, ThostFtdcQryMulticastInstrumentField pQryMulticastInstrument, int nRequestID);
 
 
 

@@ -1,7 +1,6 @@
 ﻿/////////////////////////////////////////////////////////////////////////
 //// 上期技术 Ftdc C++ => .Net Framework Adapter
-//// Author : shawn666.liu@hotmail.com   
-//// 2021-02-08 23:32:55
+//// Author : shawn666.liu@hotmail.com
 /////////////////////////////////////////////////////////////////////////
 
 using System;
@@ -128,6 +127,10 @@ namespace CTP
         ///登出请求响应, ThostFtdcUserLogoutField
         /// </summary>
         OnRspUserLogout,
+        /// <summary>
+        ///请求查询组播合约响应, ThostFtdcMulticastInstrumentField
+        /// </summary>
+        OnRspQryMulticastInstrument,
         /// <summary>
         ///错误应答, ThostFtdcRspInfoField
         /// </summary>

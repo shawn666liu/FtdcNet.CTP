@@ -1,7 +1,6 @@
 ﻿/////////////////////////////////////////////////////////////////////////
 //// 上期技术 Ftdc C++ => .Net Framework Adapter
-//// Author : shawn666.liu@hotmail.com   
-//// 2021-02-08 23:32:54
+//// Author : shawn666.liu@hotmail.com
 /////////////////////////////////////////////////////////////////////////
 
 
@@ -365,6 +364,12 @@ namespace CTP
         /// App类型
         /// </summary>
         public EnumAppTypeType AppType;
+
+        /// <summary>
+        /// 终端IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
+        public string ClientIPAddress;
 
     };
 
@@ -2031,6 +2036,16 @@ namespace CTP
         /// 大商所持仓成本差值，只有大商所使用
         /// </summary>
         public double PositionCostOffset;
+
+        /// <summary>
+        /// tas持仓手数
+        /// </summary>
+        public int TasPosition;
+
+        /// <summary>
+        /// tas持仓成本
+        /// </summary>
+        public double TasPositionCost;
 
     };
 
@@ -5930,6 +5945,16 @@ namespace CTP
         /// 大商所持仓成本差值，只有大商所使用
         /// </summary>
         public double PositionCostOffset;
+
+        /// <summary>
+        /// tas持仓手数
+        /// </summary>
+        public int TasPosition;
+
+        /// <summary>
+        /// tas持仓成本
+        /// </summary>
+        public double TasPositionCost;
 
     };
 
@@ -11000,6 +11025,16 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
 
+        /// <summary>
+        /// 前置编号
+        /// </summary>
+        public int FrontID;
+
+        /// <summary>
+        /// 会话编号
+        /// </summary>
+        public int SessionID;
+
     };
 
     /// <summary>
@@ -12922,6 +12957,16 @@ namespace CTP
         /// </summary>
         public double ToAmount;
 
+        /// <summary>
+        /// 是否手工换汇
+        /// </summary>
+        public int IsManualSwap;
+
+        /// <summary>
+        /// 是否将所有外币的剩余换汇额度设置为0
+        /// </summary>
+        public int IsAllRemainSetZero;
+
     };
 
     /// <summary>
@@ -13945,7 +13990,7 @@ namespace CTP
         public double CloseAmount;
 
         /// <summary>
-        /// 按照时间顺序平仓的笔数,大商所专用
+        /// 先开先平剩余数量（DCE）
         /// </summary>
         public int TimeFirstVolume;
 
@@ -13954,6 +13999,11 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
+
+        /// <summary>
+        /// 特殊持仓标志
+        /// </summary>
+        public EnumSpecPosiTypeType SpecPosiType;
 
     };
 
@@ -17661,6 +17711,89 @@ namespace CTP
         /// 紧急程度
         /// </summary>
         public byte NewsUrgency;
+
+    };
+
+    /// <summary>
+    /// MulticastInstrument
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcMulticastInstrumentField
+    {
+        /// <summary>
+        /// 主题号
+        /// </summary>
+        public int TopicID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 合约编号
+        /// </summary>
+        public int InstrumentNo;
+
+        /// <summary>
+        /// 基准价
+        /// </summary>
+        public double CodePrice;
+
+        /// <summary>
+        /// 合约数量乘数
+        /// </summary>
+        public int VolumeMultiple;
+
+        /// <summary>
+        /// 最小变动价位
+        /// </summary>
+        public double PriceTick;
+
+    };
+
+    /// <summary>
+    /// QryMulticastInstrument
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryMulticastInstrumentField
+    {
+        /// <summary>
+        /// 主题号
+        /// </summary>
+        public int TopicID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        public string InstrumentID;
+
+    };
+
+    /// <summary>
+    /// App客户端权限分配
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcAppIDAuthAssignField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// App代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string AppID;
+
+        /// <summary>
+        /// 交易中心代码
+        /// </summary>
+        public int DRIdentityID;
 
     };
 
@@ -24740,6 +24873,76 @@ namespace CTP
         /// 查询频率
         /// </summary>
         public int QueryFreq;
+
+    };
+
+    /// <summary>
+    /// 禁止认证IP
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcAuthForbiddenIPField
+    {
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
+        public string IPAddress;
+
+    };
+
+    /// <summary>
+    /// 查询禁止认证IP
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryAuthForbiddenIPField
+    {
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
+        public string IPAddress;
+
+    };
+
+    /// <summary>
+    /// 换汇可提冻结
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDelaySwapFrozenField
+    {
+        /// <summary>
+        /// 换汇流水号
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 15)]
+        public string DelaySwapSeqNo;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 源币种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 4)]
+        public string FromCurrencyID;
+
+        /// <summary>
+        /// 源剩余换汇额度(可提冻结)
+        /// </summary>
+        public double FromRemainSwap;
+
+        /// <summary>
+        /// 是否手工换汇
+        /// </summary>
+        public int IsManualSwap;
 
     };
 

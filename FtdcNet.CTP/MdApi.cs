@@ -1,7 +1,6 @@
 ﻿/////////////////////////////////////////////////////////////////////////
 //// 上期技术 Ftdc C++ => .Net Framework Adapter
-//// Author : shawn666.liu@hotmail.com   
-//// 2021-02-08 23:32:55
+//// Author : shawn666.liu@hotmail.com
 /////////////////////////////////////////////////////////////////////////
 
 
@@ -195,6 +194,14 @@ namespace CTP
         public int ReqUserLogout(ThostFtdcUserLogoutField pUserLogout, int nRequestID)
         {
             return Interop.MdReqUserLogout(Handle, pUserLogout, nRequestID);
+        }
+
+        /// <summary>
+        ///请求查询组播合约
+        /// </summary>
+        public int ReqQryMulticastInstrument(ThostFtdcQryMulticastInstrumentField pQryMulticastInstrument, int nRequestID)
+        {
+            return Interop.MdReqQryMulticastInstrument(Handle, pQryMulticastInstrument, nRequestID);
         }
 
         /// <summary>

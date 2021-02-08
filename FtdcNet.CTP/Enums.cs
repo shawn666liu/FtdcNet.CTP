@@ -1,7 +1,6 @@
 ﻿/////////////////////////////////////////////////////////////////////////
 //// 上期技术 Ftdc C++ => .Net Framework Adapter
-//// Author : shawn666.liu@hotmail.com   
-//// 2021-02-08 23:32:54
+//// Author : shawn666.liu@hotmail.com
 /////////////////////////////////////////////////////////////////////////
 
 using System;
@@ -144,6 +143,16 @@ namespace CTP
         /// 资管产品备案函
         /// </summary>
         CptMngPrdLetter = (byte)'L',
+
+        /// <summary>
+        /// 统一社会信用代码
+        /// </summary>
+        UniformSocialCreditCode = (byte)'N',
+
+        /// <summary>
+        /// 机构成立证明文件
+        /// </summary>
+        CorporationCertNo = (byte)'O',
 
         /// <summary>
         /// 其他证件
@@ -838,7 +847,63 @@ namespace CTP
         /// <summary>
         /// 现货期权
         /// </summary>
-        SpotOption = (byte)'6'
+        SpotOption = (byte)'6',
+
+        /// <summary>
+        /// TAS合约
+        /// </summary>
+        TAS = (byte)'7',
+
+        /// <summary>
+        /// 金属指数
+        /// </summary>
+        MI = (byte)'I'
+    };
+
+    /// <summary>
+    /// TFtdcAPIProductClassType是一个产品类型类型
+    /// </summary>
+    public enum EnumAPIProductClassType : byte
+    {
+        /// <summary>
+        /// 期货单一合约
+        /// </summary>
+        FutureSingle = (byte)'1',
+
+        /// <summary>
+        /// 期权单一合约
+        /// </summary>
+        OptionSingle = (byte)'2',
+
+        /// <summary>
+        /// 可交易期货(含期货组合和期货单一合约)
+        /// </summary>
+        Futures = (byte)'3',
+
+        /// <summary>
+        /// 可交易期权(含期权组合和期权单一合约)
+        /// </summary>
+        Options = (byte)'4',
+
+        /// <summary>
+        /// 可下单组合（目前包含DCE和ZCE的期货组合）
+        /// </summary>
+        TradingComb = (byte)'5',
+
+        /// <summary>
+        /// 可申请的组合（dce可以申请的组合合约 包含dce可以交易的合约）
+        /// </summary>
+        UnTradingComb = (byte)'6',
+
+        /// <summary>
+        /// 所有可以交易合约
+        /// </summary>
+        AllTrading = (byte)'7',
+
+        /// <summary>
+        /// 所有合约（包含不能交易合约 慎用）
+        /// </summary>
+        All = (byte)'8'
     };
 
     /// <summary>
@@ -1504,6 +1569,22 @@ namespace CTP
         /// 大宗交易成交
         /// </summary>
         BlockTrade = (byte)'5'
+    };
+
+    /// <summary>
+    /// TFtdcSpecPosiTypeType是一个特殊持仓明细标识类型
+    /// </summary>
+    public enum EnumSpecPosiTypeType : byte
+    {
+        /// <summary>
+        /// 普通持仓明细
+        /// </summary>
+        Common = (byte)'#',
+
+        /// <summary>
+        /// TAS合约成交产生的标的合约持仓明细
+        /// </summary>
+        Tas = (byte)'0'
     };
 
     /// <summary>
@@ -3127,6 +3208,16 @@ namespace CTP
         /// 客户端认证
         /// </summary>
         Authenticate = (byte)'6',
+
+        /// <summary>
+        /// 终端信息上报
+        /// </summary>
+        SubmitSysInfo = (byte)'7',
+
+        /// <summary>
+        /// 转账
+        /// </summary>
+        Transfer = (byte)'8',
 
         /// <summary>
         /// 其他
@@ -7370,7 +7461,17 @@ namespace CTP
         /// <summary>
         /// 时间价差组合
         /// </summary>
-        CLD = (byte)'6'
+        CLD = (byte)'6',
+
+        /// <summary>
+        /// 期权对锁组合
+        /// </summary>
+        OPL = (byte)'7',
+
+        /// <summary>
+        /// 买备兑组合
+        /// </summary>
+        BFO = (byte)'8'
     };
 
     /// <summary>
@@ -7729,7 +7830,12 @@ namespace CTP
         /// <summary>
         /// 申请拆分
         /// </summary>
-        UnComb = (byte)'1'
+        UnComb = (byte)'1',
+
+        /// <summary>
+        /// 操作员删组合单
+        /// </summary>
+        DelComb = (byte)'2'
     };
 
     /// <summary>
