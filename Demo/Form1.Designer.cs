@@ -34,6 +34,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtToSubscribe = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkSubmitUserSystemInfo = new System.Windows.Forms.CheckBox();
             this.chkAuthenticate = new System.Windows.Forms.CheckBox();
@@ -56,7 +57,8 @@
             this.txtPasswd = new System.Windows.Forms.TextBox();
             this.txtUserID = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label8 = new System.Windows.Forms.Label();
+            this.txtQryMktData = new System.Windows.Forms.TextBox();
+            this.btnQryMktData = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -64,7 +66,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(33, 35);
+            this.button1.Location = new System.Drawing.Point(29, 35);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -74,7 +76,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(33, 81);
+            this.button2.Location = new System.Drawing.Point(131, 74);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -84,7 +86,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(33, 161);
+            this.button3.Location = new System.Drawing.Point(29, 74);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 3;
@@ -94,7 +96,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(33, 119);
+            this.button4.Location = new System.Drawing.Point(230, 74);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 2;
@@ -104,27 +106,38 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtToSubscribe);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Location = new System.Drawing.Point(18, 335);
+            this.groupBox1.Location = new System.Drawing.Point(18, 243);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(162, 233);
+            this.groupBox1.Size = new System.Drawing.Size(491, 115);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Test MdUser";
             // 
+            // txtToSubscribe
+            // 
+            this.txtToSubscribe.Location = new System.Drawing.Point(131, 35);
+            this.txtToSubscribe.Name = "txtToSubscribe";
+            this.txtToSubscribe.Size = new System.Drawing.Size(305, 21);
+            this.txtToSubscribe.TabIndex = 21;
+            this.txtToSubscribe.Text = "IF2105,ru2105,au2106,SR105,a2105";
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnQryMktData);
+            this.groupBox2.Controls.Add(this.txtQryMktData);
             this.groupBox2.Controls.Add(this.chkSubmitUserSystemInfo);
             this.groupBox2.Controls.Add(this.chkAuthenticate);
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.button8);
-            this.groupBox2.Location = new System.Drawing.Point(215, 335);
+            this.groupBox2.Location = new System.Drawing.Point(16, 364);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(294, 233);
+            this.groupBox2.Size = new System.Drawing.Size(491, 184);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Test Trader";
@@ -132,7 +145,7 @@
             // chkSubmitUserSystemInfo
             // 
             this.chkSubmitUserSystemInfo.AutoSize = true;
-            this.chkSubmitUserSystemInfo.Location = new System.Drawing.Point(31, 69);
+            this.chkSubmitUserSystemInfo.Location = new System.Drawing.Point(31, 47);
             this.chkSubmitUserSystemInfo.Name = "chkSubmitUserSystemInfo";
             this.chkSubmitUserSystemInfo.Size = new System.Drawing.Size(228, 40);
             this.chkSubmitUserSystemInfo.TabIndex = 1;
@@ -144,7 +157,7 @@
             this.chkAuthenticate.AutoSize = true;
             this.chkAuthenticate.Checked = true;
             this.chkAuthenticate.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkAuthenticate.Location = new System.Drawing.Point(31, 35);
+            this.chkAuthenticate.Location = new System.Drawing.Point(31, 22);
             this.chkAuthenticate.Name = "chkAuthenticate";
             this.chkAuthenticate.Size = new System.Drawing.Size(138, 16);
             this.chkAuthenticate.TabIndex = 0;
@@ -153,7 +166,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(30, 187);
+            this.button6.Location = new System.Drawing.Point(132, 146);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 4;
@@ -163,7 +176,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(30, 141);
+            this.button5.Location = new System.Drawing.Point(33, 109);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 2;
@@ -173,7 +186,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(127, 141);
+            this.button8.Location = new System.Drawing.Point(33, 146);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 3;
@@ -197,7 +210,7 @@
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.txtPasswd);
             this.groupBox3.Controls.Add(this.txtUserID);
-            this.groupBox3.Location = new System.Drawing.Point(16, 110);
+            this.groupBox3.Location = new System.Drawing.Point(16, 18);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(493, 208);
             this.groupBox3.TabIndex = 7;
@@ -236,7 +249,7 @@
             this.txtFrontMD.Name = "txtFrontMD";
             this.txtFrontMD.Size = new System.Drawing.Size(349, 21);
             this.txtFrontMD.TabIndex = 2;
-            this.txtFrontMD.Text = "tcp://180.168.146.187:13040";
+            this.txtFrontMD.Text = "tcp://180.168.146.187:10111";
             // 
             // label5
             // 
@@ -253,7 +266,7 @@
             this.txtFrontTD.Name = "txtFrontTD";
             this.txtFrontTD.Size = new System.Drawing.Size(349, 21);
             this.txtFrontTD.TabIndex = 1;
-            this.txtFrontTD.Text = "tcp://180.168.146.187:13030";
+            this.txtFrontTD.Text = "tcp://180.168.146.187:10101";
             // 
             // label3
             // 
@@ -279,6 +292,7 @@
             this.txtAuthCode.Name = "txtAuthCode";
             this.txtAuthCode.Size = new System.Drawing.Size(132, 21);
             this.txtAuthCode.TabIndex = 6;
+            this.txtAuthCode.Text = "0000000000000000";
             // 
             // txtAppID
             // 
@@ -286,6 +300,7 @@
             this.txtAppID.Name = "txtAppID";
             this.txtAppID.Size = new System.Drawing.Size(132, 21);
             this.txtAppID.TabIndex = 5;
+            this.txtAppID.Text = "simnow_client_test";
             // 
             // label2
             // 
@@ -319,35 +334,42 @@
             this.txtUserID.Size = new System.Drawing.Size(132, 21);
             this.txtUserID.TabIndex = 3;
             // 
-            // label8
+            // txtQryMktData
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(52, 15);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(342, 70);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "6.3.11 API只能连接普通前置\r\n\r\n6.3.13 评测版API只能连接评测版看穿式监管前置\r\n\r\n6.3.15 生产版API只能连接生产版看穿式监管前置";
+            this.txtQryMktData.Location = new System.Drawing.Point(232, 109);
+            this.txtQryMktData.Name = "txtQryMktData";
+            this.txtQryMktData.Size = new System.Drawing.Size(135, 21);
+            this.txtQryMktData.TabIndex = 22;
+            this.txtQryMktData.Text = "ru2105";
+            // 
+            // btnQryMktData
+            // 
+            this.btnQryMktData.Location = new System.Drawing.Point(231, 146);
+            this.btnQryMktData.Name = "btnQryMktData";
+            this.btnQryMktData.Size = new System.Drawing.Size(75, 23);
+            this.btnQryMktData.TabIndex = 23;
+            this.btnQryMktData.Text = "QryMktData";
+            this.btnQryMktData.UseVisualStyleBackColor = true;
+            this.btnQryMktData.Click += new System.EventHandler(this.btnQryMktData_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 594);
-            this.Controls.Add(this.label8);
+            this.ClientSize = new System.Drawing.Size(535, 560);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "Form1  6.3.15";
+            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -380,7 +402,9 @@
         private System.Windows.Forms.TextBox txtFrontMD;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtFrontTD;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtToSubscribe;
+        private System.Windows.Forms.Button btnQryMktData;
+        private System.Windows.Forms.TextBox txtQryMktData;
     }
 }
 

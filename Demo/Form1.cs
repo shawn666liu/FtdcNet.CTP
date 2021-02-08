@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Demo
 {
@@ -91,6 +92,7 @@ namespace Demo
             Console.WriteLine("Platform is {0}", Environment.Is64BitProcess ? "x64" : "x86");
             Console.WriteLine("TradeApi version {0}", FtdcTdAdapter.GetApiVersion());
             Console.WriteLine("DataApi  version {0}", FtdcMdAdapter.GetApiVersion());
+            LoadSettings();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -99,6 +101,7 @@ namespace Demo
             {
                 if (CheckInput() == false)
                     return;
+                SaveSettings();
 
                 DataApi = new FtdcMdAdapter("", false, false);
                 DataApi.OnFrontEvent += DataApi_OnFrontEvent;
@@ -112,10 +115,13 @@ namespace Demo
 
         private void button2_Click(object sender, EventArgs e)
         {
-            List<string> inst = new List<string>();
-            inst.Add("ag1912");
-            inst.Add("j1909");
-            inst.Add("SR909");
+            var tosub = txtToSubscribe.Text;
+            var inst = tosub.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            if (inst.Length == 0)
+            {
+                MessageBox.Show("请指定合约", "提示");
+                return;
+            }
             if (DataApi != null)
                 DataApi.SubscribeMarketData(inst.ToArray());
         }
@@ -134,7 +140,10 @@ namespace Demo
         {
             if (DataApi != null)
             {
-                DataApi.UnSubscribeMarketData(new string[] { "ag1912" });
+                var tosub = txtToSubscribe.Text;
+                var inst = tosub.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                if (inst.Length > 0)
+                    DataApi.UnSubscribeMarketData(inst);
             }
         }
 
@@ -144,6 +153,7 @@ namespace Demo
             {
                 if (CheckInput() == false)
                     return;
+                SaveSettings();
 
                 TraderApi = new FtdcTdAdapter("");
                 TraderApi.OnFrontEvent += TraderApi_OnFrontEvent;
@@ -224,6 +234,13 @@ namespace Demo
                         Console.WriteLine("=====> {0}, {1},  isLast {2}", e.EventType, fld.InstrumentID, e.IsLast);
                     }
                     break;
+                case EnumOnRspType.OnRspQryDepthMarketData:
+                    if (e.Param != IntPtr.Zero)
+                    {
+                        var fld = Conv.P2S<ThostFtdcDepthMarketDataField>(e.Param);
+                        Console.WriteLine("=====> {0}, {1},  isLast {2}", e.EventType, fld.InstrumentID, e.IsLast);
+                    }
+                    break;
             }
         }
 
@@ -258,6 +275,7 @@ namespace Demo
             {
                 TraderApi.Dispose();
                 TraderApi = null;
+                Console.WriteLine("Disconnected.");
             }
         }
 
@@ -339,6 +357,70 @@ namespace Demo
             -5 字段中存在非法字符或者长度超限
             -6 采集结果字段错误
              */
+        }
+
+        void LoadSettings()
+        {
+            var fname = "settings.cfg";
+            if (!File.Exists(fname))
+                return;
+
+            var lines = File.ReadAllLines(fname, Encoding.UTF8);
+            var sep = new char[] { '=' };
+            var dict = lines.Select(line => line.Split(sep, StringSplitOptions.RemoveEmptyEntries))
+                .Where(c => c.Length == 2).ToDictionary(t => t[0], t => t[1]);
+            var lst = new List<TextBox>();
+            FindAllTextBox(this, lst);
+            foreach (var ctl in lst)
+            {
+                if (dict.TryGetValue(ctl.Name, out var text))
+                    ctl.Text = text;
+            }
+        }
+
+        void SaveSettings()
+        {
+            using (var fs = new FileStream("settings.cfg", FileMode.Create))
+            {
+                StreamWriter sw = null;
+                try
+                {
+                    sw = new StreamWriter(fs, Encoding.UTF8);
+                    var lst = new List<TextBox>();
+                    FindAllTextBox(this, lst);
+                    foreach (var ctl in lst)
+                    {
+                        sw.WriteLine($"{ctl.Name}={ctl.Text}");
+                    }
+                }
+                finally
+                {
+                    if (sw != null)
+                        sw.Close();
+                }
+            }
+        }
+
+        void FindAllTextBox(Control container, List<TextBox> list)
+        {
+            foreach (Control c in container.Controls)
+            {
+                if (c is TextBox)
+                    list.Add(c as TextBox);
+                if (c.Controls.Count > 0)
+                    FindAllTextBox(c, list);
+            }
+        }
+
+        private void btnQryMktData_Click(object sender, EventArgs e)
+        {
+            if (TraderApi != null && !string.IsNullOrEmpty(txtQryMktData.Text))
+            {
+                var req = new ThostFtdcQryDepthMarketDataField();
+                req.InstrumentID = txtQryMktData.Text;
+                req.ExchangeID = "";
+                TraderApi.ReqQryDepthMarketData(req, ++this.iRequestID);
+            }
         }
     }
 }

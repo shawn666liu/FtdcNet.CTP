@@ -1,7 +1,7 @@
 ﻿/////////////////////////////////////////////////////////////////////////
 //// 上期技术 Ftdc C++ => .Net Framework Adapter
 //// Author : shawn666.liu@hotmail.com   
-//// 本文件生成于 2019/5/12 13:31:52
+//// 2021-02-08 09:21:24
 /////////////////////////////////////////////////////////////////////////
 
 using System;
@@ -3340,22 +3340,22 @@ namespace CTP
         /// <summary>
         /// 银行发起银行资金转期货
         /// </summary>
-        BankBankToFuture = (byte)'1',
+        BankBankToFuture_102001 = (byte)'0',
 
         /// <summary>
         /// 银行发起期货资金转银行
         /// </summary>
-        BankFutureToBank = (byte)'1',
+        BankFutureToBank_102002 = (byte)'1',
 
         /// <summary>
         /// 期货发起银行资金转期货
         /// </summary>
-        FutureBankToFuture = (byte)'2',
+        FutureBankToFuture_202001 = (byte)'2',
 
         /// <summary>
         /// 期货发起期货资金转银行
         /// </summary>
-        FutureFutureToBank = (byte)'2'
+        FutureFutureToBank_202002 = (byte)'3'
     };
 
     /// <summary>
@@ -5410,22 +5410,22 @@ namespace CTP
         /// <summary>
         /// 银行发起银行转期货
         /// </summary>
-        BankLaunchBankToBroker = (byte)'1',
+        BankLaunchBankToBroker_102001 = (byte)'0',
 
         /// <summary>
         /// 期货发起银行转期货
         /// </summary>
-        BrokerLaunchBankToBroker = (byte)'2',
+        BrokerLaunchBankToBroker_202001 = (byte)'1',
 
         /// <summary>
         /// 银行发起期货转银行
         /// </summary>
-        BankLaunchBrokerToBank = (byte)'1',
+        BankLaunchBrokerToBank_102002 = (byte)'2',
 
         /// <summary>
         /// 期货发起期货转银行
         /// </summary>
-        BrokerLaunchBrokerToBank = (byte)'2'
+        BrokerLaunchBrokerToBank_202002 = (byte)'3'
     };
 
     /// <summary>

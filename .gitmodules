@@ -1,0 +1,3 @@
+[submodule "ftdc2c_ctp"]
+	path = ftdc2c_ctp
+	url = https://github.com/shawn666liu/ftdc2c_ctp.git

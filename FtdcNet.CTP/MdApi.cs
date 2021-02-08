@@ -1,7 +1,7 @@
 ﻿/////////////////////////////////////////////////////////////////////////
 //// 上期技术 Ftdc C++ => .Net Framework Adapter
 //// Author : shawn666.liu@hotmail.com   
-//// 本文件生成于 2019/5/12 13:31:52
+//// 2021-02-08 09:21:24
 /////////////////////////////////////////////////////////////////////////
 
 
@@ -196,7 +196,7 @@ namespace CTP
             if (OnFrontEvent != null)
                 OnFrontEvent(this, new OnFrontEventArgs(type, nReason));
         }
-        private Interop.CbOnFrontEvent CbOnFrontDelegate;
+        private readonly Interop.CbOnFrontEvent CbOnFrontDelegate;
 
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace CTP
             if (OnRspEvent != null)
                 OnRspEvent(this, new OnRspEventArgs(type, pParam, pRspInfo, nRequestID, bIsLast));
         }
-        private Interop.CbOnRspEvent CbOnRspDelegate;
+        private readonly Interop.CbOnRspEvent CbOnRspDelegate;
 
 
         /// <summary>
@@ -218,16 +218,23 @@ namespace CTP
             if (OnRtnEvent != null)
                 OnRtnEvent(this, new OnRtnEventArgs(type, pParam));
         }
-        private Interop.CbOnRtnEvent CbOnRtnDelegate;
+        private readonly Interop.CbOnRtnEvent CbOnRtnDelegate;
 
 
 
         public void Dispose()
         {
-            this.Release();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                this.Release();
+            }
+        }
     }; // end of class
-
 }; // end of namespace
 

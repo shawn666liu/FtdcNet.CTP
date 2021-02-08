@@ -1,7 +1,7 @@
 ﻿/////////////////////////////////////////////////////////////////////////
 //// 上期技术 Ftdc C++ => .Net Framework Adapter
 //// Author : shawn666.liu@hotmail.com   
-//// 本文件生成于 2019/5/12 13:31:52
+//// 2021-02-08 09:21:24
 /////////////////////////////////////////////////////////////////////////
 
 using System;
@@ -12,17 +12,65 @@ using System.Runtime.InteropServices;
 namespace CTP
 {
     [System.Security.SuppressUnmanagedCodeSecurity]
-    static unsafe class Interop
+    internal static class Interop
     {
         static Interop()
         {
-            string assemblyDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            var dir = Path.Combine(assemblyDirectory, Environment.Is64BitProcess ? "x64" : "x86");
-            if (Environment.OSVersion.Platform == PlatformID.Unix)
-                // Can't work, since LD_LIBRARY_PATH will not reload 
-                Environment.SetEnvironmentVariable("LD_LIBRARY_PATH", dir + ":" + Environment.GetEnvironmentVariable("LD_LIBRARY_PATH"));
-            else
+            // this need .NET Framework 4.7
+            //var frmwk = RuntimeInformation.FrameworkDescription;
+            //if (!frmwk.StartsWith(".NET Framework"))
+            //{
+            //    // may be '.Net Core' or '.Net Standard', just return
+            //    return;
+            //}
+
+            // only for windows
+            if (!Environment.OSVersion.Platform.ToString().Contains("Win"))
+                return;
+
+#if NETSTANDARD2_0
+            return;
+#endif
+            // runtimes/win-x64(86)/native/ftdc2c_ctp.dll
+            string CheckDir(string dir, ref bool _exists)
+            {
+                if (string.IsNullOrEmpty(dir)) return "";
+                var d1 = Path.Combine(dir, "ftdc2c_ctp.dll");
+                if (File.Exists(d1))
+                {
+                    _exists = true;
+                    return "";
+                }
+                var dll = Path.Combine(dir, "runtimes", System.Environment.Is64BitProcess ? "win-x64" : "win-x86", "native", "ftdc2c_ctp.dll");
+                if (File.Exists(dll))
+                    return dir;
+                return "";
+            }
+
+            string dll_parent = string.Empty;
+            bool exists = false;
+            if (Assembly.GetExecutingAssembly() != null)
+                dll_parent = CheckDir(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), ref exists);
+            if (!exists && string.IsNullOrEmpty(dll_parent) && Assembly.GetEntryAssembly() != null)
+                dll_parent = CheckDir(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), ref exists);
+            if (!exists && string.IsNullOrEmpty(dll_parent))
+                dll_parent = CheckDir(AppDomain.CurrentDomain.BaseDirectory, ref exists);
+
+            if (exists)
+                return;
+
+            if (!string.IsNullOrEmpty(dll_parent))
+            {
+                var dir = Path.Combine(dll_parent, "runtimes", System.Environment.Is64BitProcess ? "win-x64" : "win-x86", "native");
+                Console.WriteLine("Found ftdc2c_ctp.dll in {0}", dir);
+                // add to PATH
                 Environment.SetEnvironmentVariable("PATH", dir + ";" + Environment.GetEnvironmentVariable("PATH"));
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("Warning: Can't detect the location of ftdc2c_ctp.dll !!!");
+                Console.WriteLine("Warning: Can't detect the location of ftdc2c_ctp.dll !!!");
+            }
         }
 
         [UnmanagedFunctionPointer(CallingConvention.StdCall)]
