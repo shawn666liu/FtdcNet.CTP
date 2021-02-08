@@ -198,3 +198,6 @@ _Pvt_Extensions/
 *.so
 *.objs
 *.save
+.vs/
+.vscode/
+
