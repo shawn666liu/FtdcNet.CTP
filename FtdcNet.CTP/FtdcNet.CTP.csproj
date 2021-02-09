@@ -7,12 +7,15 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>1.0.4</Version>
     <Authors>Shawn Liu</Authors>
-    <Description>上期技术综合交易平台(CTP) .Net 封装</Description>
-    <Copyright>©2020</Copyright>
+    <Description>上期技术综合交易平台(CTP) .Net 封装 v6.3.19</Description>
+    <Copyright>©2021</Copyright>
     <PackageProjectUrl>https://github.com/shawn666liu/FtdcNet.CTP</PackageProjectUrl>
     <RepositoryUrl>https://github.com/shawn666liu/FtdcNet.CTP</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
-    <PackageReleaseNotes>上期 v6.3.19 生产版本</PackageReleaseNotes>
+    <PackageReleaseNotes>上期 v6.3.19 生产版本
+https://github.com/shawn666liu/FtdcNet.CTP
+https://github.com/shawn666liu/FtdcNet.CTP/blob/master/UseNuPkg.md
+</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Company>Shawn Liu</Company>
     <PackageTags>CTP Ftdc</PackageTags>
