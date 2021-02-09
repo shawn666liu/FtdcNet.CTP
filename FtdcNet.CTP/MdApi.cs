@@ -1,7 +1,6 @@
 ﻿/////////////////////////////////////////////////////////////////////////
 //// 上期技术 Ftdc C++ => .Net Framework Adapter
-//// Author : shawn666.liu@hotmail.com   
-//// 2021-02-08 23:32:55
+//// Author : shawn666.liu@hotmail.com
 /////////////////////////////////////////////////////////////////////////
 
 
@@ -137,8 +136,6 @@ namespace CTP
         /// </summary>
         public int SubscribeMarketData(string[] ppInstrumentID)
         {
-            Contract.Requires<ArgumentNullException>(ppInstrumentID != null);
-            Contract.Assume(ppInstrumentID != null);
             return Interop.MdSubscribeMarketData(Handle, ppInstrumentID, ppInstrumentID.Length);
         }
 
@@ -150,8 +147,6 @@ namespace CTP
         /// </summary>
         public int UnSubscribeMarketData(string[] ppInstrumentID)
         {
-            Contract.Requires<ArgumentNullException>(ppInstrumentID != null);
-            Contract.Assume(ppInstrumentID != null);
             return Interop.MdUnSubscribeMarketData(Handle, ppInstrumentID, ppInstrumentID.Length);
         }
 
@@ -163,8 +158,6 @@ namespace CTP
         /// </summary>
         public int SubscribeForQuoteRsp(string[] ppInstrumentID)
         {
-            Contract.Requires<ArgumentNullException>(ppInstrumentID != null);
-            Contract.Assume(ppInstrumentID != null);
             return Interop.MdSubscribeForQuoteRsp(Handle, ppInstrumentID, ppInstrumentID.Length);
         }
 
@@ -176,8 +169,6 @@ namespace CTP
         /// </summary>
         public int UnSubscribeForQuoteRsp(string[] ppInstrumentID)
         {
-            Contract.Requires<ArgumentNullException>(ppInstrumentID != null);
-            Contract.Assume(ppInstrumentID != null);
             return Interop.MdUnSubscribeForQuoteRsp(Handle, ppInstrumentID, ppInstrumentID.Length);
         }
 
