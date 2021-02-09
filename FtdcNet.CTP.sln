@@ -18,6 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		ChangeLog.md = ChangeLog.md
 		README.md = README.md
+		UseNuPkg.md = UseNuPkg.md
 		ftdc2c_ctp\v6.5.1_20200908.txt = ftdc2c_ctp\v6.5.1_20200908.txt
 	EndProjectSection
 EndProject
