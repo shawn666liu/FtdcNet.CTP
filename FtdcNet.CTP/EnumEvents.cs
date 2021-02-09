@@ -192,9 +192,9 @@ namespace CTP
         /// </summary>
         OnRspOrderAction,
         /// <summary>
-        ///查询最大报单数量响应, ThostFtdcQueryMaxOrderVolumeField
+        ///查询最大报单数量响应, ThostFtdcQryMaxOrderVolumeField
         /// </summary>
-        OnRspQueryMaxOrderVolume,
+        OnRspQryMaxOrderVolume,
         /// <summary>
         ///投资者结算结果确认响应, ThostFtdcSettlementInfoConfirmField
         /// </summary>
@@ -459,6 +459,14 @@ namespace CTP
         ///期货发起查询银行余额应答, ThostFtdcReqQueryAccountField
         /// </summary>
         OnRspQueryBankAccountMoneyByFuture,
+        /// <summary>
+        ///请求查询分类合约响应, ThostFtdcInstrumentField
+        /// </summary>
+        OnRspQryClassifiedInstrument,
+        /// <summary>
+        ///请求组合优惠比例响应, ThostFtdcCombPromotionParamField
+        /// </summary>
+        OnRspQryCombPromotionParam,
     };
 
     /// <summary>

@@ -102,10 +102,10 @@ namespace CTP
         public string OneTimePassword;
 
         /// <summary>
-        /// 终端IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string ClientIPAddress;
+        public string reserve1;
 
         /// <summary>
         /// 登录备注
@@ -117,6 +117,12 @@ namespace CTP
         /// 终端IP端口
         /// </summary>
         public int ClientIPPort;
+
+        /// <summary>
+        /// 终端IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string ClientIPAddress;
 
     };
 
@@ -366,9 +372,15 @@ namespace CTP
         public EnumAppTypeType AppType;
 
         /// <summary>
-        /// 终端IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
+        public string reserve1;
+
+        /// <summary>
+        /// 终端IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
         public string ClientIPAddress;
 
     };
@@ -944,10 +956,10 @@ namespace CTP
     public class ThostFtdcProductField
     {
         /// <summary>
-        /// 产品代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ProductID;
+        public string reserve1;
 
         /// <summary>
         /// 产品名称
@@ -1023,15 +1035,27 @@ namespace CTP
         public EnumMortgageFundUseRangeType MortgageFundUseRange;
 
         /// <summary>
-        /// 交易所产品代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeProductID;
+        public string reserve2;
 
         /// <summary>
         /// 合约基础商品乘数
         /// </summary>
         public double UnderlyingMultiple;
+
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProductID;
+
+        /// <summary>
+        /// 交易所产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeProductID;
 
     };
 
@@ -1042,10 +1066,10 @@ namespace CTP
     public class ThostFtdcInstrumentField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -1060,16 +1084,16 @@ namespace CTP
         public string InstrumentName;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve2;
 
         /// <summary>
-        /// 产品代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ProductID;
+        public string reserve3;
 
         /// <summary>
         /// 产品类型
@@ -1182,10 +1206,10 @@ namespace CTP
         public EnumMaxMarginSideAlgorithmType MaxMarginSideAlgorithm;
 
         /// <summary>
-        /// 基础商品代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string UnderlyingInstrID;
+        public string reserve4;
 
         /// <summary>
         /// 执行价
@@ -1206,6 +1230,30 @@ namespace CTP
         /// 组合类型
         /// </summary>
         public EnumCombinationTypeType CombinationType;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProductID;
+
+        /// <summary>
+        /// 基础商品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string UnderlyingInstrID;
 
     };
 
@@ -1797,10 +1845,10 @@ namespace CTP
     public class ThostFtdcInvestorPositionField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 经纪公司代码
@@ -2047,6 +2095,12 @@ namespace CTP
         /// </summary>
         public double TasPositionCost;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -2056,10 +2110,10 @@ namespace CTP
     public class ThostFtdcInstrumentMarginRateField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -2120,6 +2174,12 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -2129,10 +2189,10 @@ namespace CTP
     public class ThostFtdcInstrumentCommissionRateField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -2198,6 +2258,12 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -2213,10 +2279,10 @@ namespace CTP
         public string TradingDay;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -2225,10 +2291,10 @@ namespace CTP
         public string ExchangeID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve2;
 
         /// <summary>
         /// 最新价
@@ -2432,6 +2498,18 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string ActionDay;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
     };
 
     /// <summary>
@@ -2441,10 +2519,10 @@ namespace CTP
     public class ThostFtdcInstrumentTradingRightField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -2467,6 +2545,12 @@ namespace CTP
         /// 交易权限
         /// </summary>
         public EnumTradingRightType TradingRight;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -2772,10 +2856,10 @@ namespace CTP
     public class ThostFtdcInstrumentMarginRateAdjustField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -2824,6 +2908,12 @@ namespace CTP
         /// </summary>
         public int IsRelative;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -2839,10 +2929,10 @@ namespace CTP
         public string BrokerID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投机套保标志
@@ -2875,6 +2965,12 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string ExchangeID;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -2890,10 +2986,10 @@ namespace CTP
         public string BrokerID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投机套保标志
@@ -2959,6 +3055,12 @@ namespace CTP
         /// 不跟随交易所投资者空头保证金费
         /// </summary>
         public double NoShortMarginRatioByVolume;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -3114,10 +3216,10 @@ namespace CTP
         public string LoginTime;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve1;
 
         /// <summary>
         /// 用户端产品信息
@@ -3213,6 +3315,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
         public string Password;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -3321,10 +3429,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 报单引用
@@ -3501,16 +3609,28 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -3533,10 +3653,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 报单引用
@@ -3697,10 +3817,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve2;
 
         /// <summary>
         /// 交易所交易员代码
@@ -3897,16 +4017,34 @@ namespace CTP
         public string CurrencyID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve3;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -4063,10 +4201,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所交易员代码
@@ -4191,16 +4329,28 @@ namespace CTP
         public string BranchID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -4330,10 +4480,10 @@ namespace CTP
         public string UserID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资单元代码
@@ -4342,16 +4492,28 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -4497,10 +4659,10 @@ namespace CTP
         public string StatusMsg;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 营业部编号
@@ -4515,16 +4677,28 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -4632,16 +4806,22 @@ namespace CTP
         public string BranchID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve1;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -4746,10 +4926,10 @@ namespace CTP
         public EnumTradingRoleType TradingRole;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve1;
 
         /// <summary>
         /// 开平标志
@@ -4827,6 +5007,12 @@ namespace CTP
         /// </summary>
         public EnumTradeSourceType TradeSource;
 
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
     };
 
     /// <summary>
@@ -4848,10 +5034,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 报单引用
@@ -4906,10 +5092,10 @@ namespace CTP
         public EnumTradingRoleType TradingRole;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve2;
 
         /// <summary>
         /// 开平标志
@@ -5009,6 +5195,18 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
     };
 
     /// <summary>
@@ -5052,10 +5250,10 @@ namespace CTP
         public string LoginTime;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve1;
 
         /// <summary>
         /// 用户端产品信息
@@ -5087,13 +5285,19 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 36)]
         public string LoginRemark;
 
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
+
     };
 
     /// <summary>
     /// 查询最大报单数量
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public class ThostFtdcQueryMaxOrderVolumeField
+    public class ThostFtdcQryMaxOrderVolumeField
     {
         /// <summary>
         /// 经纪公司代码
@@ -5108,10 +5312,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 买卖方向
@@ -5144,6 +5348,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -5706,10 +5916,10 @@ namespace CTP
     public class ThostFtdcSyncingInvestorPositionField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 经纪公司代码
@@ -5956,6 +6166,12 @@ namespace CTP
         /// </summary>
         public double TasPositionCost;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -5965,10 +6181,10 @@ namespace CTP
     public class ThostFtdcSyncingInstrumentMarginRateField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -6017,6 +6233,12 @@ namespace CTP
         /// </summary>
         public int IsRelative;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -6026,10 +6248,10 @@ namespace CTP
     public class ThostFtdcSyncingInstrumentCommissionRateField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -6078,6 +6300,12 @@ namespace CTP
         /// </summary>
         public double CloseTodayRatioByVolume;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -6087,10 +6315,10 @@ namespace CTP
     public class ThostFtdcSyncingInstrumentTradingRightField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -6114,6 +6342,12 @@ namespace CTP
         /// </summary>
         public EnumTradingRightType TradingRight;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -6135,10 +6369,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -6170,6 +6404,12 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -6191,10 +6431,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -6226,6 +6466,12 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -6247,10 +6493,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -6263,6 +6509,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -6399,10 +6651,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投机套保标志
@@ -6420,6 +6672,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -6442,10 +6700,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -6458,6 +6716,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -6480,9 +6744,15 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        public string reserve1;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string InstrumentID;
 
     };
@@ -6629,10 +6899,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -6645,6 +6915,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string TraderID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
 
     };
 
@@ -6741,10 +7017,10 @@ namespace CTP
     public class ThostFtdcQryProductField
     {
         /// <summary>
-        /// 产品代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ProductID;
+        public string reserve1;
 
         /// <summary>
         /// 产品类型
@@ -6757,6 +7033,12 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string ExchangeID;
 
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProductID;
+
     };
 
     /// <summary>
@@ -6766,10 +7048,10 @@ namespace CTP
     public class ThostFtdcQryInstrumentField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -6778,15 +7060,33 @@ namespace CTP
         public string ExchangeID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        public string reserve2;
+
+        /// <summary>
+        /// 保留的无效字段
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        public string reserve3;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string ExchangeInstID;
 
         /// <summary>
         /// 产品代码
         /// </summary>
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string ProductID;
 
     };
@@ -6798,16 +7098,22 @@ namespace CTP
     public class ThostFtdcQryDepthMarketDataField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -6948,10 +7254,10 @@ namespace CTP
         public string BrokerID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投机套保标志
@@ -6963,6 +7269,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -6979,15 +7291,21 @@ namespace CTP
         public string BrokerID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投机套保标志
         /// </summary>
         public EnumHedgeFlagType HedgeFlag;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -7056,10 +7374,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -7096,6 +7414,12 @@ namespace CTP
         /// </summary>
         public int SettlementID;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -7105,10 +7429,10 @@ namespace CTP
     public class ThostFtdcOptionInstrMiniMarginField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -7142,6 +7466,12 @@ namespace CTP
         /// </summary>
         public int IsRelative;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -7151,10 +7481,10 @@ namespace CTP
     public class ThostFtdcOptionInstrMarginAdjustField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -7218,6 +7548,12 @@ namespace CTP
         /// </summary>
         public double MShortMarginRatioByVolume;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -7227,10 +7563,10 @@ namespace CTP
     public class ThostFtdcOptionInstrCommRateField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -7301,6 +7637,12 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -7322,10 +7664,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投机套保标志
@@ -7369,6 +7711,12 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -7390,10 +7738,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投机套保标志
@@ -7422,6 +7770,12 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -7443,10 +7797,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -7459,6 +7813,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -7475,15 +7835,21 @@ namespace CTP
         public string BrokerID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 指数现货收盘价
         /// </summary>
         public double ClosePrice;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -7506,10 +7872,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 执行宣告引用
@@ -7600,16 +7966,28 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -7681,10 +8059,10 @@ namespace CTP
         public string UserID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资单元代码
@@ -7693,16 +8071,28 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -7725,10 +8115,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 执行宣告引用
@@ -7813,10 +8203,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve2;
 
         /// <summary>
         /// 交易所交易员代码
@@ -7948,16 +8338,34 @@ namespace CTP
         public string CurrencyID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve3;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -8098,10 +8506,10 @@ namespace CTP
         public string StatusMsg;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 营业部编号
@@ -8116,16 +8524,28 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -8148,10 +8568,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -8176,6 +8596,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string InsertTimeEnd;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -8256,10 +8682,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所交易员代码
@@ -8340,16 +8766,28 @@ namespace CTP
         public string BranchID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -8372,10 +8810,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -8388,6 +8826,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string TraderID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
 
     };
 
@@ -8516,10 +8960,10 @@ namespace CTP
         public string BranchID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve1;
 
         /// <summary>
         /// Mac地址
@@ -8528,15 +8972,27 @@ namespace CTP
         public string MacAddress;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve2;
 
         /// <summary>
         /// 数量
         /// </summary>
         public int Volume;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
 
     };
 
@@ -8591,10 +9047,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 执行宣告引用
@@ -8685,10 +9141,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
@@ -8706,6 +9162,18 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string ErrorMsg;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -8797,10 +9265,10 @@ namespace CTP
         public string UserID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资单元代码
@@ -8809,10 +9277,10 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
@@ -8830,6 +9298,18 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string ErrorMsg;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -8860,10 +9340,10 @@ namespace CTP
     public class ThostFtdcOptionInstrTradingRightField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -8892,6 +9372,12 @@ namespace CTP
         /// </summary>
         public EnumTradingRightType TradingRight;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -8913,15 +9399,21 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 买卖方向
         /// </summary>
         public EnumDirectionType Direction;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -8944,10 +9436,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 询价引用
@@ -8974,16 +9466,28 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -9006,10 +9510,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 询价引用
@@ -9048,10 +9552,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve2;
 
         /// <summary>
         /// 交易所交易员代码
@@ -9115,16 +9619,34 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve3;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -9147,10 +9669,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -9175,6 +9697,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -9209,10 +9737,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所交易员代码
@@ -9243,16 +9771,28 @@ namespace CTP
         public EnumForQuoteStatusType ForQuoteStatus;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -9275,10 +9815,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -9291,6 +9831,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string TraderID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
 
     };
 
@@ -9313,10 +9859,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 报价引用
@@ -9418,16 +9964,28 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -9499,10 +10057,10 @@ namespace CTP
         public string UserID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资单元代码
@@ -9517,16 +10075,28 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -9549,10 +10119,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 报价引用
@@ -9642,10 +10212,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve2;
 
         /// <summary>
         /// 交易所交易员代码
@@ -9807,16 +10377,34 @@ namespace CTP
         public string CurrencyID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve3;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -9952,10 +10540,10 @@ namespace CTP
         public string StatusMsg;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 营业部编号
@@ -9970,16 +10558,28 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -10002,10 +10602,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -10036,6 +10636,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -10121,10 +10727,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所交易员代码
@@ -10223,16 +10829,28 @@ namespace CTP
         public string BranchID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -10255,10 +10873,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -10271,6 +10889,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string TraderID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
 
     };
 
@@ -10388,16 +11012,22 @@ namespace CTP
         public string UserID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve1;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -10440,10 +11070,10 @@ namespace CTP
     public class ThostFtdcOptionInstrDeltaField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -10467,6 +11097,12 @@ namespace CTP
         /// </summary>
         public double Delta;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -10482,10 +11118,10 @@ namespace CTP
         public string TradingDay;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 询价编号
@@ -10511,6 +11147,12 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string ExchangeID;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -10520,10 +11162,10 @@ namespace CTP
     public class ThostFtdcStrikeOffsetField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -10552,6 +11194,12 @@ namespace CTP
         /// </summary>
         public EnumStrikeOffsetTypeType OffsetType;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -10573,9 +11221,15 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        public string reserve1;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string InstrumentID;
 
     };
@@ -10637,16 +11291,22 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve1;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -10765,16 +11425,22 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve1;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -10849,16 +11515,22 @@ namespace CTP
         public string UserID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve1;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -10901,10 +11573,10 @@ namespace CTP
         public string BrokerID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 
@@ -10916,6 +11588,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -10932,16 +11610,22 @@ namespace CTP
         public string BrokerID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -10964,10 +11648,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 组合引用
@@ -11008,10 +11692,10 @@ namespace CTP
         public string ExchangeID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
@@ -11035,6 +11719,18 @@ namespace CTP
         /// </summary>
         public int SessionID;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
+
     };
 
     /// <summary>
@@ -11056,10 +11752,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 组合引用
@@ -11118,10 +11814,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve2;
 
         /// <summary>
         /// 交易所交易员代码
@@ -11183,10 +11879,10 @@ namespace CTP
         public string StatusMsg;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve3;
 
         /// <summary>
         /// Mac地址
@@ -11212,6 +11908,24 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
+
     };
 
     /// <summary>
@@ -11233,10 +11947,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -11249,6 +11963,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -11303,10 +12023,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所交易员代码
@@ -11346,10 +12066,10 @@ namespace CTP
         public int SequenceNo;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
@@ -11368,6 +12088,18 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string BranchID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -11390,10 +12122,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -11407,6 +12139,12 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string TraderID;
 
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
     };
 
     /// <summary>
@@ -11416,10 +12154,10 @@ namespace CTP
     public class ThostFtdcProductExchRateField
     {
         /// <summary>
-        /// 产品代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ProductID;
+        public string reserve1;
 
         /// <summary>
         /// 报价币种类型
@@ -11438,6 +12176,12 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string ExchangeID;
 
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProductID;
+
     };
 
     /// <summary>
@@ -11447,16 +12191,22 @@ namespace CTP
     public class ThostFtdcQryProductExchRateField
     {
         /// <summary>
-        /// 产品代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ProductID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string ExchangeID;
+
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProductID;
 
     };
 
@@ -11473,16 +12223,22 @@ namespace CTP
         public string BrokerID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -11499,10 +12255,10 @@ namespace CTP
         public string BrokerID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -11520,6 +12276,12 @@ namespace CTP
         /// </summary>
         public double PriceInterval;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -11529,10 +12291,10 @@ namespace CTP
     public class ThostFtdcMMOptionInstrCommRateField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -11591,6 +12353,12 @@ namespace CTP
         /// </summary>
         public double StrikeRatioByVolume;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -11612,9 +12380,15 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        public string reserve1;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string InstrumentID;
 
     };
@@ -11626,10 +12400,10 @@ namespace CTP
     public class ThostFtdcMMInstrumentCommissionRateField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -11678,6 +12452,12 @@ namespace CTP
         /// </summary>
         public double CloseTodayRatioByVolume;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -11699,9 +12479,15 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        public string reserve1;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string InstrumentID;
 
     };
@@ -11713,10 +12499,10 @@ namespace CTP
     public class ThostFtdcInstrumentOrderCommRateField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -11762,6 +12548,12 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -11783,9 +12575,15 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        public string reserve1;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string InstrumentID;
 
     };
@@ -11828,10 +12626,10 @@ namespace CTP
     public class ThostFtdcInstrumentMarginRateULField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资者范围
@@ -11875,6 +12673,12 @@ namespace CTP
         /// </summary>
         public double ShortMarginRatioByVolume;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -11901,10 +12705,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 产品代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ProductID;
+        public string reserve1;
 
         /// <summary>
         /// 当日投机开仓数量限制
@@ -11921,6 +12725,12 @@ namespace CTP
         /// </summary>
         public int OpenVolume;
 
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProductID;
+
     };
 
     /// <summary>
@@ -11930,9 +12740,15 @@ namespace CTP
     public class ThostFtdcLoginForbiddenIPField
     {
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
+        public string reserve1;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
         public string IPAddress;
 
     };
@@ -11944,15 +12760,21 @@ namespace CTP
     public class ThostFtdcIPListField
     {
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve1;
 
         /// <summary>
         /// 是否白名单
         /// </summary>
         public int IsWhite;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -11975,10 +12797,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 期权自对冲引用
@@ -12049,16 +12871,28 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -12130,10 +12964,10 @@ namespace CTP
         public string UserID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资单元代码
@@ -12142,16 +12976,28 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -12174,10 +13020,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 期权自对冲引用
@@ -12242,10 +13088,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve2;
 
         /// <summary>
         /// 交易所交易员代码
@@ -12377,16 +13223,34 @@ namespace CTP
         public string CurrencyID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve3;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -12522,10 +13386,10 @@ namespace CTP
         public string StatusMsg;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 营业部编号
@@ -12540,16 +13404,28 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -12572,10 +13448,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -12600,6 +13476,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string InsertTimeEnd;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -12660,10 +13542,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所交易员代码
@@ -12744,16 +13626,28 @@ namespace CTP
         public string BranchID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -12877,10 +13771,10 @@ namespace CTP
         public string BranchID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve1;
 
         /// <summary>
         /// Mac地址
@@ -12889,15 +13783,27 @@ namespace CTP
         public string MacAddress;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve2;
 
         /// <summary>
         /// 期权行权的头寸是否自对冲
         /// </summary>
         public EnumOptSelfCloseFlagType OptSelfCloseFlag;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
 
     };
 
@@ -13159,10 +14065,10 @@ namespace CTP
         public string TradingDay;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -13171,10 +14077,10 @@ namespace CTP
         public string ExchangeID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve2;
 
         /// <summary>
         /// 最新价
@@ -13272,6 +14178,18 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string ActionDay;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
 
     };
 
@@ -13532,10 +14450,10 @@ namespace CTP
     public class ThostFtdcMarketDataUpdateTimeField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 最后修改时间
@@ -13553,6 +14471,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string ActionDay;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -13577,9 +14501,15 @@ namespace CTP
     public class ThostFtdcSpecificInstrumentField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        public string reserve1;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string InstrumentID;
 
     };
@@ -13597,10 +14527,10 @@ namespace CTP
         public string ExchangeID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve1;
 
         /// <summary>
         /// 结算组代码
@@ -13609,10 +14539,10 @@ namespace CTP
         public string SettlementGroupID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve2;
 
         /// <summary>
         /// 合约交易状态
@@ -13635,6 +14565,18 @@ namespace CTP
         /// </summary>
         public EnumInstStatusEnterReasonType EnterReason;
 
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -13650,9 +14592,15 @@ namespace CTP
         public string ExchangeID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        public string reserve1;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string ExchangeInstID;
 
     };
@@ -13826,10 +14774,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -13843,6 +14791,12 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -13852,10 +14806,10 @@ namespace CTP
     public class ThostFtdcInvestorPositionDetailField
     {
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 经纪公司代码
@@ -13918,10 +14872,10 @@ namespace CTP
         public EnumTradeTypeType TradeType;
 
         /// <summary>
-        /// 组合合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string CombInstrumentID;
+        public string reserve2;
 
         /// <summary>
         /// 交易所代码
@@ -14004,6 +14958,18 @@ namespace CTP
         /// 特殊持仓标志
         /// </summary>
         public EnumSpecPosiTypeType SpecPosiType;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 组合合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string CombInstrumentID;
 
     };
 
@@ -14438,10 +15404,10 @@ namespace CTP
     public class ThostFtdcQryCombinationLegField
     {
         /// <summary>
-        /// 组合合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string CombInstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 单腿编号
@@ -14449,9 +15415,21 @@ namespace CTP
         public int LegID;
 
         /// <summary>
-        /// 单腿合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        public string reserve2;
+
+        /// <summary>
+        /// 组合合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string CombInstrumentID;
+
+        /// <summary>
+        /// 单腿合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string LegInstrumentID;
 
     };
@@ -14477,10 +15455,10 @@ namespace CTP
     public class ThostFtdcCombinationLegField
     {
         /// <summary>
-        /// 组合合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string CombInstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 单腿编号
@@ -14488,10 +15466,10 @@ namespace CTP
         public int LegID;
 
         /// <summary>
-        /// 单腿合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string LegInstrumentID;
+        public string reserve2;
 
         /// <summary>
         /// 买卖方向
@@ -14507,6 +15485,18 @@ namespace CTP
         /// 派生层数
         /// </summary>
         public int ImplyLevel;
+
+        /// <summary>
+        /// 组合合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string CombInstrumentID;
+
+        /// <summary>
+        /// 单腿合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string LegInstrumentID;
 
     };
 
@@ -14704,9 +15694,15 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        public string reserve1;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string InstrumentID;
 
     };
@@ -14823,10 +15819,10 @@ namespace CTP
         public string TradeID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投机套保标志
@@ -14874,10 +15870,10 @@ namespace CTP
         public int LegMultiple;
 
         /// <summary>
-        /// 组合持仓合约编码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string CombInstrumentID;
+        public string reserve2;
 
         /// <summary>
         /// 成交组号
@@ -14889,6 +15885,18 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 组合持仓合约编码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string CombInstrumentID;
 
     };
 
@@ -14911,10 +15919,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 报单引用
@@ -15118,16 +16126,28 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -15209,10 +16229,10 @@ namespace CTP
         public string UserID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 预埋撤单单编号
@@ -15248,16 +16268,28 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -15280,10 +16312,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -15296,6 +16328,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -15318,10 +16356,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -15334,6 +16372,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -15461,10 +16505,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 组合持仓合约编码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string CombInstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -15477,6 +16521,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
+
+        /// <summary>
+        /// 组合持仓合约编码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string CombInstrumentID;
 
     };
 
@@ -15538,22 +16588,34 @@ namespace CTP
         public string UserID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve1;
 
         /// <summary>
-        /// IP地址掩码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPMask;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
+
+        /// <summary>
+        /// IP地址掩码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPMask;
 
     };
 
@@ -15729,10 +16791,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 报单引用
@@ -15920,16 +16982,28 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -15952,10 +17026,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 报单引用
@@ -16116,10 +17190,10 @@ namespace CTP
         public string ClientID;
 
         /// <summary>
-        /// 合约在交易所的代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ExchangeInstID;
+        public string reserve2;
 
         /// <summary>
         /// 交易所交易员代码
@@ -16327,16 +17401,34 @@ namespace CTP
         public string CurrencyID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve3;
 
         /// <summary>
         /// Mac地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
         public string MacAddress;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -16502,10 +17594,10 @@ namespace CTP
         public string StatusMsg;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 营业部编号
@@ -16520,10 +17612,10 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string IPAddress;
+        public string reserve2;
 
         /// <summary>
         /// Mac地址
@@ -16541,6 +17633,18 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string ErrorMsg;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
 
     };
 
@@ -16586,7 +17690,7 @@ namespace CTP
     /// 根据价格查询最大报单数量
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public class ThostFtdcQueryMaxOrderVolumeWithPriceField
+    public class ThostFtdcQryMaxOrderVolumeWithPriceField
     {
         /// <summary>
         /// 经纪公司代码
@@ -16601,10 +17705,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 买卖方向
@@ -16642,6 +17746,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -16748,9 +17858,15 @@ namespace CTP
         public string ExchangeID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        public string reserve1;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string InstrumentID;
 
     };
@@ -16774,10 +17890,10 @@ namespace CTP
         public string ExchangeID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 持仓处理算法编号
@@ -16793,6 +17909,12 @@ namespace CTP
         /// 资金处理算法编号
         /// </summary>
         public EnumHandleTradingAccountAlgoIDType HandleTradingAccountAlgoID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -17225,10 +18347,10 @@ namespace CTP
         public string ExchangeID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 买卖方向
@@ -17250,6 +18372,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -17278,16 +18406,22 @@ namespace CTP
         public string ExchangeID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 投资单元代码
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
 
     };
 
@@ -17310,10 +18444,10 @@ namespace CTP
         public string InvestorID;
 
         /// <summary>
-        /// 品种/跨品种标示
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ProductGroupID;
+        public string reserve1;
 
         /// <summary>
         /// 投机套保标志
@@ -17332,6 +18466,12 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
 
+        /// <summary>
+        /// 品种/跨品种标示
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProductGroupID;
+
     };
 
     /// <summary>
@@ -17341,10 +18481,10 @@ namespace CTP
     public class ThostFtdcInvestorProductGroupMarginField
     {
         /// <summary>
-        /// 品种/跨品种标示
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ProductGroupID;
+        public string reserve1;
 
         /// <summary>
         /// 经纪公司代码
@@ -17491,6 +18631,12 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
         public string InvestUnitID;
 
+        /// <summary>
+        /// 品种/跨品种标示
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProductGroupID;
+
     };
 
     /// <summary>
@@ -17563,16 +18709,22 @@ namespace CTP
     public class ThostFtdcQryProductGroupField
     {
         /// <summary>
-        /// 产品代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ProductID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string ExchangeID;
+
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProductID;
 
     };
 
@@ -17583,10 +18735,10 @@ namespace CTP
     public class ThostFtdcProductGroupField
     {
         /// <summary>
-        /// 产品代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string ProductID;
+        public string reserve1;
 
         /// <summary>
         /// 交易所代码
@@ -17595,9 +18747,21 @@ namespace CTP
         public string ExchangeID;
 
         /// <summary>
-        /// 产品组代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        public string reserve2;
+
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProductID;
+
+        /// <summary>
+        /// 产品组代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string ProductGroupID;
 
     };
@@ -17726,10 +18890,10 @@ namespace CTP
         public int TopicID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
-        public string InstrumentID;
+        public string reserve1;
 
         /// <summary>
         /// 合约编号
@@ -17751,6 +18915,12 @@ namespace CTP
         /// </summary>
         public double PriceTick;
 
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
     };
 
     /// <summary>
@@ -17765,9 +18935,15 @@ namespace CTP
         public int TopicID;
 
         /// <summary>
-        /// 合约代码
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 31)]
+        public string reserve1;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string InstrumentID;
 
     };
@@ -23603,9 +24779,15 @@ namespace CTP
         public string UserID;
 
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
+        public string reserve1;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
         public string IPAddress;
 
     };
@@ -23627,31 +24809,6 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
         public string UserID;
-
-    };
-
-    /// <summary>
-    /// UDP组播组信息
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential)]
-    public class ThostFtdcMulticastGroupInfoField
-    {
-        /// <summary>
-        /// 组播组IP地址
-        /// </summary>
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string GroupIP;
-
-        /// <summary>
-        /// 组播组IP端口
-        /// </summary>
-        public int GroupPort;
-
-        /// <summary>
-        /// 源地址
-        /// </summary>
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string SourceIP;
 
     };
 
@@ -23693,9 +24850,15 @@ namespace CTP
     public class ThostFtdcQryLoginForbiddenIPField
     {
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
+        public string reserve1;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
         public string IPAddress;
 
     };
@@ -23707,9 +24870,15 @@ namespace CTP
     public class ThostFtdcQryIPListField
     {
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
+        public string reserve1;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
         public string IPAddress;
 
     };
@@ -24350,60 +25519,6 @@ namespace CTP
     };
 
     /// <summary>
-    /// 用户系统信息
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential)]
-    public class ThostFtdcUserSystemInfoField
-    {
-        /// <summary>
-        /// 经纪公司代码
-        /// </summary>
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
-        public string BrokerID;
-
-        /// <summary>
-        /// 用户代码
-        /// </summary>
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string UserID;
-
-        /// <summary>
-        /// 用户端系统内部信息长度
-        /// </summary>
-        public int ClientSystemInfoLen;
-
-        /// <summary>
-        /// 用户端系统内部信息
-        /// </summary>
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 273)]
-        public byte[] ClientSystemInfo;
-
-        /// <summary>
-        /// 用户公网IP
-        /// </summary>
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string ClientPublicIP;
-
-        /// <summary>
-        /// 终端IP端口
-        /// </summary>
-        public int ClientIPPort;
-
-        /// <summary>
-        /// 登录成功时间
-        /// </summary>
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
-        public string ClientLoginTime;
-
-        /// <summary>
-        /// App代码
-        /// </summary>
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
-        public string ClientAppID;
-
-    };
-
-    /// <summary>
     /// 用户发出获取安全安全登陆方法请求
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
@@ -24593,10 +25708,10 @@ namespace CTP
         public string MacAddress;
 
         /// <summary>
-        /// 终端IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string ClientIPAddress;
+        public string reserve1;
 
         /// <summary>
         /// 登录备注
@@ -24614,6 +25729,12 @@ namespace CTP
         /// 终端IP端口
         /// </summary>
         public int ClientIPPort;
+
+        /// <summary>
+        /// 终端IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string ClientIPAddress;
 
     };
 
@@ -24672,10 +25793,10 @@ namespace CTP
         public string MacAddress;
 
         /// <summary>
-        /// 终端IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string ClientIPAddress;
+        public string reserve1;
 
         /// <summary>
         /// 登录备注
@@ -24693,6 +25814,12 @@ namespace CTP
         /// 终端IP端口
         /// </summary>
         public int ClientIPPort;
+
+        /// <summary>
+        /// 终端IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string ClientIPAddress;
 
     };
 
@@ -24751,10 +25878,10 @@ namespace CTP
         public string MacAddress;
 
         /// <summary>
-        /// 终端IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string ClientIPAddress;
+        public string reserve1;
 
         /// <summary>
         /// 登录备注
@@ -24772,6 +25899,12 @@ namespace CTP
         /// 终端IP端口
         /// </summary>
         public int ClientIPPort;
+
+        /// <summary>
+        /// 终端IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string ClientIPAddress;
 
     };
 
@@ -24883,9 +26016,15 @@ namespace CTP
     public class ThostFtdcAuthForbiddenIPField
     {
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
+        public string reserve1;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
         public string IPAddress;
 
     };
@@ -24897,9 +26036,15 @@ namespace CTP
     public class ThostFtdcQryAuthForbiddenIPField
     {
         /// <summary>
-        /// IP地址
+        /// 保留的无效字段
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
+        public string reserve1;
+
+        /// <summary>
+        /// IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
         public string IPAddress;
 
     };
@@ -24943,6 +26088,235 @@ namespace CTP
         /// 是否手工换汇
         /// </summary>
         public int IsManualSwap;
+
+    };
+
+    /// <summary>
+    /// 用户系统信息
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcUserSystemInfoField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 用户代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
+        public string UserID;
+
+        /// <summary>
+        /// 用户端系统内部信息长度
+        /// </summary>
+        public int ClientSystemInfoLen;
+
+        /// <summary>
+        /// 用户端系统内部信息
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 273)]
+        public byte[] ClientSystemInfo;
+
+        /// <summary>
+        /// 保留的无效字段
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
+        public string reserve1;
+
+        /// <summary>
+        /// 终端IP端口
+        /// </summary>
+        public int ClientIPPort;
+
+        /// <summary>
+        /// 登录成功时间
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ClientLoginTime;
+
+        /// <summary>
+        /// App代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string ClientAppID;
+
+        /// <summary>
+        /// 用户公网IP
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string ClientPublicIP;
+
+    };
+
+    /// <summary>
+    /// 终端用户绑定信息
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcAuthUserIDField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// App代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string AppID;
+
+        /// <summary>
+        /// 用户代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
+        public string UserID;
+
+        /// <summary>
+        /// 校验类型
+        /// </summary>
+        public EnumAuthTypeType AuthType;
+
+    };
+
+    /// <summary>
+    /// 用户IP绑定信息
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcAuthIPField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// App代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string AppID;
+
+        /// <summary>
+        /// 用户代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string IPAddress;
+
+    };
+
+    /// <summary>
+    /// 查询分类合约
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryClassifiedInstrumentField
+    {
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProductID;
+
+        /// <summary>
+        /// 合约交易状态
+        /// </summary>
+        public EnumTradingTypeType TradingType;
+
+        /// <summary>
+        /// 合约分类类型
+        /// </summary>
+        public EnumClassTypeType ClassType;
+
+    };
+
+    /// <summary>
+    /// 查询组合优惠比例
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryCombPromotionParamField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+    };
+
+    /// <summary>
+    /// 组合优惠比例
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcCombPromotionParamField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 投机套保标志
+        /// </summary>
+        public EnumHedgeFlagType CombHedgeFlag_0;
+
+        /// <summary>
+        /// 投机套保标志
+        /// </summary>
+        public EnumHedgeFlagType CombHedgeFlag_1;
+
+        /// <summary>
+        /// 投机套保标志
+        /// </summary>
+        public EnumHedgeFlagType CombHedgeFlag_2;
+
+        /// <summary>
+        /// 投机套保标志
+        /// </summary>
+        public EnumHedgeFlagType CombHedgeFlag_3;
+
+        /// <summary>
+        /// 投机套保标志
+        /// </summary>
+        public EnumHedgeFlagType CombHedgeFlag_4;
+
+        /// <summary>
+        /// 期权组合保证金比例
+        /// </summary>
+        public double Xparameter;
 
     };
 

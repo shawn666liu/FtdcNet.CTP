@@ -7461,7 +7461,7 @@ namespace CTP
         /// <summary>
         /// 时间价差组合
         /// </summary>
-        CLD = (byte)'6',
+        CAS = (byte)'6',
 
         /// <summary>
         /// 期权对锁组合
@@ -7471,7 +7471,17 @@ namespace CTP
         /// <summary>
         /// 买备兑组合
         /// </summary>
-        BFO = (byte)'8'
+        BFO = (byte)'8',
+
+        /// <summary>
+        /// 买入期权垂直价差组合
+        /// </summary>
+        BLS = (byte)'9',
+
+        /// <summary>
+        /// 卖出期权垂直价差组合
+        /// </summary>
+        BES = (byte)'a'
     };
 
     /// <summary>
@@ -8020,6 +8030,69 @@ namespace CTP
         /// 面值
         /// </summary>
         ParValue = (byte)'2'
+    };
+
+    /// <summary>
+    /// TFtdcAuthTypeType是一个用户终端认证方式类型
+    /// </summary>
+    public enum EnumAuthTypeType : byte
+    {
+        /// <summary>
+        /// 白名单校验
+        /// </summary>
+        WHITE = (byte)'0',
+
+        /// <summary>
+        /// 黑名单校验
+        /// </summary>
+        BLACK = (byte)'1'
+    };
+
+    /// <summary>
+    /// TFtdcClassTypeType是一个合约分类方式类型
+    /// </summary>
+    public enum EnumClassTypeType : byte
+    {
+        /// <summary>
+        /// 所有合约
+        /// </summary>
+        ALL = (byte)'0',
+
+        /// <summary>
+        /// 期货、即期、期转现、Tas、金属指数合约
+        /// </summary>
+        FUTURE = (byte)'1',
+
+        /// <summary>
+        /// 期货、现货期权合约
+        /// </summary>
+        OPTION = (byte)'2',
+
+        /// <summary>
+        /// 组合合约
+        /// </summary>
+        COMB = (byte)'3'
+    };
+
+    /// <summary>
+    /// TFtdcTradingTypeType是一个合约交易状态分类方式类型
+    /// </summary>
+    public enum EnumTradingTypeType : byte
+    {
+        /// <summary>
+        /// 所有状态
+        /// </summary>
+        ALL = (byte)'0',
+
+        /// <summary>
+        /// 交易
+        /// </summary>
+        TRADE = (byte)'1',
+
+        /// <summary>
+        /// 非交易
+        /// </summary>
+        UNTRADE = (byte)'2'
     };
 
 }; // end of namespace

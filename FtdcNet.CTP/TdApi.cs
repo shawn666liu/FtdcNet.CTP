@@ -163,6 +163,7 @@ namespace CTP
         ///        THOST_TERT_RESTART:从本交易日开始重传
         ///        THOST_TERT_RESUME:从上次收到的续传
         ///        THOST_TERT_QUICK:只传送登录后公共流的内容
+        ///        THOST_TERT_NONE:取消订阅公共流
         ///@remark 该方法要在Init方法前调用。若不调用则不会收到公共流的数据。
         /// </summary>
         public void SubscribePublicTopic(EnumTeResumeType nResumeType)
@@ -311,9 +312,9 @@ namespace CTP
         /// <summary>
         ///查询最大报单数量请求
         /// </summary>
-        public int ReqQueryMaxOrderVolume(ThostFtdcQueryMaxOrderVolumeField pQueryMaxOrderVolume, int nRequestID)
+        public int ReqQryMaxOrderVolume(ThostFtdcQryMaxOrderVolumeField pQryMaxOrderVolume, int nRequestID)
         {
-            return Interop.TdReqQueryMaxOrderVolume(Handle, pQueryMaxOrderVolume, nRequestID);
+            return Interop.TdReqQryMaxOrderVolume(Handle, pQryMaxOrderVolume, nRequestID);
         }
 
         /// <summary>
@@ -842,6 +843,22 @@ namespace CTP
         public int ReqQueryBankAccountMoneyByFuture(ThostFtdcReqQueryAccountField pReqQueryAccount, int nRequestID)
         {
             return Interop.TdReqQueryBankAccountMoneyByFuture(Handle, pReqQueryAccount, nRequestID);
+        }
+
+        /// <summary>
+        ///请求查询分类合约
+        /// </summary>
+        public int ReqQryClassifiedInstrument(ThostFtdcQryClassifiedInstrumentField pQryClassifiedInstrument, int nRequestID)
+        {
+            return Interop.TdReqQryClassifiedInstrument(Handle, pQryClassifiedInstrument, nRequestID);
+        }
+
+        /// <summary>
+        ///请求组合优惠比例
+        /// </summary>
+        public int ReqQryCombPromotionParam(ThostFtdcQryCombPromotionParamField pQryCombPromotionParam, int nRequestID)
+        {
+            return Interop.TdReqQryCombPromotionParam(Handle, pQryCombPromotionParam, nRequestID);
         }
 
         /// <summary>

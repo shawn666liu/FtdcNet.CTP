@@ -224,7 +224,7 @@ namespace CTP
         public static extern int TdReqOrderAction(IntPtr pApi, ThostFtdcInputOrderActionField pInputOrderAction, int nRequestID);
 
         [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        public static extern int TdReqQueryMaxOrderVolume(IntPtr pApi, ThostFtdcQueryMaxOrderVolumeField pQueryMaxOrderVolume, int nRequestID);
+        public static extern int TdReqQryMaxOrderVolume(IntPtr pApi, ThostFtdcQryMaxOrderVolumeField pQryMaxOrderVolume, int nRequestID);
 
         [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
         public static extern int TdReqSettlementInfoConfirm(IntPtr pApi, ThostFtdcSettlementInfoConfirmField pSettlementInfoConfirm, int nRequestID);
@@ -423,6 +423,12 @@ namespace CTP
 
         [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
         public static extern int TdReqQueryBankAccountMoneyByFuture(IntPtr pApi, ThostFtdcReqQueryAccountField pReqQueryAccount, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryClassifiedInstrument(IntPtr pApi, ThostFtdcQryClassifiedInstrumentField pQryClassifiedInstrument, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryCombPromotionParam(IntPtr pApi, ThostFtdcQryCombPromotionParamField pQryCombPromotionParam, int nRequestID);
 
 
     }
