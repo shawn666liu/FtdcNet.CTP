@@ -5,7 +5,7 @@
     <RootNamespace>CTP</RootNamespace>
     <AssemblyName>FtdcNet.CTP</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.3</Version>
+    <Version>1.0.31</Version>
     <Authors>Shawn Liu</Authors>
     <Description>上期技术综合交易平台(CTP) .Net 封装 v6.3.15</Description>
     <Copyright>©2020</Copyright>
@@ -30,6 +30,8 @@ https://github.com/shawn666liu/FtdcNet.CTP/blob/master/UseNuPkg.md</PackageRelea
     <NoWarn>CA1051,CA1707,CA1028,CA2101,CA1303,CS1591</NoWarn>
     <SignAssembly>false</SignAssembly>
     <UserSecretsId>e2707d28-828a-4432-9b57-98fa571d91db</UserSecretsId>
+    <AssemblyVersion>1.0.31.0</AssemblyVersion>
+    <FileVersion>1.0.31.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
