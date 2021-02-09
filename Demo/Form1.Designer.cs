@@ -36,6 +36,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtToSubscribe = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnQryMktData = new System.Windows.Forms.Button();
+            this.txtQryMktData = new System.Windows.Forms.TextBox();
             this.chkSubmitUserSystemInfo = new System.Windows.Forms.CheckBox();
             this.chkAuthenticate = new System.Windows.Forms.CheckBox();
             this.button6 = new System.Windows.Forms.Button();
@@ -57,8 +59,7 @@
             this.txtPasswd = new System.Windows.Forms.TextBox();
             this.txtUserID = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.txtQryMktData = new System.Windows.Forms.TextBox();
-            this.btnQryMktData = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -111,7 +112,7 @@
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Location = new System.Drawing.Point(18, 243);
+            this.groupBox1.Location = new System.Drawing.Point(18, 285);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(491, 115);
             this.groupBox1.TabIndex = 4;
@@ -135,12 +136,30 @@
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.button8);
-            this.groupBox2.Location = new System.Drawing.Point(16, 364);
+            this.groupBox2.Location = new System.Drawing.Point(16, 406);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(491, 184);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Test Trader";
+            // 
+            // btnQryMktData
+            // 
+            this.btnQryMktData.Location = new System.Drawing.Point(231, 146);
+            this.btnQryMktData.Name = "btnQryMktData";
+            this.btnQryMktData.Size = new System.Drawing.Size(75, 23);
+            this.btnQryMktData.TabIndex = 23;
+            this.btnQryMktData.Text = "QryMktData";
+            this.btnQryMktData.UseVisualStyleBackColor = true;
+            this.btnQryMktData.Click += new System.EventHandler(this.btnQryMktData_Click);
+            // 
+            // txtQryMktData
+            // 
+            this.txtQryMktData.Location = new System.Drawing.Point(232, 109);
+            this.txtQryMktData.Name = "txtQryMktData";
+            this.txtQryMktData.Size = new System.Drawing.Size(135, 21);
+            this.txtQryMktData.TabIndex = 22;
+            this.txtQryMktData.Text = "ru2105";
             // 
             // chkSubmitUserSystemInfo
             // 
@@ -210,7 +229,7 @@
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.txtPasswd);
             this.groupBox3.Controls.Add(this.txtUserID);
-            this.groupBox3.Location = new System.Drawing.Point(16, 18);
+            this.groupBox3.Location = new System.Drawing.Point(16, 60);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(493, 208);
             this.groupBox3.TabIndex = 7;
@@ -334,29 +353,22 @@
             this.txtUserID.Size = new System.Drawing.Size(132, 21);
             this.txtUserID.TabIndex = 3;
             // 
-            // txtQryMktData
+            // label8
             // 
-            this.txtQryMktData.Location = new System.Drawing.Point(232, 109);
-            this.txtQryMktData.Name = "txtQryMktData";
-            this.txtQryMktData.Size = new System.Drawing.Size(135, 21);
-            this.txtQryMktData.TabIndex = 22;
-            this.txtQryMktData.Text = "ru2105";
-            // 
-            // btnQryMktData
-            // 
-            this.btnQryMktData.Location = new System.Drawing.Point(231, 146);
-            this.btnQryMktData.Name = "btnQryMktData";
-            this.btnQryMktData.Size = new System.Drawing.Size(75, 23);
-            this.btnQryMktData.TabIndex = 23;
-            this.btnQryMktData.Text = "QryMktData";
-            this.btnQryMktData.UseVisualStyleBackColor = true;
-            this.btnQryMktData.Click += new System.EventHandler(this.btnQryMktData_Click);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(39, 24);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(303, 22);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "可能需要合适版本的柜台才能支持 ！！！";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 560);
+            this.ClientSize = new System.Drawing.Size(535, 597);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -370,6 +382,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -405,6 +418,7 @@
         private System.Windows.Forms.TextBox txtToSubscribe;
         private System.Windows.Forms.Button btnQryMktData;
         private System.Windows.Forms.TextBox txtQryMktData;
+        private System.Windows.Forms.Label label8;
     }
 }
 

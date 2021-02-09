@@ -136,8 +136,6 @@ namespace CTP
         /// </summary>
         public int SubscribeMarketData(string[] ppInstrumentID)
         {
-            Contract.Requires<ArgumentNullException>(ppInstrumentID != null);
-            Contract.Assume(ppInstrumentID != null);
             return Interop.MdSubscribeMarketData(Handle, ppInstrumentID, ppInstrumentID.Length);
         }
 
@@ -149,8 +147,6 @@ namespace CTP
         /// </summary>
         public int UnSubscribeMarketData(string[] ppInstrumentID)
         {
-            Contract.Requires<ArgumentNullException>(ppInstrumentID != null);
-            Contract.Assume(ppInstrumentID != null);
             return Interop.MdUnSubscribeMarketData(Handle, ppInstrumentID, ppInstrumentID.Length);
         }
 
@@ -162,8 +158,6 @@ namespace CTP
         /// </summary>
         public int SubscribeForQuoteRsp(string[] ppInstrumentID)
         {
-            Contract.Requires<ArgumentNullException>(ppInstrumentID != null);
-            Contract.Assume(ppInstrumentID != null);
             return Interop.MdSubscribeForQuoteRsp(Handle, ppInstrumentID, ppInstrumentID.Length);
         }
 
@@ -175,8 +169,6 @@ namespace CTP
         /// </summary>
         public int UnSubscribeForQuoteRsp(string[] ppInstrumentID)
         {
-            Contract.Requires<ArgumentNullException>(ppInstrumentID != null);
-            Contract.Assume(ppInstrumentID != null);
             return Interop.MdUnSubscribeForQuoteRsp(Handle, ppInstrumentID, ppInstrumentID.Length);
         }
 
