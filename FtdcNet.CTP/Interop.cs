@@ -31,44 +31,37 @@ namespace CTP
             return;
 #endif
             // runtimes/win-x64(86)/native/ftdc2c_ctp.dll
-            string CheckDir(string dir, ref bool _exists)
+            string CheckDir(string dir)
             {
                 if (string.IsNullOrEmpty(dir)) return "";
                 var d1 = Path.Combine(dir, "ftdc2c_ctp.dll");
                 if (File.Exists(d1))
-                {
-                    _exists = true;
-                    return "";
-                }
-                var dll = Path.Combine(dir, "runtimes", System.Environment.Is64BitProcess ? "win-x64" : "win-x86", "native", "ftdc2c_ctp.dll");
+                    return dir;
+                dir = Path.Combine(dir, "runtimes", System.Environment.Is64BitProcess ? "win-x64" : "win-x86", "native");
+                var dll = Path.Combine(dir, "ftdc2c_ctp.dll");
                 if (File.Exists(dll))
                     return dir;
                 return "";
             }
 
             string dll_parent = string.Empty;
-            bool exists = false;
             if (Assembly.GetExecutingAssembly() != null)
-                dll_parent = CheckDir(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), ref exists);
-            if (!exists && string.IsNullOrEmpty(dll_parent) && Assembly.GetEntryAssembly() != null)
-                dll_parent = CheckDir(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), ref exists);
-            if (!exists && string.IsNullOrEmpty(dll_parent))
-                dll_parent = CheckDir(AppDomain.CurrentDomain.BaseDirectory, ref exists);
+                dll_parent = CheckDir(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            if (string.IsNullOrEmpty(dll_parent) && Assembly.GetEntryAssembly() != null)
+                dll_parent = CheckDir(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
+            if (string.IsNullOrEmpty(dll_parent))
+                dll_parent = CheckDir(AppDomain.CurrentDomain.BaseDirectory);
 
-            if (exists)
-                return;
-
-            if (!string.IsNullOrEmpty(dll_parent))
-            {
-                var dir = Path.Combine(dll_parent, "runtimes", System.Environment.Is64BitProcess ? "win-x64" : "win-x86", "native");
-                Console.WriteLine("Found ftdc2c_ctp.dll in {0}", dir);
-                // add to PATH
-                Environment.SetEnvironmentVariable("PATH", dir + ";" + Environment.GetEnvironmentVariable("PATH"));
-            }
-            else
+            if (string.IsNullOrEmpty(dll_parent))
             {
                 System.Diagnostics.Debug.WriteLine("Warning: Can't detect the location of ftdc2c_ctp.dll !!!");
                 Console.WriteLine("Warning: Can't detect the location of ftdc2c_ctp.dll !!!");
+            }
+            else
+            {
+                Console.WriteLine("Found ftdc2c_ctp.dll in '{0}'.", dll_parent);
+                // add to PATH
+                Environment.SetEnvironmentVariable("PATH", dll_parent + ";" + Environment.GetEnvironmentVariable("PATH"));
             }
         }
 
@@ -427,4 +420,3 @@ namespace CTP
 
     }
 }
-
