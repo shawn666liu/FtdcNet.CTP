@@ -5,7 +5,7 @@
     <RootNamespace>CTP</RootNamespace>
     <AssemblyName>FtdcNet.CTP</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.3.1</Version>
+    <Version>1.1.0</Version>
     <Authors>Shawn Liu</Authors>
     <Description>上期技术综合交易平台(CTP) .Net 封装 v6.3.15</Description>
     <Copyright>©2021</Copyright>
@@ -13,7 +13,7 @@
     <RepositoryUrl>https://github.com/shawn666liu/FtdcNet.CTP</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
     <PackageReleaseNotes>上期 v6.3.15 生产版本
-https://github.com/shawn666liu/FtdcNet.CTP/blob/master/UseNuPkg.md</PackageReleaseNotes>
+版本对应请查看： https://github.com/shawn666liu/FtdcNet.CTP/blob/master/UseNuPkg.md</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Company>Shawn Liu</Company>
     <PackageTags>CTP Ftdc</PackageTags>
@@ -30,8 +30,8 @@ https://github.com/shawn666liu/FtdcNet.CTP/blob/master/UseNuPkg.md</PackageRelea
     <NoWarn>CA1051,CA1707,CA1028,CA2101,CA1303,CS1591</NoWarn>
     <SignAssembly>false</SignAssembly>
     <UserSecretsId>e2707d28-828a-4432-9b57-98fa571d91db</UserSecretsId>
-    <AssemblyVersion>1.0.3.1</AssemblyVersion>
-    <FileVersion>1.0.3.1</FileVersion>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
