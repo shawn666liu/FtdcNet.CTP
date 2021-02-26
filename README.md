@@ -13,6 +13,7 @@ branches  => CTP version
 ## Useage
 * Use NuGet (recommend)  
   See [UseNuPkg.md](https://github.com/shawn666liu/FtdcNet.CTP/blob/master/UseNuPkg.md)  
+  https://www.nuget.org/packages/FtdcNet.CTP  
 
 * Build from source   
   git clone --recursive https://github.com/shawn666liu/FtdcNet.CTP.git   
