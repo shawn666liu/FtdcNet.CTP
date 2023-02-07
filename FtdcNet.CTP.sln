@@ -17,6 +17,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E22B7BF3-C108-4D2F-B7EA-B602D7193CD9}"
 	ProjectSection(SolutionItems) = preProject
 		ftdc2c_ctp\6.3.15_20190220.txt = ftdc2c_ctp\6.3.15_20190220.txt
+		ChangeLog.md = ChangeLog.md
 		README.md = README.md
 	EndProjectSection
 EndProject
