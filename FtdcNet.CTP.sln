@@ -16,10 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E22B7BF3-C108-4D2F-B7EA-B602D7193CD9}"
 	ProjectSection(SolutionItems) = preProject
-		Branches.md = Branches.md
 		ChangeLog.md = ChangeLog.md
 		README.md = README.md
-		UseNuPkg.md = UseNuPkg.md
 		ftdc2c_ctp\v6.5.1_20200908.txt = ftdc2c_ctp\v6.5.1_20200908.txt
 	EndProjectSection
 EndProject
