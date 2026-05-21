@@ -145,6 +145,11 @@ namespace CTP
         CptMngPrdLetter = (byte)'L',
 
         /// <summary>
+        /// 港澳台居民居住证
+        /// </summary>
+        HKMCTwResidencePermit = (byte)'M',
+
+        /// <summary>
         /// 统一社会信用代码
         /// </summary>
         UniformSocialCreditCode = (byte)'N',
@@ -178,7 +183,7 @@ namespace CTP
         /// <summary>
         /// 单一投资者
         /// </summary>
-        Single = (byte)'3'
+        Single_ = (byte)'3'
     };
 
     /// <summary>
@@ -199,7 +204,7 @@ namespace CTP
         /// <summary>
         /// 单一投资者
         /// </summary>
-        Single = (byte)'3'
+        Single_ = (byte)'3'
     };
 
     /// <summary>
@@ -886,12 +891,12 @@ namespace CTP
         Options = (byte)'4',
 
         /// <summary>
-        /// 可下单组合（目前包含DCE和ZCE的期货组合）
+        /// 可下单套利组合
         /// </summary>
         TradingComb = (byte)'5',
 
         /// <summary>
-        /// 可申请的组合（dce可以申请的组合合约 包含dce可以交易的合约）
+        /// 可申请的组合（可以申请的组合合约 包含可以交易的合约）
         /// </summary>
         UnTradingComb = (byte)'6',
 
@@ -977,12 +982,12 @@ namespace CTP
         /// <summary>
         /// 多头
         /// </summary>
-        Long = (byte)'2',
+        Long_ = (byte)'2',
 
         /// <summary>
         /// 空头
         /// </summary>
-        Short = (byte)'3'
+        Short_ = (byte)'3'
     };
 
     /// <summary>
@@ -1058,12 +1063,12 @@ namespace CTP
         MarketMaker = (byte)'5',
 
         /// <summary>
-        /// 第一腿投机第二腿套保 大商所专用
+        /// 第一腿投机第二腿套保
         /// </summary>
         SpecHedge = (byte)'6',
 
         /// <summary>
-        /// 第一腿套保第二腿投机  大商所专用
+        /// 第一腿套保第二腿投机
         /// </summary>
         HedgeSpec = (byte)'7'
     };
@@ -1285,7 +1290,12 @@ namespace CTP
         /// <summary>
         /// 自然人临近交割
         /// </summary>
-        PersonDeliv = (byte)'7'
+        PersonDeliv = (byte)'7',
+
+        /// <summary>
+        /// 风控强平不验证资金
+        /// </summary>
+        Notverifycapital = (byte)'8'
     };
 
     /// <summary>
@@ -3140,7 +3150,7 @@ namespace CTP
         /// <summary>
         /// 单一投资者
         /// </summary>
-        Single = (byte)'3'
+        Single_ = (byte)'3'
     };
 
     /// <summary>
@@ -3190,12 +3200,12 @@ namespace CTP
         Logout = (byte)'2',
 
         /// <summary>
-        /// 交易成功
+        /// CTP校验通过
         /// </summary>
         Trading = (byte)'3',
 
         /// <summary>
-        /// 交易失败
+        /// CTP校验失败
         /// </summary>
         TradingError = (byte)'4',
 
@@ -4812,7 +4822,7 @@ namespace CTP
         /// <summary>
         /// 单一投资者辅助强平
         /// </summary>
-        Single = (byte)'1',
+        Single_ = (byte)'1',
 
         /// <summary>
         /// 批量投资者辅助强平
@@ -5685,7 +5695,7 @@ namespace CTP
         /// <summary>
         /// 单一操作员
         /// </summary>
-        Single = (byte)'1'
+        Single_ = (byte)'1'
     };
 
     /// <summary>
@@ -5759,7 +5769,7 @@ namespace CTP
         /// <summary>
         /// 单一投资者
         /// </summary>
-        Single = (byte)'3'
+        Single_ = (byte)'3'
     };
 
     /// <summary>
@@ -5854,7 +5864,7 @@ namespace CTP
         /// <summary>
         /// 单一投资者
         /// </summary>
-        Single = (byte)'3'
+        Single_ = (byte)'3'
     };
 
     /// <summary>
@@ -6344,7 +6354,7 @@ namespace CTP
         /// <summary>
         /// 长期生效
         /// </summary>
-        Long = (byte)'2'
+        Long_ = (byte)'2'
     };
 
     /// <summary>
@@ -8093,6 +8103,337 @@ namespace CTP
         /// 非交易
         /// </summary>
         UNTRADE = (byte)'2'
+    };
+
+    /// <summary>
+    /// TFtdcProductStatusType是一个产品状态类型
+    /// </summary>
+    public enum EnumProductStatusType : byte
+    {
+        /// <summary>
+        /// 可交易
+        /// </summary>
+        tradeable = (byte)'1',
+
+        /// <summary>
+        /// 不可交易
+        /// </summary>
+        untradeable = (byte)'2'
+    };
+
+    /// <summary>
+    /// TFtdcSyncDeltaStatusType是一个追平状态类型
+    /// </summary>
+    public enum EnumSyncDeltaStatusType : byte
+    {
+        /// <summary>
+        /// 交易可读
+        /// </summary>
+        Readable = (byte)'1',
+
+        /// <summary>
+        /// 交易在读
+        /// </summary>
+        Reading = (byte)'2',
+
+        /// <summary>
+        /// 交易读取完成
+        /// </summary>
+        Readend = (byte)'3',
+
+        /// <summary>
+        /// 追平失败 交易本地状态结算不存在
+        /// </summary>
+        OptErr = (byte)'e'
+    };
+
+    /// <summary>
+    /// TFtdcActionDirectionType是一个操作标志类型
+    /// </summary>
+    public enum EnumActionDirectionType : byte
+    {
+        /// <summary>
+        /// 增加
+        /// </summary>
+        Add = (byte)'1',
+
+        /// <summary>
+        /// 删除
+        /// </summary>
+        Del = (byte)'2',
+
+        /// <summary>
+        /// 更新
+        /// </summary>
+        Upd = (byte)'3'
+    };
+
+    /// <summary>
+    /// TFtdcOrderCancelAlgType是一个撤单时选择席位算法类型
+    /// </summary>
+    public enum EnumOrderCancelAlgType : byte
+    {
+        /// <summary>
+        /// 轮询席位撤单
+        /// </summary>
+        Balance = (byte)'1',
+
+        /// <summary>
+        /// 优先原报单席位撤单
+        /// </summary>
+        OrigFirst = (byte)'2'
+    };
+
+    /// <summary>
+    /// TFtdcOpenLimitControlLevelType是一个开仓量限制粒度类型
+    /// </summary>
+    public enum EnumOpenLimitControlLevelType : byte
+    {
+        /// <summary>
+        /// 不控制
+        /// </summary>
+        None = (byte)'0',
+
+        /// <summary>
+        /// 产品级别
+        /// </summary>
+        Product = (byte)'1',
+
+        /// <summary>
+        /// 合约级别
+        /// </summary>
+        Inst = (byte)'2'
+    };
+
+    /// <summary>
+    /// TFtdcOrderFreqControlLevelType是一个报单频率控制粒度类型
+    /// </summary>
+    public enum EnumOrderFreqControlLevelType : byte
+    {
+        /// <summary>
+        /// 不控制
+        /// </summary>
+        None = (byte)'0',
+
+        /// <summary>
+        /// 产品级别
+        /// </summary>
+        Product = (byte)'1',
+
+        /// <summary>
+        /// 合约级别
+        /// </summary>
+        Inst = (byte)'2'
+    };
+
+    /// <summary>
+    /// TFtdcEnumBoolType是一个枚举bool类型类型
+    /// </summary>
+    public enum EnumEnumBoolType : byte
+    {
+        /// <summary>
+        /// false
+        /// </summary>
+        False = (byte)'0',
+
+        /// <summary>
+        /// true
+        /// </summary>
+        True = (byte)'1'
+    };
+
+    /// <summary>
+    /// TFtdcTimeRangeType是一个期货合约阶段标识类型
+    /// </summary>
+    public enum EnumTimeRangeType : byte
+    {
+        /// <summary>
+        /// 一般月份
+        /// </summary>
+        USUAL = (byte)'1',
+
+        /// <summary>
+        /// 交割月前一个月上半月
+        /// </summary>
+        FNSP = (byte)'2',
+
+        /// <summary>
+        /// 交割月前一个月下半月
+        /// </summary>
+        BNSP = (byte)'3',
+
+        /// <summary>
+        /// 交割月份
+        /// </summary>
+        SPOT = (byte)'4'
+    };
+
+    /// <summary>
+    /// TFtdcPortfolioType是一个新型组保算法类型
+    /// </summary>
+    public enum EnumPortfolioType : byte
+    {
+        /// <summary>
+        /// 不使用新型组保算法
+        /// </summary>
+        None = (byte)'0',
+
+        /// <summary>
+        /// SPBM算法
+        /// </summary>
+        SPBM = (byte)'1',
+
+        /// <summary>
+        /// RULE算法
+        /// </summary>
+        RULE = (byte)'2',
+
+        /// <summary>
+        /// SPMM算法
+        /// </summary>
+        SPMM = (byte)'3',
+
+        /// <summary>
+        /// RCAMS算法
+        /// </summary>
+        RCAMS = (byte)'4'
+    };
+
+    /// <summary>
+    /// TFtdcWithDrawParamIDType是一个可提参数代码类型
+    /// </summary>
+    public enum EnumWithDrawParamIDType : byte
+    {
+        /// <summary>
+        /// 权利金收支是否可提 1 代表可提 0 不可提
+        /// </summary>
+        CashIn = (byte)'C'
+    };
+
+    /// <summary>
+    /// TFtdcInvstTradingRightType是一个投资者交易权限类型
+    /// </summary>
+    public enum EnumInvstTradingRightType : byte
+    {
+        /// <summary>
+        /// 只能平仓
+        /// </summary>
+        CloseOnly = (byte)'1',
+
+        /// <summary>
+        /// 不能交易
+        /// </summary>
+        Forbidden = (byte)'2'
+    };
+
+    /// <summary>
+    /// TFtdcInstMarginCalIDType是一个SPMM合约保证金算法类型
+    /// </summary>
+    public enum EnumInstMarginCalIDType : byte
+    {
+        /// <summary>
+        /// 标准算法收取双边
+        /// </summary>
+        BothSide = (byte)'1',
+
+        /// <summary>
+        /// 单向大边
+        /// </summary>
+        MMSA = (byte)'2',
+
+        /// <summary>
+        /// 新组保SPMM
+        /// </summary>
+        SPMM = (byte)'3'
+    };
+
+    /// <summary>
+    /// TFtdcRCAMSCombinationTypeType是一个RCAMS组合类型类型
+    /// </summary>
+    public enum EnumRCAMSCombinationTypeType : byte
+    {
+        /// <summary>
+        /// 牛市看涨价差组合
+        /// </summary>
+        BUC = (byte)'0',
+
+        /// <summary>
+        /// 熊市看涨价差组合
+        /// </summary>
+        BEC = (byte)'1',
+
+        /// <summary>
+        /// 熊市看跌价差组合
+        /// </summary>
+        BEP = (byte)'2',
+
+        /// <summary>
+        /// 牛市看跌价差组合
+        /// </summary>
+        BUP = (byte)'3',
+
+        /// <summary>
+        /// 日历价差组合
+        /// </summary>
+        CAS = (byte)'4'
+    };
+
+    /// <summary>
+    /// TFtdcPortfTypeType是一个新组保算法启用类型类型
+    /// </summary>
+    public enum EnumPortfTypeType : byte
+    {
+        /// <summary>
+        /// 使用初版交易所算法
+        /// </summary>
+        None = (byte)'0',
+
+        /// <summary>
+        /// SPBM算法V1.1.0_附加保证金调整
+        /// </summary>
+        AddOnHedge = (byte)'1'
+    };
+
+    /// <summary>
+    /// TFtdcInstrumentClassType是一个合约类型类型
+    /// </summary>
+    public enum EnumInstrumentClassType : byte
+    {
+        /// <summary>
+        /// 一般月份合约
+        /// </summary>
+        Usual = (byte)'1',
+
+        /// <summary>
+        /// 临近交割合约
+        /// </summary>
+        Delivery = (byte)'2',
+
+        /// <summary>
+        /// 非组合合约
+        /// </summary>
+        NonComb = (byte)'3'
+    };
+
+    /// <summary>
+    /// TFtdcProdChangeFlagType是一个品种记录改变状态类型
+    /// </summary>
+    public enum EnumProdChangeFlagType : byte
+    {
+        /// <summary>
+        /// 持仓量和冻结量均无变化
+        /// </summary>
+        None = (byte)'0',
+
+        /// <summary>
+        /// 持仓量无变化，冻结量有变化
+        /// </summary>
+        OnlyFrozen = (byte)'1',
+
+        /// <summary>
+        /// 持仓量有变化
+        /// </summary>
+        PositionChange = (byte)'2'
     };
 
 }; // end of namespace

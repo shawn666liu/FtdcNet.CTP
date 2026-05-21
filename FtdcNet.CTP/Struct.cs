@@ -208,6 +208,18 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string INETime;
 
+        /// <summary>
+        /// 后台版本信息
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string SysVersion;
+
+        /// <summary>
+        /// 广期所时间
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string GFEXTime;
+
     };
 
     /// <summary>
@@ -1057,6 +1069,16 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string ExchangeProductID;
 
+        /// <summary>
+        /// 开仓量限制粒度
+        /// </summary>
+        public EnumOpenLimitControlLevelType OpenLimitControlLevel;
+
+        /// <summary>
+        /// 报单频率控制粒度
+        /// </summary>
+        public EnumOrderFreqControlLevelType OrderFreqControlLevel;
+
     };
 
     /// <summary>
@@ -1329,6 +1351,21 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
         public string BrokerID;
 
+        /// <summary>
+        /// 撤单时选择席位算法
+        /// </summary>
+        public EnumOrderCancelAlgType OrderCancelAlg;
+
+        /// <summary>
+        /// 交易报盘安装数量
+        /// </summary>
+        public int TradeInstallCount;
+
+        /// <summary>
+        /// 行情报盘安装数量
+        /// </summary>
+        public int MDInstallCount;
+
     };
 
     /// <summary>
@@ -1412,6 +1449,16 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
         public string MarginModelID;
+
+        /// <summary>
+        /// 是否频率控制
+        /// </summary>
+        public EnumEnumBoolType IsOrderFreq;
+
+        /// <summary>
+        /// 是否开仓限制
+        /// </summary>
+        public EnumEnumBoolType IsOpenVolLimit;
 
     };
 
@@ -2081,7 +2128,7 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// 大商所持仓成本差值，只有大商所使用
+        /// 持仓成本差值
         /// </summary>
         public double PositionCostOffset;
 
@@ -2510,6 +2557,16 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string ExchangeInstID;
 
+        /// <summary>
+        /// 上带价
+        /// </summary>
+        public double BandingUpperPrice;
+
+        /// <summary>
+        /// 下带价
+        /// </summary>
+        public double BandingLowerPrice;
+
     };
 
     /// <summary>
@@ -2792,6 +2849,11 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 7)]
         public string MaxOrderMessageReference;
+
+        /// <summary>
+        /// 撤单时选择席位算法
+        /// </summary>
+        public EnumOrderCancelAlgType OrderCancelAlg;
 
     };
 
@@ -3126,7 +3188,7 @@ namespace CTP
     public class ThostFtdcCurrentTimeField
     {
         /// <summary>
-        /// 当前日期
+        /// 当前交易日
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string CurrDate;
@@ -3143,7 +3205,7 @@ namespace CTP
         public int CurrMillisec;
 
         /// <summary>
-        /// 业务日期
+        /// 自然日期
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
         public string ActionDay;
@@ -5446,6 +5508,17 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 4)]
         public string CurrencyID;
 
+        /// <summary>
+        /// 是否是个股期权内转
+        /// </summary>
+        public int IsFromSopt;
+
+        /// <summary>
+        /// 资金密码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string TradingPassword;
+
     };
 
     /// <summary>
@@ -5586,6 +5659,16 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
         public string MarginModelID;
+
+        /// <summary>
+        /// 是否频率控制
+        /// </summary>
+        public EnumEnumBoolType IsOrderFreq;
+
+        /// <summary>
+        /// 是否开仓限制
+        /// </summary>
+        public EnumEnumBoolType IsOpenVolLimit;
 
     };
 
@@ -6152,7 +6235,7 @@ namespace CTP
         public string InvestUnitID;
 
         /// <summary>
-        /// 大商所持仓成本差值，只有大商所使用
+        /// 持仓成本差值
         /// </summary>
         public double PositionCostOffset;
 
@@ -9987,6 +10070,17 @@ namespace CTP
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
         public string IPAddress;
 
+        /// <summary>
+        /// 被顶单编号
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
+        public string ReplaceSysID;
+
+        /// <summary>
+        /// 有效期类型
+        /// </summary>
+        public EnumTimeConditionType TimeCondition;
+
     };
 
     /// <summary>
@@ -10405,6 +10499,17 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
         public string IPAddress;
+
+        /// <summary>
+        /// 被顶单编号
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
+        public string ReplaceSysID;
+
+        /// <summary>
+        /// 有效期类型
+        /// </summary>
+        public EnumTimeConditionType TimeCondition;
 
     };
 
@@ -10851,6 +10956,11 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
         public string IPAddress;
+
+        /// <summary>
+        /// 有效期类型
+        /// </summary>
+        public EnumTimeConditionType TimeCondition;
 
     };
 
@@ -12553,6 +12663,16 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string InstrumentID;
+
+        /// <summary>
+        /// 报单手续费
+        /// </summary>
+        public double OrderCommByTrade;
+
+        /// <summary>
+        /// 撤单手续费
+        /// </summary>
+        public double OrderActionCommByTrade;
 
     };
 
@@ -14481,6 +14601,24 @@ namespace CTP
     };
 
     /// <summary>
+    /// 行情上下带价
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcMarketDataBandingPriceField
+    {
+        /// <summary>
+        /// 上带价
+        /// </summary>
+        public double BandingUpperPrice;
+
+        /// <summary>
+        /// 下带价
+        /// </summary>
+        public double BandingLowerPrice;
+
+    };
+
+    /// <summary>
     /// 行情交易所代码属性
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
@@ -14944,7 +15082,7 @@ namespace CTP
         public double CloseAmount;
 
         /// <summary>
-        /// 先开先平剩余数量（DCE）
+        /// 先开先平剩余数量
         /// </summary>
         public int TimeFirstVolume;
 
@@ -15122,6 +15260,11 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 7)]
         public string MaxOrderMessageReference;
+
+        /// <summary>
+        /// 撤单时选择席位算法
+        /// </summary>
+        public EnumOrderCancelAlgType OrderCancelAlg;
 
     };
 
@@ -15704,6 +15847,17 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
         public string InstrumentID;
+
+        /// <summary>
+        /// 交易中心代码
+        /// </summary>
+        public int DRIdentityID;
+
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
 
     };
 
@@ -26016,12 +26170,6 @@ namespace CTP
     public class ThostFtdcAuthForbiddenIPField
     {
         /// <summary>
-        /// 保留的无效字段
-        /// </summary>
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string reserve1;
-
-        /// <summary>
         /// IP地址
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
@@ -26035,12 +26183,6 @@ namespace CTP
     [StructLayout(LayoutKind.Sequential)]
     public class ThostFtdcQryAuthForbiddenIPField
     {
-        /// <summary>
-        /// 保留的无效字段
-        /// </summary>
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
-        public string reserve1;
-
         /// <summary>
         /// IP地址
         /// </summary>
@@ -26148,6 +26290,12 @@ namespace CTP
         /// </summary>
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
         public string ClientPublicIP;
+
+        /// <summary>
+        /// 客户登录备注2
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 151)]
+        public string ClientLoginRemark;
 
     };
 
@@ -26317,6 +26465,5608 @@ namespace CTP
         /// 期权组合保证金比例
         /// </summary>
         public double Xparameter;
+
+    };
+
+    /// <summary>
+    /// 国密用户登录请求
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcReqUserLoginSCField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 用户代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
+        public string UserID;
+
+        /// <summary>
+        /// 密码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string Password;
+
+        /// <summary>
+        /// 用户端产品信息
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string UserProductInfo;
+
+        /// <summary>
+        /// 接口端产品信息
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string InterfaceProductInfo;
+
+        /// <summary>
+        /// 协议信息
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string ProtocolInfo;
+
+        /// <summary>
+        /// Mac地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
+        public string MacAddress;
+
+        /// <summary>
+        /// 动态密码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string OneTimePassword;
+
+        /// <summary>
+        /// 终端IP地址
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string ClientIPAddress;
+
+        /// <summary>
+        /// 登录备注
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 36)]
+        public string LoginRemark;
+
+        /// <summary>
+        /// 终端IP端口
+        /// </summary>
+        public int ClientIPPort;
+
+        /// <summary>
+        /// 认证码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
+        public string AuthCode;
+
+        /// <summary>
+        /// App代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string AppID;
+
+    };
+
+    /// <summary>
+    /// 投资者风险结算持仓查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryRiskSettleInvstPositionField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+    };
+
+    /// <summary>
+    /// 风险结算产品查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryRiskSettleProductStatusField
+    {
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProductID;
+
+    };
+
+    /// <summary>
+    /// 投资者风险结算持仓
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcRiskSettleInvstPositionField
+    {
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 持仓多空方向
+        /// </summary>
+        public EnumPosiDirectionType PosiDirection;
+
+        /// <summary>
+        /// 投机套保标志
+        /// </summary>
+        public EnumHedgeFlagType HedgeFlag;
+
+        /// <summary>
+        /// 持仓日期
+        /// </summary>
+        public EnumPositionDateType PositionDate;
+
+        /// <summary>
+        /// 上日持仓
+        /// </summary>
+        public int YdPosition;
+
+        /// <summary>
+        /// 今日持仓
+        /// </summary>
+        public int Position;
+
+        /// <summary>
+        /// 多头冻结
+        /// </summary>
+        public int LongFrozen;
+
+        /// <summary>
+        /// 空头冻结
+        /// </summary>
+        public int ShortFrozen;
+
+        /// <summary>
+        /// 开仓冻结金额
+        /// </summary>
+        public double LongFrozenAmount;
+
+        /// <summary>
+        /// 开仓冻结金额
+        /// </summary>
+        public double ShortFrozenAmount;
+
+        /// <summary>
+        /// 开仓量
+        /// </summary>
+        public int OpenVolume;
+
+        /// <summary>
+        /// 平仓量
+        /// </summary>
+        public int CloseVolume;
+
+        /// <summary>
+        /// 开仓金额
+        /// </summary>
+        public double OpenAmount;
+
+        /// <summary>
+        /// 平仓金额
+        /// </summary>
+        public double CloseAmount;
+
+        /// <summary>
+        /// 持仓成本
+        /// </summary>
+        public double PositionCost;
+
+        /// <summary>
+        /// 上次占用的保证金
+        /// </summary>
+        public double PreMargin;
+
+        /// <summary>
+        /// 占用的保证金
+        /// </summary>
+        public double UseMargin;
+
+        /// <summary>
+        /// 冻结的保证金
+        /// </summary>
+        public double FrozenMargin;
+
+        /// <summary>
+        /// 冻结的资金
+        /// </summary>
+        public double FrozenCash;
+
+        /// <summary>
+        /// 冻结的手续费
+        /// </summary>
+        public double FrozenCommission;
+
+        /// <summary>
+        /// 资金差额
+        /// </summary>
+        public double CashIn;
+
+        /// <summary>
+        /// 手续费
+        /// </summary>
+        public double Commission;
+
+        /// <summary>
+        /// 平仓盈亏
+        /// </summary>
+        public double CloseProfit;
+
+        /// <summary>
+        /// 持仓盈亏
+        /// </summary>
+        public double PositionProfit;
+
+        /// <summary>
+        /// 上次结算价
+        /// </summary>
+        public double PreSettlementPrice;
+
+        /// <summary>
+        /// 本次结算价
+        /// </summary>
+        public double SettlementPrice;
+
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 结算编号
+        /// </summary>
+        public int SettlementID;
+
+        /// <summary>
+        /// 开仓成本
+        /// </summary>
+        public double OpenCost;
+
+        /// <summary>
+        /// 交易所保证金
+        /// </summary>
+        public double ExchangeMargin;
+
+        /// <summary>
+        /// 组合成交形成的持仓
+        /// </summary>
+        public int CombPosition;
+
+        /// <summary>
+        /// 组合多头冻结
+        /// </summary>
+        public int CombLongFrozen;
+
+        /// <summary>
+        /// 组合空头冻结
+        /// </summary>
+        public int CombShortFrozen;
+
+        /// <summary>
+        /// 逐日盯市平仓盈亏
+        /// </summary>
+        public double CloseProfitByDate;
+
+        /// <summary>
+        /// 逐笔对冲平仓盈亏
+        /// </summary>
+        public double CloseProfitByTrade;
+
+        /// <summary>
+        /// 今日持仓
+        /// </summary>
+        public int TodayPosition;
+
+        /// <summary>
+        /// 保证金率
+        /// </summary>
+        public double MarginRateByMoney;
+
+        /// <summary>
+        /// 保证金率(按手数)
+        /// </summary>
+        public double MarginRateByVolume;
+
+        /// <summary>
+        /// 执行冻结
+        /// </summary>
+        public int StrikeFrozen;
+
+        /// <summary>
+        /// 执行冻结金额
+        /// </summary>
+        public double StrikeFrozenAmount;
+
+        /// <summary>
+        /// 放弃执行冻结
+        /// </summary>
+        public int AbandonFrozen;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 执行冻结的昨仓
+        /// </summary>
+        public int YdStrikeFrozen;
+
+        /// <summary>
+        /// 投资单元代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 17)]
+        public string InvestUnitID;
+
+        /// <summary>
+        /// 持仓成本差值
+        /// </summary>
+        public double PositionCostOffset;
+
+        /// <summary>
+        /// tas持仓手数
+        /// </summary>
+        public int TasPosition;
+
+        /// <summary>
+        /// tas持仓成本
+        /// </summary>
+        public double TasPositionCost;
+
+    };
+
+    /// <summary>
+    /// 风险品种
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcRiskSettleProductStatusField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 产品编号
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProductID;
+
+        /// <summary>
+        /// 产品结算状态
+        /// </summary>
+        public EnumProductStatusType ProductStatus;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平信息
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaInfoField
+    {
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+        /// <summary>
+        /// 追平状态
+        /// </summary>
+        public EnumSyncDeltaStatusType SyncDeltaStatus;
+
+        /// <summary>
+        /// 追平描述
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 257)]
+        public string SyncDescription;
+
+        /// <summary>
+        /// 是否只有资金追平
+        /// </summary>
+        public int IsOnlyTrdDelta;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平产品信息
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaProductStatusField
+    {
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProductID;
+
+        /// <summary>
+        /// 是否允许交易
+        /// </summary>
+        public EnumProductStatusType ProductStatus;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平持仓明细
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaInvstPosDtlField
+    {
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 投机套保标志
+        /// </summary>
+        public EnumHedgeFlagType HedgeFlag;
+
+        /// <summary>
+        /// 买卖
+        /// </summary>
+        public EnumDirectionType Direction;
+
+        /// <summary>
+        /// 开仓日期
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string OpenDate;
+
+        /// <summary>
+        /// 成交编号
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
+        public string TradeID;
+
+        /// <summary>
+        /// 数量
+        /// </summary>
+        public int Volume;
+
+        /// <summary>
+        /// 开仓价
+        /// </summary>
+        public double OpenPrice;
+
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 结算编号
+        /// </summary>
+        public int SettlementID;
+
+        /// <summary>
+        /// 成交类型
+        /// </summary>
+        public EnumTradeTypeType TradeType;
+
+        /// <summary>
+        /// 组合合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string CombInstrumentID;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 逐日盯市平仓盈亏
+        /// </summary>
+        public double CloseProfitByDate;
+
+        /// <summary>
+        /// 逐笔对冲平仓盈亏
+        /// </summary>
+        public double CloseProfitByTrade;
+
+        /// <summary>
+        /// 逐日盯市持仓盈亏
+        /// </summary>
+        public double PositionProfitByDate;
+
+        /// <summary>
+        /// 逐笔对冲持仓盈亏
+        /// </summary>
+        public double PositionProfitByTrade;
+
+        /// <summary>
+        /// 投资者保证金
+        /// </summary>
+        public double Margin;
+
+        /// <summary>
+        /// 交易所保证金
+        /// </summary>
+        public double ExchMargin;
+
+        /// <summary>
+        /// 保证金率
+        /// </summary>
+        public double MarginRateByMoney;
+
+        /// <summary>
+        /// 保证金率(按手数)
+        /// </summary>
+        public double MarginRateByVolume;
+
+        /// <summary>
+        /// 昨结算价
+        /// </summary>
+        public double LastSettlementPrice;
+
+        /// <summary>
+        /// 结算价
+        /// </summary>
+        public double SettlementPrice;
+
+        /// <summary>
+        /// 平仓量
+        /// </summary>
+        public int CloseVolume;
+
+        /// <summary>
+        /// 平仓金额
+        /// </summary>
+        public double CloseAmount;
+
+        /// <summary>
+        /// 先开先平剩余数量
+        /// </summary>
+        public int TimeFirstVolume;
+
+        /// <summary>
+        /// 特殊持仓标志
+        /// </summary>
+        public EnumSpecPosiTypeType SpecPosiType;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平组合持仓明细
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaInvstPosCombDtlField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 开仓日期
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string OpenDate;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 结算编号
+        /// </summary>
+        public int SettlementID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 组合编号
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
+        public string ComTradeID;
+
+        /// <summary>
+        /// 撮合编号
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
+        public string TradeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 投机套保标志
+        /// </summary>
+        public EnumHedgeFlagType HedgeFlag;
+
+        /// <summary>
+        /// 买卖
+        /// </summary>
+        public EnumDirectionType Direction;
+
+        /// <summary>
+        /// 持仓量
+        /// </summary>
+        public int TotalAmt;
+
+        /// <summary>
+        /// 投资者保证金
+        /// </summary>
+        public double Margin;
+
+        /// <summary>
+        /// 交易所保证金
+        /// </summary>
+        public double ExchMargin;
+
+        /// <summary>
+        /// 保证金率
+        /// </summary>
+        public double MarginRateByMoney;
+
+        /// <summary>
+        /// 保证金率(按手数)
+        /// </summary>
+        public double MarginRateByVolume;
+
+        /// <summary>
+        /// 单腿编号
+        /// </summary>
+        public int LegID;
+
+        /// <summary>
+        /// 单腿乘数
+        /// </summary>
+        public int LegMultiple;
+
+        /// <summary>
+        /// 成交组号
+        /// </summary>
+        public int TradeGroupID;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平资金
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaTradingAccountField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者帐号
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string AccountID;
+
+        /// <summary>
+        /// 上次质押金额
+        /// </summary>
+        public double PreMortgage;
+
+        /// <summary>
+        /// 上次信用额度
+        /// </summary>
+        public double PreCredit;
+
+        /// <summary>
+        /// 上次存款额
+        /// </summary>
+        public double PreDeposit;
+
+        /// <summary>
+        /// 上次结算准备金
+        /// </summary>
+        public double PreBalance;
+
+        /// <summary>
+        /// 上次占用的保证金
+        /// </summary>
+        public double PreMargin;
+
+        /// <summary>
+        /// 利息基数
+        /// </summary>
+        public double InterestBase;
+
+        /// <summary>
+        /// 利息收入
+        /// </summary>
+        public double Interest;
+
+        /// <summary>
+        /// 入金金额
+        /// </summary>
+        public double Deposit;
+
+        /// <summary>
+        /// 出金金额
+        /// </summary>
+        public double Withdraw;
+
+        /// <summary>
+        /// 冻结的保证金
+        /// </summary>
+        public double FrozenMargin;
+
+        /// <summary>
+        /// 冻结的资金
+        /// </summary>
+        public double FrozenCash;
+
+        /// <summary>
+        /// 冻结的手续费
+        /// </summary>
+        public double FrozenCommission;
+
+        /// <summary>
+        /// 当前保证金总额
+        /// </summary>
+        public double CurrMargin;
+
+        /// <summary>
+        /// 资金差额
+        /// </summary>
+        public double CashIn;
+
+        /// <summary>
+        /// 手续费
+        /// </summary>
+        public double Commission;
+
+        /// <summary>
+        /// 平仓盈亏
+        /// </summary>
+        public double CloseProfit;
+
+        /// <summary>
+        /// 持仓盈亏
+        /// </summary>
+        public double PositionProfit;
+
+        /// <summary>
+        /// 期货结算准备金
+        /// </summary>
+        public double Balance;
+
+        /// <summary>
+        /// 可用资金
+        /// </summary>
+        public double Available;
+
+        /// <summary>
+        /// 可取资金
+        /// </summary>
+        public double WithdrawQuota;
+
+        /// <summary>
+        /// 基本准备金
+        /// </summary>
+        public double Reserve;
+
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 结算编号
+        /// </summary>
+        public int SettlementID;
+
+        /// <summary>
+        /// 信用额度
+        /// </summary>
+        public double Credit;
+
+        /// <summary>
+        /// 质押金额
+        /// </summary>
+        public double Mortgage;
+
+        /// <summary>
+        /// 交易所保证金
+        /// </summary>
+        public double ExchangeMargin;
+
+        /// <summary>
+        /// 投资者交割保证金
+        /// </summary>
+        public double DeliveryMargin;
+
+        /// <summary>
+        /// 交易所交割保证金
+        /// </summary>
+        public double ExchangeDeliveryMargin;
+
+        /// <summary>
+        /// 保底期货结算准备金
+        /// </summary>
+        public double ReserveBalance;
+
+        /// <summary>
+        /// 币种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 4)]
+        public string CurrencyID;
+
+        /// <summary>
+        /// 上次货币质入金额
+        /// </summary>
+        public double PreFundMortgageIn;
+
+        /// <summary>
+        /// 上次货币质出金额
+        /// </summary>
+        public double PreFundMortgageOut;
+
+        /// <summary>
+        /// 货币质入金额
+        /// </summary>
+        public double FundMortgageIn;
+
+        /// <summary>
+        /// 货币质出金额
+        /// </summary>
+        public double FundMortgageOut;
+
+        /// <summary>
+        /// 货币质押余额
+        /// </summary>
+        public double FundMortgageAvailable;
+
+        /// <summary>
+        /// 可质押货币金额
+        /// </summary>
+        public double MortgageableFund;
+
+        /// <summary>
+        /// 特殊产品占用保证金
+        /// </summary>
+        public double SpecProductMargin;
+
+        /// <summary>
+        /// 特殊产品冻结保证金
+        /// </summary>
+        public double SpecProductFrozenMargin;
+
+        /// <summary>
+        /// 特殊产品手续费
+        /// </summary>
+        public double SpecProductCommission;
+
+        /// <summary>
+        /// 特殊产品冻结手续费
+        /// </summary>
+        public double SpecProductFrozenCommission;
+
+        /// <summary>
+        /// 特殊产品持仓盈亏
+        /// </summary>
+        public double SpecProductPositionProfit;
+
+        /// <summary>
+        /// 特殊产品平仓盈亏
+        /// </summary>
+        public double SpecProductCloseProfit;
+
+        /// <summary>
+        /// 根据持仓盈亏算法计算的特殊产品持仓盈亏
+        /// </summary>
+        public double SpecProductPositionProfitByAlg;
+
+        /// <summary>
+        /// 特殊产品交易所保证金
+        /// </summary>
+        public double SpecProductExchangeMargin;
+
+        /// <summary>
+        /// 延时换汇冻结金额
+        /// </summary>
+        public double FrozenSwap;
+
+        /// <summary>
+        /// 剩余换汇额度
+        /// </summary>
+        public double RemainSwap;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 投资者风险结算总保证金
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaInitInvstMarginField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 追平前总风险保证金
+        /// </summary>
+        public double LastRiskTotalInvstMargin;
+
+        /// <summary>
+        /// 追平前交易所总风险保证金
+        /// </summary>
+        public double LastRiskTotalExchMargin;
+
+        /// <summary>
+        /// 本次追平品种总保证金
+        /// </summary>
+        public double ThisSyncInvstMargin;
+
+        /// <summary>
+        /// 本次追平品种交易所总保证金
+        /// </summary>
+        public double ThisSyncExchMargin;
+
+        /// <summary>
+        /// 本次未追平品种总保证金
+        /// </summary>
+        public double RemainRiskInvstMargin;
+
+        /// <summary>
+        /// 本次未追平品种交易所总保证金
+        /// </summary>
+        public double RemainRiskExchMargin;
+
+        /// <summary>
+        /// 追平前总特殊产品风险保证金
+        /// </summary>
+        public double LastRiskSpecTotalInvstMargin;
+
+        /// <summary>
+        /// 追平前总特殊产品交易所风险保证金
+        /// </summary>
+        public double LastRiskSpecTotalExchMargin;
+
+        /// <summary>
+        /// 本次追平品种特殊产品总保证金
+        /// </summary>
+        public double ThisSyncSpecInvstMargin;
+
+        /// <summary>
+        /// 本次追平品种特殊产品交易所总保证金
+        /// </summary>
+        public double ThisSyncSpecExchMargin;
+
+        /// <summary>
+        /// 本次未追平品种特殊产品总保证金
+        /// </summary>
+        public double RemainRiskSpecInvstMargin;
+
+        /// <summary>
+        /// 本次未追平品种特殊产品交易所总保证金
+        /// </summary>
+        public double RemainRiskSpecExchMargin;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平组合优先级
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaDceCombInstrumentField
+    {
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string CombInstrumentID;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// 成交组号
+        /// </summary>
+        public int TradeGroupID;
+
+        /// <summary>
+        /// 投机套保标志
+        /// </summary>
+        public EnumHedgeFlagType CombHedgeFlag;
+
+        /// <summary>
+        /// 组合类型
+        /// </summary>
+        public EnumDceCombinationTypeType CombinationType;
+
+        /// <summary>
+        /// 买卖
+        /// </summary>
+        public EnumDirectionType Direction;
+
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProductID;
+
+        /// <summary>
+        /// 期权组合保证金比例
+        /// </summary>
+        public double Xparameter;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平投资者期货保证金率
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaInvstMarginRateField
+    {
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 投资者范围
+        /// </summary>
+        public EnumInvestorRangeType InvestorRange;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 投机套保标志
+        /// </summary>
+        public EnumHedgeFlagType HedgeFlag;
+
+        /// <summary>
+        /// 多头保证金率
+        /// </summary>
+        public double LongMarginRatioByMoney;
+
+        /// <summary>
+        /// 多头保证金费
+        /// </summary>
+        public double LongMarginRatioByVolume;
+
+        /// <summary>
+        /// 空头保证金率
+        /// </summary>
+        public double ShortMarginRatioByMoney;
+
+        /// <summary>
+        /// 空头保证金费
+        /// </summary>
+        public double ShortMarginRatioByVolume;
+
+        /// <summary>
+        /// 是否相对交易所收取
+        /// </summary>
+        public int IsRelative;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平交易所期货保证金率
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaExchMarginRateField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 投机套保标志
+        /// </summary>
+        public EnumHedgeFlagType HedgeFlag;
+
+        /// <summary>
+        /// 多头保证金率
+        /// </summary>
+        public double LongMarginRatioByMoney;
+
+        /// <summary>
+        /// 多头保证金费
+        /// </summary>
+        public double LongMarginRatioByVolume;
+
+        /// <summary>
+        /// 空头保证金率
+        /// </summary>
+        public double ShortMarginRatioByMoney;
+
+        /// <summary>
+        /// 空头保证金费
+        /// </summary>
+        public double ShortMarginRatioByVolume;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平中金现货期权交易所保证金率
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaOptExchMarginField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 投机空头保证金调整系数
+        /// </summary>
+        public double SShortMarginRatioByMoney;
+
+        /// <summary>
+        /// 投机空头保证金调整系数
+        /// </summary>
+        public double SShortMarginRatioByVolume;
+
+        /// <summary>
+        /// 保值空头保证金调整系数
+        /// </summary>
+        public double HShortMarginRatioByMoney;
+
+        /// <summary>
+        /// 保值空头保证金调整系数
+        /// </summary>
+        public double HShortMarginRatioByVolume;
+
+        /// <summary>
+        /// 套利空头保证金调整系数
+        /// </summary>
+        public double AShortMarginRatioByMoney;
+
+        /// <summary>
+        /// 套利空头保证金调整系数
+        /// </summary>
+        public double AShortMarginRatioByVolume;
+
+        /// <summary>
+        /// 做市商空头保证金调整系数
+        /// </summary>
+        public double MShortMarginRatioByMoney;
+
+        /// <summary>
+        /// 做市商空头保证金调整系数
+        /// </summary>
+        public double MShortMarginRatioByVolume;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平中金现货期权投资者保证金率
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaOptInvstMarginField
+    {
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 投资者范围
+        /// </summary>
+        public EnumInvestorRangeType InvestorRange;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 投机空头保证金调整系数
+        /// </summary>
+        public double SShortMarginRatioByMoney;
+
+        /// <summary>
+        /// 投机空头保证金调整系数
+        /// </summary>
+        public double SShortMarginRatioByVolume;
+
+        /// <summary>
+        /// 保值空头保证金调整系数
+        /// </summary>
+        public double HShortMarginRatioByMoney;
+
+        /// <summary>
+        /// 保值空头保证金调整系数
+        /// </summary>
+        public double HShortMarginRatioByVolume;
+
+        /// <summary>
+        /// 套利空头保证金调整系数
+        /// </summary>
+        public double AShortMarginRatioByMoney;
+
+        /// <summary>
+        /// 套利空头保证金调整系数
+        /// </summary>
+        public double AShortMarginRatioByVolume;
+
+        /// <summary>
+        /// 是否跟随交易所收取
+        /// </summary>
+        public int IsRelative;
+
+        /// <summary>
+        /// 做市商空头保证金调整系数
+        /// </summary>
+        public double MShortMarginRatioByMoney;
+
+        /// <summary>
+        /// 做市商空头保证金调整系数
+        /// </summary>
+        public double MShortMarginRatioByVolume;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平期权标的调整保证金率
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaInvstMarginRateULField
+    {
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 投资者范围
+        /// </summary>
+        public EnumInvestorRangeType InvestorRange;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 投机套保标志
+        /// </summary>
+        public EnumHedgeFlagType HedgeFlag;
+
+        /// <summary>
+        /// 多头保证金率
+        /// </summary>
+        public double LongMarginRatioByMoney;
+
+        /// <summary>
+        /// 多头保证金费
+        /// </summary>
+        public double LongMarginRatioByVolume;
+
+        /// <summary>
+        /// 空头保证金率
+        /// </summary>
+        public double ShortMarginRatioByMoney;
+
+        /// <summary>
+        /// 空头保证金费
+        /// </summary>
+        public double ShortMarginRatioByVolume;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平期权手续费率
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaOptInvstCommRateField
+    {
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 投资者范围
+        /// </summary>
+        public EnumInvestorRangeType InvestorRange;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 开仓手续费率
+        /// </summary>
+        public double OpenRatioByMoney;
+
+        /// <summary>
+        /// 开仓手续费
+        /// </summary>
+        public double OpenRatioByVolume;
+
+        /// <summary>
+        /// 平仓手续费率
+        /// </summary>
+        public double CloseRatioByMoney;
+
+        /// <summary>
+        /// 平仓手续费
+        /// </summary>
+        public double CloseRatioByVolume;
+
+        /// <summary>
+        /// 平今手续费率
+        /// </summary>
+        public double CloseTodayRatioByMoney;
+
+        /// <summary>
+        /// 平今手续费
+        /// </summary>
+        public double CloseTodayRatioByVolume;
+
+        /// <summary>
+        /// 执行手续费率
+        /// </summary>
+        public double StrikeRatioByMoney;
+
+        /// <summary>
+        /// 执行手续费
+        /// </summary>
+        public double StrikeRatioByVolume;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平期货手续费率
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaInvstCommRateField
+    {
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 投资者范围
+        /// </summary>
+        public EnumInvestorRangeType InvestorRange;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 开仓手续费率
+        /// </summary>
+        public double OpenRatioByMoney;
+
+        /// <summary>
+        /// 开仓手续费
+        /// </summary>
+        public double OpenRatioByVolume;
+
+        /// <summary>
+        /// 平仓手续费率
+        /// </summary>
+        public double CloseRatioByMoney;
+
+        /// <summary>
+        /// 平仓手续费
+        /// </summary>
+        public double CloseRatioByVolume;
+
+        /// <summary>
+        /// 平今手续费率
+        /// </summary>
+        public double CloseTodayRatioByMoney;
+
+        /// <summary>
+        /// 平今手续费
+        /// </summary>
+        public double CloseTodayRatioByVolume;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平交叉汇率
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaProductExchRateField
+    {
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProductID;
+
+        /// <summary>
+        /// 报价币种类型
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 4)]
+        public string QuoteCurrencyID;
+
+        /// <summary>
+        /// 汇率
+        /// </summary>
+        public double ExchangeRate;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平行情
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaDepthMarketDataField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约在交易所的代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// 最新价
+        /// </summary>
+        public double LastPrice;
+
+        /// <summary>
+        /// 上次结算价
+        /// </summary>
+        public double PreSettlementPrice;
+
+        /// <summary>
+        /// 昨收盘
+        /// </summary>
+        public double PreClosePrice;
+
+        /// <summary>
+        /// 昨持仓量
+        /// </summary>
+        public double PreOpenInterest;
+
+        /// <summary>
+        /// 今开盘
+        /// </summary>
+        public double OpenPrice;
+
+        /// <summary>
+        /// 最高价
+        /// </summary>
+        public double HighestPrice;
+
+        /// <summary>
+        /// 最低价
+        /// </summary>
+        public double LowestPrice;
+
+        /// <summary>
+        /// 数量
+        /// </summary>
+        public int Volume;
+
+        /// <summary>
+        /// 成交金额
+        /// </summary>
+        public double Turnover;
+
+        /// <summary>
+        /// 持仓量
+        /// </summary>
+        public double OpenInterest;
+
+        /// <summary>
+        /// 今收盘
+        /// </summary>
+        public double ClosePrice;
+
+        /// <summary>
+        /// 本次结算价
+        /// </summary>
+        public double SettlementPrice;
+
+        /// <summary>
+        /// 涨停板价
+        /// </summary>
+        public double UpperLimitPrice;
+
+        /// <summary>
+        /// 跌停板价
+        /// </summary>
+        public double LowerLimitPrice;
+
+        /// <summary>
+        /// 昨虚实度
+        /// </summary>
+        public double PreDelta;
+
+        /// <summary>
+        /// 今虚实度
+        /// </summary>
+        public double CurrDelta;
+
+        /// <summary>
+        /// 最后修改时间
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string UpdateTime;
+
+        /// <summary>
+        /// 最后修改毫秒
+        /// </summary>
+        public int UpdateMillisec;
+
+        /// <summary>
+        /// 申买价一
+        /// </summary>
+        public double BidPrice1;
+
+        /// <summary>
+        /// 申买量一
+        /// </summary>
+        public int BidVolume1;
+
+        /// <summary>
+        /// 申卖价一
+        /// </summary>
+        public double AskPrice1;
+
+        /// <summary>
+        /// 申卖量一
+        /// </summary>
+        public int AskVolume1;
+
+        /// <summary>
+        /// 申买价二
+        /// </summary>
+        public double BidPrice2;
+
+        /// <summary>
+        /// 申买量二
+        /// </summary>
+        public int BidVolume2;
+
+        /// <summary>
+        /// 申卖价二
+        /// </summary>
+        public double AskPrice2;
+
+        /// <summary>
+        /// 申卖量二
+        /// </summary>
+        public int AskVolume2;
+
+        /// <summary>
+        /// 申买价三
+        /// </summary>
+        public double BidPrice3;
+
+        /// <summary>
+        /// 申买量三
+        /// </summary>
+        public int BidVolume3;
+
+        /// <summary>
+        /// 申卖价三
+        /// </summary>
+        public double AskPrice3;
+
+        /// <summary>
+        /// 申卖量三
+        /// </summary>
+        public int AskVolume3;
+
+        /// <summary>
+        /// 申买价四
+        /// </summary>
+        public double BidPrice4;
+
+        /// <summary>
+        /// 申买量四
+        /// </summary>
+        public int BidVolume4;
+
+        /// <summary>
+        /// 申卖价四
+        /// </summary>
+        public double AskPrice4;
+
+        /// <summary>
+        /// 申卖量四
+        /// </summary>
+        public int AskVolume4;
+
+        /// <summary>
+        /// 申买价五
+        /// </summary>
+        public double BidPrice5;
+
+        /// <summary>
+        /// 申买量五
+        /// </summary>
+        public int BidVolume5;
+
+        /// <summary>
+        /// 申卖价五
+        /// </summary>
+        public double AskPrice5;
+
+        /// <summary>
+        /// 申卖量五
+        /// </summary>
+        public int AskVolume5;
+
+        /// <summary>
+        /// 当日均价
+        /// </summary>
+        public double AveragePrice;
+
+        /// <summary>
+        /// 业务日期
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ActionDay;
+
+        /// <summary>
+        /// 上带价
+        /// </summary>
+        public double BandingUpperPrice;
+
+        /// <summary>
+        /// 下带价
+        /// </summary>
+        public double BandingLowerPrice;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平现货指数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaIndexPriceField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 指数现货收盘价
+        /// </summary>
+        public double ClosePrice;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平仓单折抵
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaEWarrantOffsetField
+    {
+        /// <summary>
+        /// 交易日期
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 买卖方向
+        /// </summary>
+        public EnumDirectionType Direction;
+
+        /// <summary>
+        /// 投机套保标志
+        /// </summary>
+        public EnumHedgeFlagType HedgeFlag;
+
+        /// <summary>
+        /// 数量
+        /// </summary>
+        public int Volume;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// SPBM期货合约保证金参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSPBMFutureParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+        /// <summary>
+        /// 期货合约因子
+        /// </summary>
+        public int Cvf;
+
+        /// <summary>
+        /// 阶段标识
+        /// </summary>
+        public EnumTimeRangeType TimeRange;
+
+        /// <summary>
+        /// 品种保证金标准
+        /// </summary>
+        public double MarginRate;
+
+        /// <summary>
+        /// 期货合约内部对锁仓费率折扣比例
+        /// </summary>
+        public double LockRateX;
+
+        /// <summary>
+        /// 提高保证金标准
+        /// </summary>
+        public double AddOnRate;
+
+        /// <summary>
+        /// 昨结算价
+        /// </summary>
+        public double PreSettlementPrice;
+
+        /// <summary>
+        /// 期货合约内部对锁仓附加费率折扣比例
+        /// </summary>
+        public double AddOnLockRateX2;
+
+    };
+
+    /// <summary>
+    /// SPBM期权合约保证金参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSPBMOptionParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+        /// <summary>
+        /// 期权合约因子
+        /// </summary>
+        public int Cvf;
+
+        /// <summary>
+        /// 期权冲抵价格
+        /// </summary>
+        public double DownPrice;
+
+        /// <summary>
+        /// Delta值
+        /// </summary>
+        public double Delta;
+
+        /// <summary>
+        /// 卖方期权风险转换最低值
+        /// </summary>
+        public double SlimiDelta;
+
+        /// <summary>
+        /// 昨结算价
+        /// </summary>
+        public double PreSettlementPrice;
+
+    };
+
+    /// <summary>
+    /// SPBM品种内对锁仓折扣参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSPBMIntraParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+        /// <summary>
+        /// 品种内合约间对锁仓费率折扣比例
+        /// </summary>
+        public double IntraRateY;
+
+        /// <summary>
+        /// 品种内合约间对锁仓附加费率折扣比例
+        /// </summary>
+        public double AddOnIntraRateY2;
+
+    };
+
+    /// <summary>
+    /// SPBM跨品种抵扣参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSPBMInterParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 优先级
+        /// </summary>
+        public int SpreadId;
+
+        /// <summary>
+        /// 品种间对锁仓费率折扣比例
+        /// </summary>
+        public double InterRateZ;
+
+        /// <summary>
+        /// 第一腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg1ProdFamilyCode;
+
+        /// <summary>
+        /// 第二腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg2ProdFamilyCode;
+
+    };
+
+    /// <summary>
+    /// 同步SPBM参数结束
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncSPBMParameterEndField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+    };
+
+    /// <summary>
+    /// SPBM期货合约保证金参数查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQrySPBMFutureParameterField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+    };
+
+    /// <summary>
+    /// SPBM期权合约保证金参数查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQrySPBMOptionParameterField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+    };
+
+    /// <summary>
+    /// SPBM品种内对锁仓折扣参数查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQrySPBMIntraParameterField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+    };
+
+    /// <summary>
+    /// SPBM跨品种抵扣参数查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQrySPBMInterParameterField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 第一腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg1ProdFamilyCode;
+
+        /// <summary>
+        /// 第二腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg2ProdFamilyCode;
+
+    };
+
+    /// <summary>
+    /// 组合保证金套餐
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSPBMPortfDefinitionField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 组合保证金套餐代码
+        /// </summary>
+        public int PortfolioDefID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+        /// <summary>
+        /// 是否启用SPBM
+        /// </summary>
+        public int IsSPBM;
+
+    };
+
+    /// <summary>
+    /// 投资者套餐选择
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSPBMInvestorPortfDefField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 组合保证金套餐代码
+        /// </summary>
+        public int PortfolioDefID;
+
+    };
+
+    /// <summary>
+    /// 投资者新型组合保证金系数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcInvestorPortfMarginRatioField
+    {
+        /// <summary>
+        /// 投资者范围
+        /// </summary>
+        public EnumInvestorRangeType InvestorRange;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 会员对投资者收取的保证金和交易所对投资者收取的保证金的比例
+        /// </summary>
+        public double MarginRatio;
+
+    };
+
+    /// <summary>
+    /// 组合保证金套餐查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQrySPBMPortfDefinitionField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 组合保证金套餐代码
+        /// </summary>
+        public int PortfolioDefID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+    };
+
+    /// <summary>
+    /// 投资者套餐选择查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQrySPBMInvestorPortfDefField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+    };
+
+    /// <summary>
+    /// 投资者新型组合保证金系数查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryInvestorPortfMarginRatioField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+    };
+
+    /// <summary>
+    /// 投资者产品SPBM明细
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcInvestorProdSPBMDetailField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+        /// <summary>
+        /// 合约内对锁保证金
+        /// </summary>
+        public double IntraInstrMargin;
+
+        /// <summary>
+        /// 买归集保证金
+        /// </summary>
+        public double BCollectingMargin;
+
+        /// <summary>
+        /// 卖归集保证金
+        /// </summary>
+        public double SCollectingMargin;
+
+        /// <summary>
+        /// 品种内合约间对锁保证金
+        /// </summary>
+        public double IntraProdMargin;
+
+        /// <summary>
+        /// 净保证金
+        /// </summary>
+        public double NetMargin;
+
+        /// <summary>
+        /// 产品间对锁保证金
+        /// </summary>
+        public double InterProdMargin;
+
+        /// <summary>
+        /// 裸保证金
+        /// </summary>
+        public double SingleMargin;
+
+        /// <summary>
+        /// 附加保证金
+        /// </summary>
+        public double AddOnMargin;
+
+        /// <summary>
+        /// 交割月保证金
+        /// </summary>
+        public double DeliveryMargin;
+
+        /// <summary>
+        /// 看涨期权最低风险
+        /// </summary>
+        public double CallOptionMinRisk;
+
+        /// <summary>
+        /// 看跌期权最低风险
+        /// </summary>
+        public double PutOptionMinRisk;
+
+        /// <summary>
+        /// 卖方期权最低风险
+        /// </summary>
+        public double OptionMinRisk;
+
+        /// <summary>
+        /// 买方期权冲抵价值
+        /// </summary>
+        public double OptionValueOffset;
+
+        /// <summary>
+        /// 卖方期权权利金
+        /// </summary>
+        public double OptionRoyalty;
+
+        /// <summary>
+        /// 价值冲抵
+        /// </summary>
+        public double RealOptionValueOffset;
+
+        /// <summary>
+        /// 保证金
+        /// </summary>
+        public double Margin;
+
+        /// <summary>
+        /// 交易所保证金
+        /// </summary>
+        public double ExchMargin;
+
+    };
+
+    /// <summary>
+    /// 投资者产品SPBM明细查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryInvestorProdSPBMDetailField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+    };
+
+    /// <summary>
+    /// 组保交易参数设置
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcPortfTradeParamSettingField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 新型组保算法
+        /// </summary>
+        public EnumPortfolioType Portfolio;
+
+        /// <summary>
+        /// 撤单是否验资
+        /// </summary>
+        public int IsActionVerify;
+
+        /// <summary>
+        /// 平仓是否验资
+        /// </summary>
+        public int IsCloseVerify;
+
+    };
+
+    /// <summary>
+    /// 投资者交易权限设置
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcInvestorTradingRightField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 交易权限
+        /// </summary>
+        public EnumInvstTradingRightType InvstTradingRight;
+
+    };
+
+    /// <summary>
+    /// 质押配比参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcMortgageParamField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者帐号
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string AccountID;
+
+        /// <summary>
+        /// 质押配比系数
+        /// </summary>
+        public double MortgageBalance;
+
+        /// <summary>
+        /// 开仓是否验证质押配比
+        /// </summary>
+        public int CheckMortgageRatio;
+
+    };
+
+    /// <summary>
+    /// 可提控制参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcWithDrawParamField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者帐号
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string AccountID;
+
+        /// <summary>
+        /// 参数代码
+        /// </summary>
+        public EnumWithDrawParamIDType WithDrawParamID;
+
+        /// <summary>
+        /// 参数代码值
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string WithDrawParamValue;
+
+    };
+
+    /// <summary>
+    /// Thost终端用户功能权限
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcThostUserFunctionField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 用户代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
+        public string UserID;
+
+        /// <summary>
+        /// Thost终端功能代码
+        /// </summary>
+        public int ThostFunctionCode;
+
+    };
+
+    /// <summary>
+    /// Thost终端用户功能权限查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryThostUserFunctionField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 用户代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 16)]
+        public string UserID;
+
+    };
+
+    /// <summary>
+    /// SPBM附加跨品种抵扣参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSPBMAddOnInterParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 优先级
+        /// </summary>
+        public int SpreadId;
+
+        /// <summary>
+        /// 品种间对锁仓附加费率折扣比例
+        /// </summary>
+        public double AddOnInterRateZ2;
+
+        /// <summary>
+        /// 第一腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg1ProdFamilyCode;
+
+        /// <summary>
+        /// 第二腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg2ProdFamilyCode;
+
+    };
+
+    /// <summary>
+    /// SPBM附加跨品种抵扣参数查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQrySPBMAddOnInterParameterField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 第一腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg1ProdFamilyCode;
+
+        /// <summary>
+        /// 第二腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg2ProdFamilyCode;
+
+    };
+
+    /// <summary>
+    /// 投资者商品组SPMM记录查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryInvestorCommoditySPMMMarginField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 商品组代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CommodityID;
+
+    };
+
+    /// <summary>
+    /// 投资者商品群SPMM记录查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryInvestorCommodityGroupSPMMMarginField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 商品群代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CommodityGroupID;
+
+    };
+
+    /// <summary>
+    /// SPMM合约参数查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQrySPMMInstParamField
+    {
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+    };
+
+    /// <summary>
+    /// SPMM产品参数查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQrySPMMProductParamField
+    {
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductID;
+
+    };
+
+    /// <summary>
+    /// 投资者商品组SPMM记录
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcInvestorCommoditySPMMMarginField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 商品组代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CommodityID;
+
+        /// <summary>
+        /// 优惠仓位应收保证金
+        /// </summary>
+        public double MarginBeforeDiscount;
+
+        /// <summary>
+        /// 不优惠仓位应收保证金
+        /// </summary>
+        public double MarginNoDiscount;
+
+        /// <summary>
+        /// 多头实仓风险
+        /// </summary>
+        public double LongPosRisk;
+
+        /// <summary>
+        /// 多头开仓冻结风险
+        /// </summary>
+        public double LongOpenFrozenRisk;
+
+        /// <summary>
+        /// 多头被平冻结风险
+        /// </summary>
+        public double LongCloseFrozenRisk;
+
+        /// <summary>
+        /// 空头实仓风险
+        /// </summary>
+        public double ShortPosRisk;
+
+        /// <summary>
+        /// 空头开仓冻结风险
+        /// </summary>
+        public double ShortOpenFrozenRisk;
+
+        /// <summary>
+        /// 空头被平冻结风险
+        /// </summary>
+        public double ShortCloseFrozenRisk;
+
+        /// <summary>
+        /// SPMM品种内跨期优惠系数
+        /// </summary>
+        public double IntraCommodityRate;
+
+        /// <summary>
+        /// SPMM期权优惠系数
+        /// </summary>
+        public double OptionDiscountRate;
+
+        /// <summary>
+        /// 实仓对冲优惠金额
+        /// </summary>
+        public double PosDiscount;
+
+        /// <summary>
+        /// 开仓报单对冲优惠金额
+        /// </summary>
+        public double OpenFrozenDiscount;
+
+        /// <summary>
+        /// 品种风险净头
+        /// </summary>
+        public double NetRisk;
+
+        /// <summary>
+        /// 平仓冻结保证金
+        /// </summary>
+        public double CloseFrozenMargin;
+
+        /// <summary>
+        /// 冻结的手续费
+        /// </summary>
+        public double FrozenCommission;
+
+        /// <summary>
+        /// 手续费
+        /// </summary>
+        public double Commission;
+
+        /// <summary>
+        /// 冻结的资金
+        /// </summary>
+        public double FrozenCash;
+
+        /// <summary>
+        /// 资金差额
+        /// </summary>
+        public double CashIn;
+
+        /// <summary>
+        /// 行权冻结资金
+        /// </summary>
+        public double StrikeFrozenMargin;
+
+    };
+
+    /// <summary>
+    /// 投资者商品群SPMM记录
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcInvestorCommodityGroupSPMMMarginField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 商品群代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CommodityGroupID;
+
+        /// <summary>
+        /// 优惠仓位应收保证金
+        /// </summary>
+        public double MarginBeforeDiscount;
+
+        /// <summary>
+        /// 不优惠仓位应收保证金
+        /// </summary>
+        public double MarginNoDiscount;
+
+        /// <summary>
+        /// 多头风险
+        /// </summary>
+        public double LongRisk;
+
+        /// <summary>
+        /// 空头风险
+        /// </summary>
+        public double ShortRisk;
+
+        /// <summary>
+        /// 商品群平仓冻结保证金
+        /// </summary>
+        public double CloseFrozenMargin;
+
+        /// <summary>
+        /// SPMM跨品种优惠系数
+        /// </summary>
+        public double InterCommodityRate;
+
+        /// <summary>
+        /// 商品群最小保证金比例
+        /// </summary>
+        public double MiniMarginRatio;
+
+        /// <summary>
+        /// 投资者保证金和交易所保证金的比例
+        /// </summary>
+        public double AdjustRatio;
+
+        /// <summary>
+        /// SPMM品种内优惠汇总
+        /// </summary>
+        public double IntraCommodityDiscount;
+
+        /// <summary>
+        /// SPMM跨品种优惠
+        /// </summary>
+        public double InterCommodityDiscount;
+
+        /// <summary>
+        /// 交易所保证金
+        /// </summary>
+        public double ExchMargin;
+
+        /// <summary>
+        /// 投资者保证金
+        /// </summary>
+        public double InvestorMargin;
+
+        /// <summary>
+        /// 冻结的手续费
+        /// </summary>
+        public double FrozenCommission;
+
+        /// <summary>
+        /// 手续费
+        /// </summary>
+        public double Commission;
+
+        /// <summary>
+        /// 冻结的资金
+        /// </summary>
+        public double FrozenCash;
+
+        /// <summary>
+        /// 资金差额
+        /// </summary>
+        public double CashIn;
+
+        /// <summary>
+        /// 行权冻结资金
+        /// </summary>
+        public double StrikeFrozenMargin;
+
+    };
+
+    /// <summary>
+    /// SPMM合约参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSPMMInstParamField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// SPMM合约保证金算法
+        /// </summary>
+        public EnumInstMarginCalIDType InstMarginCalID;
+
+        /// <summary>
+        /// 商品组代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CommodityID;
+
+        /// <summary>
+        /// 商品群代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CommodityGroupID;
+
+    };
+
+    /// <summary>
+    /// SPMM产品参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSPMMProductParamField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductID;
+
+        /// <summary>
+        /// 商品组代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CommodityID;
+
+        /// <summary>
+        /// 商品群代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CommodityGroupID;
+
+    };
+
+    /// <summary>
+    /// 席位与交易中心对应关系维护查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryTraderAssignField
+    {
+        /// <summary>
+        /// 交易员代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
+        public string TraderID;
+
+    };
+
+    /// <summary>
+    /// 席位与交易中心对应关系
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcTraderAssignField
+    {
+        /// <summary>
+        /// 应用单元代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 交易所交易员代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
+        public string TraderID;
+
+        /// <summary>
+        /// 会员代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string ParticipantID;
+
+        /// <summary>
+        /// 交易中心代码
+        /// </summary>
+        public int DRIdentityID;
+
+    };
+
+    /// <summary>
+    /// 投资者申报费阶梯收取设置
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcInvestorInfoCntSettingField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 商品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductID;
+
+        /// <summary>
+        /// 是否收取申报费
+        /// </summary>
+        public int IsCalInfoComm;
+
+        /// <summary>
+        /// 是否限制信息量
+        /// </summary>
+        public int IsLimitInfoMax;
+
+        /// <summary>
+        /// 信息量限制笔数
+        /// </summary>
+        public int InfoMaxLimit;
+
+    };
+
+    /// <summary>
+    /// RCAMS产品组合信息
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcRCAMSCombProductInfoField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductID;
+
+        /// <summary>
+        /// 商品组代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProductID;
+
+        /// <summary>
+        /// 商品群代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductGroupID;
+
+    };
+
+    /// <summary>
+    /// RCAMS同合约风险对冲参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcRCAMSInstrParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductID;
+
+        /// <summary>
+        /// 同合约风险对冲比率
+        /// </summary>
+        public double HedgeRate;
+
+    };
+
+    /// <summary>
+    /// RCAMS品种内风险对冲参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcRCAMSIntraParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 产品组合代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProductID;
+
+        /// <summary>
+        /// 品种内对冲比率
+        /// </summary>
+        public double HedgeRate;
+
+    };
+
+    /// <summary>
+    /// RCAMS跨品种风险折抵参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcRCAMSInterParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 商品群代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductGroupID;
+
+        /// <summary>
+        /// 优先级
+        /// </summary>
+        public int Priority;
+
+        /// <summary>
+        /// 折抵率
+        /// </summary>
+        public double CreditRate;
+
+        /// <summary>
+        /// 产品组合代码1
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProduct1;
+
+        /// <summary>
+        /// 产品组合代码2
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProduct2;
+
+    };
+
+    /// <summary>
+    /// RCAMS空头期权风险调整参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcRCAMSShortOptAdjustParamField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 产品组合代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProductID;
+
+        /// <summary>
+        /// 投套标志
+        /// </summary>
+        public EnumHedgeFlagType HedgeFlag;
+
+        /// <summary>
+        /// 空头期权风险调整标准
+        /// </summary>
+        public double AdjustValue;
+
+    };
+
+    /// <summary>
+    /// RCAMS策略组合持仓
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcRCAMSInvestorCombPositionField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 投套标志
+        /// </summary>
+        public EnumHedgeFlagType HedgeFlag;
+
+        /// <summary>
+        /// 持仓多空方向
+        /// </summary>
+        public EnumPosiDirectionType PosiDirection;
+
+        /// <summary>
+        /// 组合合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string CombInstrumentID;
+
+        /// <summary>
+        /// 单腿编号
+        /// </summary>
+        public int LegID;
+
+        /// <summary>
+        /// 交易所组合合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// 持仓量
+        /// </summary>
+        public int TotalAmt;
+
+        /// <summary>
+        /// 交易所保证金
+        /// </summary>
+        public double ExchMargin;
+
+        /// <summary>
+        /// 投资者保证金
+        /// </summary>
+        public double Margin;
+
+    };
+
+    /// <summary>
+    /// 投资者品种RCAMS保证金
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcInvestorProdRCAMSMarginField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 产品组合代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProductID;
+
+        /// <summary>
+        /// 投套标志
+        /// </summary>
+        public EnumHedgeFlagType HedgeFlag;
+
+        /// <summary>
+        /// 商品群代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductGroupID;
+
+        /// <summary>
+        /// 品种组合前风险
+        /// </summary>
+        public double RiskBeforeDiscount;
+
+        /// <summary>
+        /// 同合约对冲风险
+        /// </summary>
+        public double IntraInstrRisk;
+
+        /// <summary>
+        /// 品种买持仓风险
+        /// </summary>
+        public double BPosRisk;
+
+        /// <summary>
+        /// 品种卖持仓风险
+        /// </summary>
+        public double SPosRisk;
+
+        /// <summary>
+        /// 品种内对冲风险
+        /// </summary>
+        public double IntraProdRisk;
+
+        /// <summary>
+        /// 品种净持仓风险
+        /// </summary>
+        public double NetRisk;
+
+        /// <summary>
+        /// 品种间对冲风险
+        /// </summary>
+        public double InterProdRisk;
+
+        /// <summary>
+        /// 空头期权风险调整
+        /// </summary>
+        public double ShortOptRiskAdj;
+
+        /// <summary>
+        /// 空头期权权利金
+        /// </summary>
+        public double OptionRoyalty;
+
+        /// <summary>
+        /// 大边组合平仓冻结保证金
+        /// </summary>
+        public double MMSACloseFrozenMargin;
+
+        /// <summary>
+        /// 平策略组合冻结保证金
+        /// </summary>
+        public double CloseCombFrozenMargin;
+
+        /// <summary>
+        /// 平仓冻结保证金
+        /// </summary>
+        public double CloseFrozenMargin;
+
+        /// <summary>
+        /// 大边组合开仓冻结保证金
+        /// </summary>
+        public double MMSAOpenFrozenMargin;
+
+        /// <summary>
+        /// 交割月期货开仓冻结保证金
+        /// </summary>
+        public double DeliveryOpenFrozenMargin;
+
+        /// <summary>
+        /// 开仓冻结保证金
+        /// </summary>
+        public double OpenFrozenMargin;
+
+        /// <summary>
+        /// 投资者冻结保证金
+        /// </summary>
+        public double UseFrozenMargin;
+
+        /// <summary>
+        /// 大边组合交易所持仓保证金
+        /// </summary>
+        public double MMSAExchMargin;
+
+        /// <summary>
+        /// 交割月期货交易所持仓保证金
+        /// </summary>
+        public double DeliveryExchMargin;
+
+        /// <summary>
+        /// 策略组合交易所保证金
+        /// </summary>
+        public double CombExchMargin;
+
+        /// <summary>
+        /// 交易所持仓保证金
+        /// </summary>
+        public double ExchMargin;
+
+        /// <summary>
+        /// 投资者持仓保证金
+        /// </summary>
+        public double UseMargin;
+
+    };
+
+    /// <summary>
+    /// RCAMS产品组合信息查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryRCAMSCombProductInfoField
+    {
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductID;
+
+        /// <summary>
+        /// 商品组代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProductID;
+
+        /// <summary>
+        /// 商品群代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductGroupID;
+
+    };
+
+    /// <summary>
+    /// RCAMS同合约风险对冲参数查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryRCAMSInstrParameterField
+    {
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductID;
+
+    };
+
+    /// <summary>
+    /// RCAMS品种内风险对冲参数查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryRCAMSIntraParameterField
+    {
+        /// <summary>
+        /// 产品组合代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProductID;
+
+    };
+
+    /// <summary>
+    /// RCAMS跨品种风险折抵参数查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryRCAMSInterParameterField
+    {
+        /// <summary>
+        /// 商品群代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductGroupID;
+
+        /// <summary>
+        /// 产品组合代码1
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProduct1;
+
+        /// <summary>
+        /// 产品组合代码2
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProduct2;
+
+    };
+
+    /// <summary>
+    /// RCAMS空头期权风险调整参数查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryRCAMSShortOptAdjustParamField
+    {
+        /// <summary>
+        /// 产品组合代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProductID;
+
+    };
+
+    /// <summary>
+    /// RCAMS策略组合持仓查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryRCAMSInvestorCombPositionField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 组合合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string CombInstrumentID;
+
+    };
+
+    /// <summary>
+    /// 投资者品种RCAMS保证金查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryInvestorProdRCAMSMarginField
+    {
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 产品组合代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProductID;
+
+        /// <summary>
+        /// 商品群代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductGroupID;
+
+    };
+
+    /// <summary>
+    /// RULE合约保证金参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcRULEInstrParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 合约类型
+        /// </summary>
+        public EnumInstrumentClassType InstrumentClass;
+
+        /// <summary>
+        /// 标准合约
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string StdInstrumentID;
+
+        /// <summary>
+        /// 投机买折算系数
+        /// </summary>
+        public double BSpecRatio;
+
+        /// <summary>
+        /// 投机卖折算系数
+        /// </summary>
+        public double SSpecRatio;
+
+        /// <summary>
+        /// 套保买折算系数
+        /// </summary>
+        public double BHedgeRatio;
+
+        /// <summary>
+        /// 套保卖折算系数
+        /// </summary>
+        public double SHedgeRatio;
+
+        /// <summary>
+        /// 买附加风险保证金
+        /// </summary>
+        public double BAddOnMargin;
+
+        /// <summary>
+        /// 卖附加风险保证金
+        /// </summary>
+        public double SAddOnMargin;
+
+        /// <summary>
+        /// 商品群号
+        /// </summary>
+        public int CommodityGroupID;
+
+    };
+
+    /// <summary>
+    /// RULE品种内对锁仓折扣参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcRULEIntraParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+        /// <summary>
+        /// 标准合约
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string StdInstrumentID;
+
+        /// <summary>
+        /// 标准合约保证金
+        /// </summary>
+        public double StdInstrMargin;
+
+        /// <summary>
+        /// 一般月份合约组合保证金系数
+        /// </summary>
+        public double UsualIntraRate;
+
+        /// <summary>
+        /// 临近交割合约组合保证金系数
+        /// </summary>
+        public double DeliveryIntraRate;
+
+    };
+
+    /// <summary>
+    /// RULE跨品种抵扣参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcRULEInterParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 优先级
+        /// </summary>
+        public int SpreadId;
+
+        /// <summary>
+        /// 品种间对锁仓费率折扣比例
+        /// </summary>
+        public double InterRate;
+
+        /// <summary>
+        /// 第一腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg1ProdFamilyCode;
+
+        /// <summary>
+        /// 第二腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg2ProdFamilyCode;
+
+        /// <summary>
+        /// 腿1比例系数
+        /// </summary>
+        public int Leg1PropFactor;
+
+        /// <summary>
+        /// 腿2比例系数
+        /// </summary>
+        public int Leg2PropFactor;
+
+        /// <summary>
+        /// 商品群号
+        /// </summary>
+        public int CommodityGroupID;
+
+        /// <summary>
+        /// 商品群名称
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
+        public string CommodityGroupName;
+
+    };
+
+    /// <summary>
+    /// RULE合约保证金参数查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryRULEInstrParameterField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+    };
+
+    /// <summary>
+    /// RULE品种内对锁仓折扣参数查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryRULEIntraParameterField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+    };
+
+    /// <summary>
+    /// RULE跨品种抵扣参数查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryRULEInterParameterField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 第一腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg1ProdFamilyCode;
+
+        /// <summary>
+        /// 第二腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg2ProdFamilyCode;
+
+        /// <summary>
+        /// 商品群号
+        /// </summary>
+        public int CommodityGroupID;
+
+    };
+
+    /// <summary>
+    /// 投资者产品RULE保证金
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcInvestorProdRULEMarginField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+        /// <summary>
+        /// 合约类型
+        /// </summary>
+        public EnumInstrumentClassType InstrumentClass;
+
+        /// <summary>
+        /// 商品群号
+        /// </summary>
+        public int CommodityGroupID;
+
+        /// <summary>
+        /// 买标准持仓
+        /// </summary>
+        public double BStdPosition;
+
+        /// <summary>
+        /// 卖标准持仓
+        /// </summary>
+        public double SStdPosition;
+
+        /// <summary>
+        /// 买标准开仓冻结
+        /// </summary>
+        public double BStdOpenFrozen;
+
+        /// <summary>
+        /// 卖标准开仓冻结
+        /// </summary>
+        public double SStdOpenFrozen;
+
+        /// <summary>
+        /// 买标准平仓冻结
+        /// </summary>
+        public double BStdCloseFrozen;
+
+        /// <summary>
+        /// 卖标准平仓冻结
+        /// </summary>
+        public double SStdCloseFrozen;
+
+        /// <summary>
+        /// 品种内对冲标准持仓
+        /// </summary>
+        public double IntraProdStdPosition;
+
+        /// <summary>
+        /// 品种内单腿标准持仓
+        /// </summary>
+        public double NetStdPosition;
+
+        /// <summary>
+        /// 品种间对冲标准持仓
+        /// </summary>
+        public double InterProdStdPosition;
+
+        /// <summary>
+        /// 单腿标准持仓
+        /// </summary>
+        public double SingleStdPosition;
+
+        /// <summary>
+        /// 品种内对锁保证金
+        /// </summary>
+        public double IntraProdMargin;
+
+        /// <summary>
+        /// 品种间对锁保证金
+        /// </summary>
+        public double InterProdMargin;
+
+        /// <summary>
+        /// 跨品种单腿保证金
+        /// </summary>
+        public double SingleMargin;
+
+        /// <summary>
+        /// 非组合合约保证金
+        /// </summary>
+        public double NonCombMargin;
+
+        /// <summary>
+        /// 附加保证金
+        /// </summary>
+        public double AddOnMargin;
+
+        /// <summary>
+        /// 交易所保证金
+        /// </summary>
+        public double ExchMargin;
+
+        /// <summary>
+        /// 附加冻结保证金
+        /// </summary>
+        public double AddOnFrozenMargin;
+
+        /// <summary>
+        /// 开仓冻结保证金
+        /// </summary>
+        public double OpenFrozenMargin;
+
+        /// <summary>
+        /// 平仓冻结保证金
+        /// </summary>
+        public double CloseFrozenMargin;
+
+        /// <summary>
+        /// 品种保证金
+        /// </summary>
+        public double Margin;
+
+        /// <summary>
+        /// 冻结保证金
+        /// </summary>
+        public double FrozenMargin;
+
+    };
+
+    /// <summary>
+    /// 投资者产品RULE保证金查询
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcQryInvestorProdRULEMarginField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+        /// <summary>
+        /// 商品群号
+        /// </summary>
+        public int CommodityGroupID;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平SPBM组合保证金套餐
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaSPBMPortfDefinitionField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 组合保证金套餐代码
+        /// </summary>
+        public int PortfolioDefID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+        /// <summary>
+        /// 是否启用SPBM
+        /// </summary>
+        public int IsSPBM;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平投资者SPBM套餐选择
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaSPBMInvstPortfDefField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 组合保证金套餐代码
+        /// </summary>
+        public int PortfolioDefID;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平SPBM期货合约保证金参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaSPBMFutureParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+        /// <summary>
+        /// 期货合约因子
+        /// </summary>
+        public int Cvf;
+
+        /// <summary>
+        /// 阶段标识
+        /// </summary>
+        public EnumTimeRangeType TimeRange;
+
+        /// <summary>
+        /// 品种保证金标准
+        /// </summary>
+        public double MarginRate;
+
+        /// <summary>
+        /// 期货合约内部对锁仓费率折扣比例
+        /// </summary>
+        public double LockRateX;
+
+        /// <summary>
+        /// 提高保证金标准
+        /// </summary>
+        public double AddOnRate;
+
+        /// <summary>
+        /// 昨结算价
+        /// </summary>
+        public double PreSettlementPrice;
+
+        /// <summary>
+        /// 期货合约内部对锁仓附加费率折扣比例
+        /// </summary>
+        public double AddOnLockRateX2;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平SPBM期权合约保证金参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaSPBMOptionParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+        /// <summary>
+        /// 期权合约因子
+        /// </summary>
+        public int Cvf;
+
+        /// <summary>
+        /// 期权冲抵价格
+        /// </summary>
+        public double DownPrice;
+
+        /// <summary>
+        /// Delta值
+        /// </summary>
+        public double Delta;
+
+        /// <summary>
+        /// 卖方期权风险转换最低值
+        /// </summary>
+        public double SlimiDelta;
+
+        /// <summary>
+        /// 昨结算价
+        /// </summary>
+        public double PreSettlementPrice;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平SPBM品种内对锁仓折扣参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaSPBMIntraParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+        /// <summary>
+        /// 品种内合约间对锁仓费率折扣比例
+        /// </summary>
+        public double IntraRateY;
+
+        /// <summary>
+        /// 品种内合约间对锁仓附加费率折扣比例
+        /// </summary>
+        public double AddOnIntraRateY2;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平SPBM跨品种抵扣参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaSPBMInterParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 优先级
+        /// </summary>
+        public int SpreadId;
+
+        /// <summary>
+        /// 品种间对锁仓费率折扣比例
+        /// </summary>
+        public double InterRateZ;
+
+        /// <summary>
+        /// 第一腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg1ProdFamilyCode;
+
+        /// <summary>
+        /// 第二腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg2ProdFamilyCode;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平SPBM附加跨品种抵扣参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaSPBMAddOnInterParamField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 优先级
+        /// </summary>
+        public int SpreadId;
+
+        /// <summary>
+        /// 品种间对锁仓附加费率折扣比例
+        /// </summary>
+        public double AddOnInterRateZ2;
+
+        /// <summary>
+        /// 第一腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg1ProdFamilyCode;
+
+        /// <summary>
+        /// 第二腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg2ProdFamilyCode;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平SPMM合约参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaSPMMInstParamField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// SPMM合约保证金算法
+        /// </summary>
+        public EnumInstMarginCalIDType InstMarginCalID;
+
+        /// <summary>
+        /// 商品组代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CommodityID;
+
+        /// <summary>
+        /// 商品群代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CommodityGroupID;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平SPMM产品相关参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaSPMMProductParamField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductID;
+
+        /// <summary>
+        /// 商品组代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CommodityID;
+
+        /// <summary>
+        /// 商品群代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CommodityGroupID;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平投资者SPMM模板选择
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaInvestorSPMMModelField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// SPMM模板ID
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string SPMMModelID;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平SPMM模板参数设置
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaSPMMModelParamField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// SPMM模板ID
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]
+        public string SPMMModelID;
+
+        /// <summary>
+        /// 商品群代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CommodityGroupID;
+
+        /// <summary>
+        /// SPMM品种内跨期优惠系数
+        /// </summary>
+        public double IntraCommodityRate;
+
+        /// <summary>
+        /// SPMM品种间优惠系数
+        /// </summary>
+        public double InterCommodityRate;
+
+        /// <summary>
+        /// SPMM期权优惠系数
+        /// </summary>
+        public double OptionDiscountRate;
+
+        /// <summary>
+        /// 商品群最小保证金比例
+        /// </summary>
+        public double MiniMarginRatio;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平RCAMS产品组合信息
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaRCAMSCombProdInfoField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductID;
+
+        /// <summary>
+        /// 商品组代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProductID;
+
+        /// <summary>
+        /// 商品群代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductGroupID;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平RCAMS同合约风险对冲参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaRCAMSInstrParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 产品代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductID;
+
+        /// <summary>
+        /// 同合约风险对冲比率
+        /// </summary>
+        public double HedgeRate;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平RCAMS品种内风险对冲参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaRCAMSIntraParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 产品组合代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProductID;
+
+        /// <summary>
+        /// 品种内对冲比率
+        /// </summary>
+        public double HedgeRate;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平RCAMS跨品种风险折抵参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaRCAMSInterParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 商品群代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProductGroupID;
+
+        /// <summary>
+        /// 优先级
+        /// </summary>
+        public int Priority;
+
+        /// <summary>
+        /// 折抵率
+        /// </summary>
+        public double CreditRate;
+
+        /// <summary>
+        /// 产品组合代码1
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProduct1;
+
+        /// <summary>
+        /// 产品组合代码2
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProduct2;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平RCAMS空头期权风险调整参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaRCAMSSOptAdjParamField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 产品组合代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string CombProductID;
+
+        /// <summary>
+        /// 投套标志
+        /// </summary>
+        public EnumHedgeFlagType HedgeFlag;
+
+        /// <summary>
+        /// 空头期权风险调整标准
+        /// </summary>
+        public double AdjustValue;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平RCAMS策略组合规则明细
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaRCAMSCombRuleDtlField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 策略产品
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 41)]
+        public string ProdGroup;
+
+        /// <summary>
+        /// 策略id
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 51)]
+        public string RuleId;
+
+        /// <summary>
+        /// 优先级
+        /// </summary>
+        public int Priority;
+
+        /// <summary>
+        /// 投套标志
+        /// </summary>
+        public EnumHedgeFlagType HedgeFlag;
+
+        /// <summary>
+        /// 组合保证金标准
+        /// </summary>
+        public double CombMargin;
+
+        /// <summary>
+        /// 交易所组合合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// 单腿编号
+        /// </summary>
+        public int LegID;
+
+        /// <summary>
+        /// 单腿合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string LegInstrumentID;
+
+        /// <summary>
+        /// 买卖方向
+        /// </summary>
+        public EnumDirectionType Direction;
+
+        /// <summary>
+        /// 单腿乘数
+        /// </summary>
+        public int LegMultiple;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平RCAMS策略组合持仓
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaRCAMSInvstCombPosField
+    {
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 经纪公司代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
+        public string BrokerID;
+
+        /// <summary>
+        /// 投资者代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 13)]
+        public string InvestorID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 投套标志
+        /// </summary>
+        public EnumHedgeFlagType HedgeFlag;
+
+        /// <summary>
+        /// 持仓多空方向
+        /// </summary>
+        public EnumPosiDirectionType PosiDirection;
+
+        /// <summary>
+        /// 组合合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string CombInstrumentID;
+
+        /// <summary>
+        /// 单腿编号
+        /// </summary>
+        public int LegID;
+
+        /// <summary>
+        /// 交易所组合合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ExchangeInstID;
+
+        /// <summary>
+        /// 持仓量
+        /// </summary>
+        public int TotalAmt;
+
+        /// <summary>
+        /// 交易所保证金
+        /// </summary>
+        public double ExchMargin;
+
+        /// <summary>
+        /// 投资者保证金
+        /// </summary>
+        public double Margin;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平RULE合约保证金参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaRULEInstrParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 合约代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string InstrumentID;
+
+        /// <summary>
+        /// 合约类型
+        /// </summary>
+        public EnumInstrumentClassType InstrumentClass;
+
+        /// <summary>
+        /// 标准合约
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string StdInstrumentID;
+
+        /// <summary>
+        /// 投机买折算系数
+        /// </summary>
+        public double BSpecRatio;
+
+        /// <summary>
+        /// 投机卖折算系数
+        /// </summary>
+        public double SSpecRatio;
+
+        /// <summary>
+        /// 套保买折算系数
+        /// </summary>
+        public double BHedgeRatio;
+
+        /// <summary>
+        /// 套保卖折算系数
+        /// </summary>
+        public double SHedgeRatio;
+
+        /// <summary>
+        /// 买附加风险保证金
+        /// </summary>
+        public double BAddOnMargin;
+
+        /// <summary>
+        /// 卖附加风险保证金
+        /// </summary>
+        public double SAddOnMargin;
+
+        /// <summary>
+        /// 商品群号
+        /// </summary>
+        public int CommodityGroupID;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平RULE品种内对锁仓折扣参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaRULEIntraParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 品种代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string ProdFamilyCode;
+
+        /// <summary>
+        /// 标准合约
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string StdInstrumentID;
+
+        /// <summary>
+        /// 标准合约保证金
+        /// </summary>
+        public double StdInstrMargin;
+
+        /// <summary>
+        /// 一般月份合约组合保证金系数
+        /// </summary>
+        public double UsualIntraRate;
+
+        /// <summary>
+        /// 临近交割合约组合保证金系数
+        /// </summary>
+        public double DeliveryIntraRate;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
+
+    };
+
+    /// <summary>
+    /// 风险结算追平RULE跨品种抵扣参数
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public class ThostFtdcSyncDeltaRULEInterParameterField
+    {
+        /// <summary>
+        /// 交易日
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string TradingDay;
+
+        /// <summary>
+        /// 交易所代码
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 9)]
+        public string ExchangeID;
+
+        /// <summary>
+        /// 优先级
+        /// </summary>
+        public int SpreadId;
+
+        /// <summary>
+        /// 品种间对锁仓费率折扣比例
+        /// </summary>
+        public double InterRate;
+
+        /// <summary>
+        /// 第一腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg1ProdFamilyCode;
+
+        /// <summary>
+        /// 第二腿构成品种
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 81)]
+        public string Leg2ProdFamilyCode;
+
+        /// <summary>
+        /// 腿1比例系数
+        /// </summary>
+        public int Leg1PropFactor;
+
+        /// <summary>
+        /// 腿2比例系数
+        /// </summary>
+        public int Leg2PropFactor;
+
+        /// <summary>
+        /// 商品群号
+        /// </summary>
+        public int CommodityGroupID;
+
+        /// <summary>
+        /// 商品群名称
+        /// </summary>
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 21)]
+        public string CommodityGroupName;
+
+        /// <summary>
+        /// 操作标志
+        /// </summary>
+        public EnumActionDirectionType ActionDirection;
+
+        /// <summary>
+        /// 追平序号
+        /// </summary>
+        public int SyncDeltaSequenceNo;
 
     };
 

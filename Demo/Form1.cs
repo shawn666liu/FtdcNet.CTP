@@ -73,6 +73,7 @@ namespace Demo
 
         void DataApi_OnFrontEvent(object sender, OnFrontEventArgs e)
         {
+            Console.WriteLine("DataApi_OnFrontEvent " + e.EventType.ToString());
             switch (e.EventType)
             {
                 case EnumOnFrontType.OnFrontConnected:

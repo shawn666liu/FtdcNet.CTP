@@ -1,4 +1,4 @@
-## FtdcNet.CTP
+ï»¿## FtdcNet.CTP
 
 .Net wrapper for ftdc2c_ctp. Support x86/x64/AnyCPU.
 
@@ -8,9 +8,25 @@ Licensed under the [MIT License](http://www.mit-license.org/)
 
 ## Version
 git branche  => CTP version  
+* v6.7.2 &nbsp;  => CTP version is V6.7.2 &nbsp; (20230913) 
 * v6.5.1 &nbsp;  => CTP version is V6.5.1 &nbsp; (20200908) 
 * v6.3.19 => CTP version is V6.3.19 (20200106) 
 * v6.3.15 => CTP version is V6.3.15 (20190220) 
+
+## Use NuGet (recommend)    
+  https://www.nuget.org/packages/FtdcNet.CTP  
+
+ç‰ˆæœ¬å¯¹åº”
+* FtdcNet.CTP.1.4.0.nupkg  => CTP v6.7.2
+* FtdcNet.CTP.1.3.0.nupkg  => CTP v6.5.1
+* FtdcNet.CTP.1.2.0.nupkg  => CTP v6.3.19
+* FtdcNet.CTP.1.1.0.nupkg  => CTP v6.3.15
+
+æŒ‰æ‰€éœ€CTPç‰ˆæœ¬å®‰è£…  
+* Install-Package FtdcNet.CTP -Version 1.4.0
+* Install-Package FtdcNet.CTP -Version 1.3.0
+
+NetCoreåŠNet5ä¹‹åŽé¡¹ç›®ï¼Œä½¿ç”¨NuGet Manageræ·»åŠ Packageä¹‹åŽï¼Œä¼šè‡ªåŠ¨æ‹·è´æ‰€éœ€æ–‡ä»¶åˆ°å¯æ‰§è¡Œç›®å½•ä¸‹çš„runtimesç›®å½•
 
 ## Build from source   
   you need to specify --recursive to clone submodules as well.  
@@ -22,28 +38,33 @@ git branche  => CTP version
   cd ftdc2c_ctp  
   git checkout v6.3.15    
 
-## Use NuGet (recommend)    
-  https://www.nuget.org/packages/FtdcNet.CTP  
 
-°æ±¾¶ÔÓ¦
-* FtdcNet.CTP.1.3.0.nupkg  => CTP v6.5.1
-* FtdcNet.CTP.1.2.0.nupkg  => CTP v6.3.19
-* FtdcNet.CTP.1.1.0.nupkg  => CTP v6.3.15
 
-°´ËùÐèCTP°æ±¾°²×°  
-* Install-Package FtdcNet.CTP -Version 1.3.0
-* Install-Package FtdcNet.CTP -Version 1.2.0
-* Install-Package FtdcNet.CTP -Version 1.1.0
-
-Ê¹ÓÃ
-
-* NetCore¼°Net5ÏîÄ¿£¬Ê¹ÓÃNuGet ManagerÌí¼ÓPackageÖ®ºó£¬»á×Ô¶¯¿½±´ËùÐèÎÄ¼þµ½¿ÉÖ´ÐÐÄ¿Â¼ÏÂµÄruntimesÄ¿Â¼
-* Net FrameworkÏîÄ¿£¬Èç¹ûplatformÊÇAnyCPU»òÕßÊÇVS2013ÏîÄ¿£¬ÐèÒªÊÖ¶¯¿½±´runtimesÄ¿Â¼µ½¿ÉÖ´ÐÐÎÄ¼þµÄÊä³öÄ¿Â¼£¬  
-  Ìí¼Ó·½·¨Ò»£º vsÏîÄ¿Ìí¼Ó°üºó£¬»áÔÚC:\\Users\\????\\.nuget\\packages\\ftdcnet.ctp ÏÂ±£Áôftdcnet.ctp.???.nupkg  
-  Ìí¼Ó·½·¨¶þ£º ´Óhttps://www.nuget.org/packages/FtdcNet.CTP Ò³Ãæ, Ñ¡ÖÐºÏÊÊ°æ±¾, µã»÷ÓÒ±ß"Download package"ÏÂÔØnupkg°ü  
-  Ê¹ÓÃ7zip»òÕßwinzip´ò¿ªÏÂÔØºóµÄ°ü£¬±ÈÈç ftdcnet.ctp.1.2.0.nupkg ÎÄ¼þ£¬ÌáÈ¡runtimesÄ¿Â¼µ½ÄãµÄexeËùÔÚÄ¿Â¼  
-* Net FrameworkÏîÄ¿£¬Èç¹ûÊÇVS2019£¬¿ÉÒÔ²»Ê¹ÓÃAnyCPU£¬platformÑ¡Ôñx86/x64Ê±£¬VS»á×Ô¶¯¸´ÖÆÏàÓ¦µÄdllµ½exeÄ¿Â¼£¬¶øÎÞÐèruntimesÄ¿Â¼
+## Net Framework Project
+* Net Frameworké¡¹ç›®ï¼Œå¦‚æžœplatformæ˜¯AnyCPUæˆ–è€…æ˜¯VS2013é¡¹ç›®ï¼Œéœ€è¦æ‰‹åŠ¨æ‹·è´runtimesç›®å½•åˆ°å¯æ‰§è¡Œæ–‡ä»¶çš„è¾“å‡ºç›®å½•ï¼Œ  
+  æ·»åŠ æ–¹æ³•ä¸€ï¼š vsé¡¹ç›®æ·»åŠ åŒ…åŽï¼Œä¼šåœ¨C:\\Users\\????\\.nuget\\packages\\ftdcnet.ctp ä¸‹ä¿ç•™ftdcnet.ctp.???.nupkg  
+  æ·»åŠ æ–¹æ³•äºŒï¼š ä»Žhttps://www.nuget.org/packages/FtdcNet.CTP é¡µé¢, é€‰ä¸­åˆé€‚ç‰ˆæœ¬, ç‚¹å‡»å³è¾¹"Download package"ä¸‹è½½nupkgåŒ…  
+  ä½¿ç”¨7zipæˆ–è€…winzipæ‰“å¼€ä¸‹è½½åŽçš„åŒ…ï¼Œæ¯”å¦‚ ftdcnet.ctp.1.2.0.nupkg æ–‡ä»¶ï¼Œæå–runtimesç›®å½•åˆ°ä½ çš„exeæ‰€åœ¨ç›®å½•  
+* Net Frameworké¡¹ç›®ï¼Œå¦‚æžœæ˜¯VS2019ï¼Œå¯ä»¥ä¸ä½¿ç”¨AnyCPUï¼Œplatformé€‰æ‹©x86/x64æ—¶ï¼ŒVSä¼šè‡ªåŠ¨å¤åˆ¶ç›¸åº”çš„dllåˆ°exeç›®å½•ï¼Œè€Œæ— éœ€runtimesç›®å½•
   
 
 ## ChangeLog
-  See [ChangeLog.md](ChangeLog.md) 
+
+#### 2025-12-26
+- branch v6.7.2 => nuget package 1.4.0
+- broken changes:  
+  1. EnumXXEvent.None removed, use EnumXXEvent.MaxValue as an invalid value  
+  2. Some fileds name changed from `Single,Short,Long` to `Single_,Short_,Long_` since they are key words of C#
+
+#### 2021-02-26
+- try to fix 'dll not found' issue
+- version number updated.
+
+#### 2021-02-09
+- ftdc2c_ctp as submodule
+- provide v6.3.15/v6.3.19/v6.5.1 branches
+- proivde nupkg 
+
+#### 2019-05-12
+- ftdc2c_ctp integrated.
+- update to CTP v6.3.15

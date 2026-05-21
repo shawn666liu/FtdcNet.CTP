@@ -125,7 +125,7 @@
             this.txtToSubscribe.Name = "txtToSubscribe";
             this.txtToSubscribe.Size = new System.Drawing.Size(305, 21);
             this.txtToSubscribe.TabIndex = 21;
-            this.txtToSubscribe.Text = "IF2105,ru2105,au2106,SR105,a2105";
+            this.txtToSubscribe.Text = "IF2605,ru2605,au2606,SR605,a2605";
             // 
             // groupBox2
             // 
@@ -159,7 +159,7 @@
             this.txtQryMktData.Name = "txtQryMktData";
             this.txtQryMktData.Size = new System.Drawing.Size(135, 21);
             this.txtQryMktData.TabIndex = 22;
-            this.txtQryMktData.Text = "ru2105";
+            this.txtQryMktData.Text = "ru2605";
             // 
             // chkSubmitUserSystemInfo
             // 
@@ -268,7 +268,7 @@
             this.txtFrontMD.Name = "txtFrontMD";
             this.txtFrontMD.Size = new System.Drawing.Size(349, 21);
             this.txtFrontMD.TabIndex = 2;
-            this.txtFrontMD.Text = "tcp://180.168.146.187:10111";
+            this.txtFrontMD.Text = "tcp://182.254.243.31:30011";
             // 
             // label5
             // 
@@ -285,7 +285,7 @@
             this.txtFrontTD.Name = "txtFrontTD";
             this.txtFrontTD.Size = new System.Drawing.Size(349, 21);
             this.txtFrontTD.TabIndex = 1;
-            this.txtFrontTD.Text = "tcp://180.168.146.187:10101";
+            this.txtFrontTD.Text = "tcp://182.254.243.31:30001";
             // 
             // label3
             // 

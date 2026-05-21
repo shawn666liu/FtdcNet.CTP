@@ -51,7 +51,7 @@ namespace CTP
         /// <returns>0 为正确，非0为错误</returns>
         public static int CTP_GetSystemInfo(byte[] pSystemInfo, ref int nLen)
         {
-            return Interop.CTPGetSystemInfo(pSystemInfo, ref nLen);
+            return Interop.CTP_GetSystemInfo(pSystemInfo, ref nLen);
         }
         /// <summary>
         ///创建TraderApi
@@ -510,6 +510,14 @@ namespace CTP
         }
 
         /// <summary>
+        ///请求查询交易员报盘机
+        /// </summary>
+        public int ReqQryTraderOffer(ThostFtdcQryTraderOfferField pQryTraderOffer, int nRequestID)
+        {
+            return Interop.TdReqQryTraderOffer(Handle, pQryTraderOffer, nRequestID);
+        }
+
+        /// <summary>
         ///请求查询投资者结算结果
         /// </summary>
         public int ReqQrySettlementInfo(ThostFtdcQrySettlementInfoField pQrySettlementInfo, int nRequestID)
@@ -859,6 +867,214 @@ namespace CTP
         public int ReqQryCombPromotionParam(ThostFtdcQryCombPromotionParamField pQryCombPromotionParam, int nRequestID)
         {
             return Interop.TdReqQryCombPromotionParam(Handle, pQryCombPromotionParam, nRequestID);
+        }
+
+        /// <summary>
+        ///投资者风险结算持仓查询
+        /// </summary>
+        public int ReqQryRiskSettleInvstPosition(ThostFtdcQryRiskSettleInvstPositionField pQryRiskSettleInvstPosition, int nRequestID)
+        {
+            return Interop.TdReqQryRiskSettleInvstPosition(Handle, pQryRiskSettleInvstPosition, nRequestID);
+        }
+
+        /// <summary>
+        ///风险结算产品查询
+        /// </summary>
+        public int ReqQryRiskSettleProductStatus(ThostFtdcQryRiskSettleProductStatusField pQryRiskSettleProductStatus, int nRequestID)
+        {
+            return Interop.TdReqQryRiskSettleProductStatus(Handle, pQryRiskSettleProductStatus, nRequestID);
+        }
+
+        /// <summary>
+        ///SPBM期货合约参数查询
+        /// </summary>
+        public int ReqQrySPBMFutureParameter(ThostFtdcQrySPBMFutureParameterField pQrySPBMFutureParameter, int nRequestID)
+        {
+            return Interop.TdReqQrySPBMFutureParameter(Handle, pQrySPBMFutureParameter, nRequestID);
+        }
+
+        /// <summary>
+        ///SPBM期权合约参数查询
+        /// </summary>
+        public int ReqQrySPBMOptionParameter(ThostFtdcQrySPBMOptionParameterField pQrySPBMOptionParameter, int nRequestID)
+        {
+            return Interop.TdReqQrySPBMOptionParameter(Handle, pQrySPBMOptionParameter, nRequestID);
+        }
+
+        /// <summary>
+        ///SPBM品种内对锁仓折扣参数查询
+        /// </summary>
+        public int ReqQrySPBMIntraParameter(ThostFtdcQrySPBMIntraParameterField pQrySPBMIntraParameter, int nRequestID)
+        {
+            return Interop.TdReqQrySPBMIntraParameter(Handle, pQrySPBMIntraParameter, nRequestID);
+        }
+
+        /// <summary>
+        ///SPBM跨品种抵扣参数查询
+        /// </summary>
+        public int ReqQrySPBMInterParameter(ThostFtdcQrySPBMInterParameterField pQrySPBMInterParameter, int nRequestID)
+        {
+            return Interop.TdReqQrySPBMInterParameter(Handle, pQrySPBMInterParameter, nRequestID);
+        }
+
+        /// <summary>
+        ///SPBM组合保证金套餐查询
+        /// </summary>
+        public int ReqQrySPBMPortfDefinition(ThostFtdcQrySPBMPortfDefinitionField pQrySPBMPortfDefinition, int nRequestID)
+        {
+            return Interop.TdReqQrySPBMPortfDefinition(Handle, pQrySPBMPortfDefinition, nRequestID);
+        }
+
+        /// <summary>
+        ///投资者SPBM套餐选择查询
+        /// </summary>
+        public int ReqQrySPBMInvestorPortfDef(ThostFtdcQrySPBMInvestorPortfDefField pQrySPBMInvestorPortfDef, int nRequestID)
+        {
+            return Interop.TdReqQrySPBMInvestorPortfDef(Handle, pQrySPBMInvestorPortfDef, nRequestID);
+        }
+
+        /// <summary>
+        ///投资者新型组合保证金系数查询
+        /// </summary>
+        public int ReqQryInvestorPortfMarginRatio(ThostFtdcQryInvestorPortfMarginRatioField pQryInvestorPortfMarginRatio, int nRequestID)
+        {
+            return Interop.TdReqQryInvestorPortfMarginRatio(Handle, pQryInvestorPortfMarginRatio, nRequestID);
+        }
+
+        /// <summary>
+        ///投资者产品SPBM明细查询
+        /// </summary>
+        public int ReqQryInvestorProdSPBMDetail(ThostFtdcQryInvestorProdSPBMDetailField pQryInvestorProdSPBMDetail, int nRequestID)
+        {
+            return Interop.TdReqQryInvestorProdSPBMDetail(Handle, pQryInvestorProdSPBMDetail, nRequestID);
+        }
+
+        /// <summary>
+        ///投资者商品组SPMM记录查询
+        /// </summary>
+        public int ReqQryInvestorCommoditySPMMMargin(ThostFtdcQryInvestorCommoditySPMMMarginField pQryInvestorCommoditySPMMMargin, int nRequestID)
+        {
+            return Interop.TdReqQryInvestorCommoditySPMMMargin(Handle, pQryInvestorCommoditySPMMMargin, nRequestID);
+        }
+
+        /// <summary>
+        ///投资者商品群SPMM记录查询
+        /// </summary>
+        public int ReqQryInvestorCommodityGroupSPMMMargin(ThostFtdcQryInvestorCommodityGroupSPMMMarginField pQryInvestorCommodityGroupSPMMMargin, int nRequestID)
+        {
+            return Interop.TdReqQryInvestorCommodityGroupSPMMMargin(Handle, pQryInvestorCommodityGroupSPMMMargin, nRequestID);
+        }
+
+        /// <summary>
+        ///SPMM合约参数查询
+        /// </summary>
+        public int ReqQrySPMMInstParam(ThostFtdcQrySPMMInstParamField pQrySPMMInstParam, int nRequestID)
+        {
+            return Interop.TdReqQrySPMMInstParam(Handle, pQrySPMMInstParam, nRequestID);
+        }
+
+        /// <summary>
+        ///SPMM产品参数查询
+        /// </summary>
+        public int ReqQrySPMMProductParam(ThostFtdcQrySPMMProductParamField pQrySPMMProductParam, int nRequestID)
+        {
+            return Interop.TdReqQrySPMMProductParam(Handle, pQrySPMMProductParam, nRequestID);
+        }
+
+        /// <summary>
+        ///SPBM附加跨品种抵扣参数查询
+        /// </summary>
+        public int ReqQrySPBMAddOnInterParameter(ThostFtdcQrySPBMAddOnInterParameterField pQrySPBMAddOnInterParameter, int nRequestID)
+        {
+            return Interop.TdReqQrySPBMAddOnInterParameter(Handle, pQrySPBMAddOnInterParameter, nRequestID);
+        }
+
+        /// <summary>
+        ///RCAMS产品组合信息查询
+        /// </summary>
+        public int ReqQryRCAMSCombProductInfo(ThostFtdcQryRCAMSCombProductInfoField pQryRCAMSCombProductInfo, int nRequestID)
+        {
+            return Interop.TdReqQryRCAMSCombProductInfo(Handle, pQryRCAMSCombProductInfo, nRequestID);
+        }
+
+        /// <summary>
+        ///RCAMS同合约风险对冲参数查询
+        /// </summary>
+        public int ReqQryRCAMSInstrParameter(ThostFtdcQryRCAMSInstrParameterField pQryRCAMSInstrParameter, int nRequestID)
+        {
+            return Interop.TdReqQryRCAMSInstrParameter(Handle, pQryRCAMSInstrParameter, nRequestID);
+        }
+
+        /// <summary>
+        ///RCAMS品种内风险对冲参数查询
+        /// </summary>
+        public int ReqQryRCAMSIntraParameter(ThostFtdcQryRCAMSIntraParameterField pQryRCAMSIntraParameter, int nRequestID)
+        {
+            return Interop.TdReqQryRCAMSIntraParameter(Handle, pQryRCAMSIntraParameter, nRequestID);
+        }
+
+        /// <summary>
+        ///RCAMS跨品种风险折抵参数查询
+        /// </summary>
+        public int ReqQryRCAMSInterParameter(ThostFtdcQryRCAMSInterParameterField pQryRCAMSInterParameter, int nRequestID)
+        {
+            return Interop.TdReqQryRCAMSInterParameter(Handle, pQryRCAMSInterParameter, nRequestID);
+        }
+
+        /// <summary>
+        ///RCAMS空头期权风险调整参数查询
+        /// </summary>
+        public int ReqQryRCAMSShortOptAdjustParam(ThostFtdcQryRCAMSShortOptAdjustParamField pQryRCAMSShortOptAdjustParam, int nRequestID)
+        {
+            return Interop.TdReqQryRCAMSShortOptAdjustParam(Handle, pQryRCAMSShortOptAdjustParam, nRequestID);
+        }
+
+        /// <summary>
+        ///RCAMS策略组合持仓查询
+        /// </summary>
+        public int ReqQryRCAMSInvestorCombPosition(ThostFtdcQryRCAMSInvestorCombPositionField pQryRCAMSInvestorCombPosition, int nRequestID)
+        {
+            return Interop.TdReqQryRCAMSInvestorCombPosition(Handle, pQryRCAMSInvestorCombPosition, nRequestID);
+        }
+
+        /// <summary>
+        ///投资者品种RCAMS保证金查询
+        /// </summary>
+        public int ReqQryInvestorProdRCAMSMargin(ThostFtdcQryInvestorProdRCAMSMarginField pQryInvestorProdRCAMSMargin, int nRequestID)
+        {
+            return Interop.TdReqQryInvestorProdRCAMSMargin(Handle, pQryInvestorProdRCAMSMargin, nRequestID);
+        }
+
+        /// <summary>
+        ///RULE合约保证金参数查询
+        /// </summary>
+        public int ReqQryRULEInstrParameter(ThostFtdcQryRULEInstrParameterField pQryRULEInstrParameter, int nRequestID)
+        {
+            return Interop.TdReqQryRULEInstrParameter(Handle, pQryRULEInstrParameter, nRequestID);
+        }
+
+        /// <summary>
+        ///RULE品种内对锁仓折扣参数查询
+        /// </summary>
+        public int ReqQryRULEIntraParameter(ThostFtdcQryRULEIntraParameterField pQryRULEIntraParameter, int nRequestID)
+        {
+            return Interop.TdReqQryRULEIntraParameter(Handle, pQryRULEIntraParameter, nRequestID);
+        }
+
+        /// <summary>
+        ///RULE跨品种抵扣参数查询
+        /// </summary>
+        public int ReqQryRULEInterParameter(ThostFtdcQryRULEInterParameterField pQryRULEInterParameter, int nRequestID)
+        {
+            return Interop.TdReqQryRULEInterParameter(Handle, pQryRULEInterParameter, nRequestID);
+        }
+
+        /// <summary>
+        ///投资者产品RULE保证金查询
+        /// </summary>
+        public int ReqQryInvestorProdRULEMargin(ThostFtdcQryInvestorProdRULEMarginField pQryInvestorProdRULEMargin, int nRequestID)
+        {
+            return Interop.TdReqQryInvestorProdRULEMargin(Handle, pQryInvestorProdRULEMargin, nRequestID);
         }
 
         /// <summary>

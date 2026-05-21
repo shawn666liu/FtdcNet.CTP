@@ -31,37 +31,44 @@ namespace CTP
             return;
 #endif
             // runtimes/win-x64(86)/native/ftdc2c_ctp.dll
-            string CheckDir(string dir)
+            string CheckDir(string dir, ref bool _exists)
             {
                 if (string.IsNullOrEmpty(dir)) return "";
                 var d1 = Path.Combine(dir, "ftdc2c_ctp.dll");
                 if (File.Exists(d1))
-                    return dir;
-                dir = Path.Combine(dir, "runtimes", System.Environment.Is64BitProcess ? "win-x64" : "win-x86", "native");
-                var dll = Path.Combine(dir, "ftdc2c_ctp.dll");
+                {
+                    _exists = true;
+                    return "";
+                }
+                var dll = Path.Combine(dir, "runtimes", System.Environment.Is64BitProcess ? "win-x64" : "win-x86", "native", "ftdc2c_ctp.dll");
                 if (File.Exists(dll))
                     return dir;
                 return "";
             }
 
             string dll_parent = string.Empty;
+            bool exists = false;
             if (Assembly.GetExecutingAssembly() != null)
-                dll_parent = CheckDir(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            if (string.IsNullOrEmpty(dll_parent) && Assembly.GetEntryAssembly() != null)
-                dll_parent = CheckDir(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
-            if (string.IsNullOrEmpty(dll_parent))
-                dll_parent = CheckDir(AppDomain.CurrentDomain.BaseDirectory);
+                dll_parent = CheckDir(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), ref exists);
+            if (!exists && string.IsNullOrEmpty(dll_parent) && Assembly.GetEntryAssembly() != null)
+                dll_parent = CheckDir(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), ref exists);
+            if (!exists && string.IsNullOrEmpty(dll_parent))
+                dll_parent = CheckDir(AppDomain.CurrentDomain.BaseDirectory, ref exists);
 
-            if (string.IsNullOrEmpty(dll_parent))
+            if (exists)
+                return;
+
+            if (!string.IsNullOrEmpty(dll_parent))
             {
-                System.Diagnostics.Debug.WriteLine("Warning: Can't detect the location of ftdc2c_ctp.dll !!!");
-                Console.WriteLine("Warning: Can't detect the location of ftdc2c_ctp.dll !!!");
+                var dir = Path.Combine(dll_parent, "runtimes", System.Environment.Is64BitProcess ? "win-x64" : "win-x86", "native");
+                Console.WriteLine("Found ftdc2c_ctp.dll in {0}", dir);
+                // add to PATH
+                Environment.SetEnvironmentVariable("PATH", dir + ";" + Environment.GetEnvironmentVariable("PATH"));
             }
             else
             {
-                Console.WriteLine("Found ftdc2c_ctp.dll in '{0}'.", dll_parent);
-                // add to PATH
-                Environment.SetEnvironmentVariable("PATH", dll_parent + ";" + Environment.GetEnvironmentVariable("PATH"));
+                System.Diagnostics.Debug.WriteLine("Warning: Can't detect the location of ftdc2c_ctp.dll !!!");
+                Console.WriteLine("Warning: Can't detect the location of ftdc2c_ctp.dll !!!");
             }
         }
 
@@ -84,8 +91,8 @@ namespace CTP
         public static extern void TdRegisterCallback(IntPtr pApi, CbOnErrRtnEvent c1, CbOnFrontEvent c2, CbOnRspEvent c3, CbOnRtnEvent c4, IntPtr pObject);
 
 
-        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
-        public static extern int CTPGetSystemInfo([MarshalAs(UnmanagedType.LPArray)] byte[] pSystemInfo, ref int nLen);
+        [DllImport("WinDataCollect", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int CTP_GetSystemInfo([MarshalAs(UnmanagedType.LPArray)] byte[] pSystemInfo, ref int nLen);
 
 
         [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
@@ -292,6 +299,9 @@ namespace CTP
         public static extern int TdReqQryDepthMarketData(IntPtr pApi, ThostFtdcQryDepthMarketDataField pQryDepthMarketData, int nRequestID);
 
         [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryTraderOffer(IntPtr pApi, ThostFtdcQryTraderOfferField pQryTraderOffer, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
         public static extern int TdReqQrySettlementInfo(IntPtr pApi, ThostFtdcQrySettlementInfoField pQrySettlementInfo, int nRequestID);
 
         [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
@@ -423,6 +433,85 @@ namespace CTP
         [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
         public static extern int TdReqQryCombPromotionParam(IntPtr pApi, ThostFtdcQryCombPromotionParamField pQryCombPromotionParam, int nRequestID);
 
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryRiskSettleInvstPosition(IntPtr pApi, ThostFtdcQryRiskSettleInvstPositionField pQryRiskSettleInvstPosition, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryRiskSettleProductStatus(IntPtr pApi, ThostFtdcQryRiskSettleProductStatusField pQryRiskSettleProductStatus, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQrySPBMFutureParameter(IntPtr pApi, ThostFtdcQrySPBMFutureParameterField pQrySPBMFutureParameter, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQrySPBMOptionParameter(IntPtr pApi, ThostFtdcQrySPBMOptionParameterField pQrySPBMOptionParameter, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQrySPBMIntraParameter(IntPtr pApi, ThostFtdcQrySPBMIntraParameterField pQrySPBMIntraParameter, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQrySPBMInterParameter(IntPtr pApi, ThostFtdcQrySPBMInterParameterField pQrySPBMInterParameter, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQrySPBMPortfDefinition(IntPtr pApi, ThostFtdcQrySPBMPortfDefinitionField pQrySPBMPortfDefinition, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQrySPBMInvestorPortfDef(IntPtr pApi, ThostFtdcQrySPBMInvestorPortfDefField pQrySPBMInvestorPortfDef, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryInvestorPortfMarginRatio(IntPtr pApi, ThostFtdcQryInvestorPortfMarginRatioField pQryInvestorPortfMarginRatio, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryInvestorProdSPBMDetail(IntPtr pApi, ThostFtdcQryInvestorProdSPBMDetailField pQryInvestorProdSPBMDetail, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryInvestorCommoditySPMMMargin(IntPtr pApi, ThostFtdcQryInvestorCommoditySPMMMarginField pQryInvestorCommoditySPMMMargin, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryInvestorCommodityGroupSPMMMargin(IntPtr pApi, ThostFtdcQryInvestorCommodityGroupSPMMMarginField pQryInvestorCommodityGroupSPMMMargin, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQrySPMMInstParam(IntPtr pApi, ThostFtdcQrySPMMInstParamField pQrySPMMInstParam, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQrySPMMProductParam(IntPtr pApi, ThostFtdcQrySPMMProductParamField pQrySPMMProductParam, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQrySPBMAddOnInterParameter(IntPtr pApi, ThostFtdcQrySPBMAddOnInterParameterField pQrySPBMAddOnInterParameter, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryRCAMSCombProductInfo(IntPtr pApi, ThostFtdcQryRCAMSCombProductInfoField pQryRCAMSCombProductInfo, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryRCAMSInstrParameter(IntPtr pApi, ThostFtdcQryRCAMSInstrParameterField pQryRCAMSInstrParameter, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryRCAMSIntraParameter(IntPtr pApi, ThostFtdcQryRCAMSIntraParameterField pQryRCAMSIntraParameter, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryRCAMSInterParameter(IntPtr pApi, ThostFtdcQryRCAMSInterParameterField pQryRCAMSInterParameter, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryRCAMSShortOptAdjustParam(IntPtr pApi, ThostFtdcQryRCAMSShortOptAdjustParamField pQryRCAMSShortOptAdjustParam, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryRCAMSInvestorCombPosition(IntPtr pApi, ThostFtdcQryRCAMSInvestorCombPositionField pQryRCAMSInvestorCombPosition, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryInvestorProdRCAMSMargin(IntPtr pApi, ThostFtdcQryInvestorProdRCAMSMarginField pQryInvestorProdRCAMSMargin, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryRULEInstrParameter(IntPtr pApi, ThostFtdcQryRULEInstrParameterField pQryRULEInstrParameter, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryRULEIntraParameter(IntPtr pApi, ThostFtdcQryRULEIntraParameterField pQryRULEIntraParameter, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryRULEInterParameter(IntPtr pApi, ThostFtdcQryRULEInterParameterField pQryRULEInterParameter, int nRequestID);
+
+        [DllImport("ftdc2c_ctp", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.StdCall)]
+        public static extern int TdReqQryInvestorProdRULEMargin(IntPtr pApi, ThostFtdcQryInvestorProdRULEMarginField pQryInvestorProdRULEMargin, int nRequestID);
+
 
     }
 }
+

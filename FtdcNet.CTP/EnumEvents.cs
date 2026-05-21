@@ -16,10 +16,6 @@ namespace CTP
     public enum EnumOnErrRtnType
     {
         /// <summary>
-        /// 未使用,保留
-        /// </summary>
-        None,
-        /// <summary>
         ///报单录入错误回报, ThostFtdcInputOrderField
         /// </summary>
         OnErrRtnOrderInsert,
@@ -83,6 +79,10 @@ namespace CTP
         ///期货发起查询银行余额错误回报, ThostFtdcReqQueryAccountField
         /// </summary>
         OnErrRtnQueryBankBalanceByFuture,
+        /// <summary>
+        /// 未使用,保留
+        /// </summary>
+        MaxValue,
     };
 
     /// <summary>
@@ -90,10 +90,6 @@ namespace CTP
     /// </summary>
     public enum EnumOnFrontType
     {
-        /// <summary>
-        /// 未使用,保留
-        /// </summary>
-        None,
         /// <summary>
         ///当客户端与交易后台建立起通信连接时（还未登录前），该方法被调用。
         /// </summary>
@@ -108,6 +104,10 @@ namespace CTP
         ///        0x2003 收到错误报文, int
         /// </summary>
         OnFrontDisconnected,
+        /// <summary>
+        /// 未使用,保留
+        /// </summary>
+        MaxValue,
     };
 
     /// <summary>
@@ -115,10 +115,6 @@ namespace CTP
     /// </summary>
     public enum EnumOnRspType
     {
-        /// <summary>
-        /// 未使用,保留
-        /// </summary>
-        None,
         /// <summary>
         ///登录请求响应, ThostFtdcRspUserLoginField
         /// </summary>
@@ -291,6 +287,10 @@ namespace CTP
         ///请求查询行情响应, ThostFtdcDepthMarketDataField
         /// </summary>
         OnRspQryDepthMarketData,
+        /// <summary>
+        ///请求查询交易员报盘机响应, ThostFtdcTraderOfferField
+        /// </summary>
+        OnRspQryTraderOffer,
         /// <summary>
         ///请求查询投资者结算结果响应, ThostFtdcSettlementInfoField
         /// </summary>
@@ -467,6 +467,114 @@ namespace CTP
         ///请求组合优惠比例响应, ThostFtdcCombPromotionParamField
         /// </summary>
         OnRspQryCombPromotionParam,
+        /// <summary>
+        ///投资者风险结算持仓查询响应, ThostFtdcRiskSettleInvstPositionField
+        /// </summary>
+        OnRspQryRiskSettleInvstPosition,
+        /// <summary>
+        ///风险结算产品查询响应, ThostFtdcRiskSettleProductStatusField
+        /// </summary>
+        OnRspQryRiskSettleProductStatus,
+        /// <summary>
+        ///SPBM期货合约参数查询响应, ThostFtdcSPBMFutureParameterField
+        /// </summary>
+        OnRspQrySPBMFutureParameter,
+        /// <summary>
+        ///SPBM期权合约参数查询响应, ThostFtdcSPBMOptionParameterField
+        /// </summary>
+        OnRspQrySPBMOptionParameter,
+        /// <summary>
+        ///SPBM品种内对锁仓折扣参数查询响应, ThostFtdcSPBMIntraParameterField
+        /// </summary>
+        OnRspQrySPBMIntraParameter,
+        /// <summary>
+        ///SPBM跨品种抵扣参数查询响应, ThostFtdcSPBMInterParameterField
+        /// </summary>
+        OnRspQrySPBMInterParameter,
+        /// <summary>
+        ///SPBM组合保证金套餐查询响应, ThostFtdcSPBMPortfDefinitionField
+        /// </summary>
+        OnRspQrySPBMPortfDefinition,
+        /// <summary>
+        ///投资者SPBM套餐选择查询响应, ThostFtdcSPBMInvestorPortfDefField
+        /// </summary>
+        OnRspQrySPBMInvestorPortfDef,
+        /// <summary>
+        ///投资者新型组合保证金系数查询响应, ThostFtdcInvestorPortfMarginRatioField
+        /// </summary>
+        OnRspQryInvestorPortfMarginRatio,
+        /// <summary>
+        ///投资者产品SPBM明细查询响应, ThostFtdcInvestorProdSPBMDetailField
+        /// </summary>
+        OnRspQryInvestorProdSPBMDetail,
+        /// <summary>
+        ///投资者商品组SPMM记录查询响应, ThostFtdcInvestorCommoditySPMMMarginField
+        /// </summary>
+        OnRspQryInvestorCommoditySPMMMargin,
+        /// <summary>
+        ///投资者商品群SPMM记录查询响应, ThostFtdcInvestorCommodityGroupSPMMMarginField
+        /// </summary>
+        OnRspQryInvestorCommodityGroupSPMMMargin,
+        /// <summary>
+        ///SPMM合约参数查询响应, ThostFtdcSPMMInstParamField
+        /// </summary>
+        OnRspQrySPMMInstParam,
+        /// <summary>
+        ///SPMM产品参数查询响应, ThostFtdcSPMMProductParamField
+        /// </summary>
+        OnRspQrySPMMProductParam,
+        /// <summary>
+        ///SPBM附加跨品种抵扣参数查询响应, ThostFtdcSPBMAddOnInterParameterField
+        /// </summary>
+        OnRspQrySPBMAddOnInterParameter,
+        /// <summary>
+        ///RCAMS产品组合信息查询响应, ThostFtdcRCAMSCombProductInfoField
+        /// </summary>
+        OnRspQryRCAMSCombProductInfo,
+        /// <summary>
+        ///RCAMS同合约风险对冲参数查询响应, ThostFtdcRCAMSInstrParameterField
+        /// </summary>
+        OnRspQryRCAMSInstrParameter,
+        /// <summary>
+        ///RCAMS品种内风险对冲参数查询响应, ThostFtdcRCAMSIntraParameterField
+        /// </summary>
+        OnRspQryRCAMSIntraParameter,
+        /// <summary>
+        ///RCAMS跨品种风险折抵参数查询响应, ThostFtdcRCAMSInterParameterField
+        /// </summary>
+        OnRspQryRCAMSInterParameter,
+        /// <summary>
+        ///RCAMS空头期权风险调整参数查询响应, ThostFtdcRCAMSShortOptAdjustParamField
+        /// </summary>
+        OnRspQryRCAMSShortOptAdjustParam,
+        /// <summary>
+        ///RCAMS策略组合持仓查询响应, ThostFtdcRCAMSInvestorCombPositionField
+        /// </summary>
+        OnRspQryRCAMSInvestorCombPosition,
+        /// <summary>
+        ///投资者品种RCAMS保证金查询响应, ThostFtdcInvestorProdRCAMSMarginField
+        /// </summary>
+        OnRspQryInvestorProdRCAMSMargin,
+        /// <summary>
+        ///RULE合约保证金参数查询响应, ThostFtdcRULEInstrParameterField
+        /// </summary>
+        OnRspQryRULEInstrParameter,
+        /// <summary>
+        ///RULE品种内对锁仓折扣参数查询响应, ThostFtdcRULEIntraParameterField
+        /// </summary>
+        OnRspQryRULEIntraParameter,
+        /// <summary>
+        ///RULE跨品种抵扣参数查询响应, ThostFtdcRULEInterParameterField
+        /// </summary>
+        OnRspQryRULEInterParameter,
+        /// <summary>
+        ///投资者产品RULE保证金查询响应, ThostFtdcInvestorProdRULEMarginField
+        /// </summary>
+        OnRspQryInvestorProdRULEMargin,
+        /// <summary>
+        /// 未使用,保留
+        /// </summary>
+        MaxValue,
     };
 
     /// <summary>
@@ -474,10 +582,6 @@ namespace CTP
     /// </summary>
     public enum EnumOnRtnType
     {
-        /// <summary>
-        /// 未使用,保留
-        /// </summary>
-        None,
         /// <summary>
         ///深度行情通知, ThostFtdcDepthMarketDataField
         /// </summary>
@@ -586,6 +690,10 @@ namespace CTP
         ///银行发起变更银行账号通知, ThostFtdcChangeAccountField
         /// </summary>
         OnRtnChangeAccountByBank,
+        /// <summary>
+        /// 未使用,保留
+        /// </summary>
+        MaxValue,
     };
 
 }; // end of namespace
